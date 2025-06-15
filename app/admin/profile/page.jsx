@@ -1,3 +1,4 @@
+import { auth } from "@/auth";
 import UpdatePasswordForm from "@/components/UpdatePasswordForm";
 
 export const metadata = {
@@ -5,6 +6,8 @@ export const metadata = {
 };
 
 export default async function Page() {
+  const session = await auth();
+
   return (
     <section>
       <h2 className="mb-6 text-2xl font-bold uppercase text-center tracking-wide">
