@@ -1,13 +1,10 @@
 import UpdatePasswordForm from "@/components/UpdatePasswordForm";
-import { requireAdmin } from "@/lib/auth-guard";
 
 export const metadata = {
   title: "Profile",
 };
 
 export default async function Page() {
-  const session = await requireAdmin();
-
   return (
     <section>
       <h2 className="mb-6 text-2xl font-bold uppercase text-center tracking-wide">

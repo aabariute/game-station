@@ -1,8 +1,9 @@
 "use client";
 
 import { updateUserPassword } from "@/lib/actions/auth-actions";
-import { startTransition, useActionState } from "react";
+import { startTransition, useActionState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 export default function UpdatePasswordForm() {
   const {
@@ -17,7 +18,7 @@ export default function UpdatePasswordForm() {
     },
   });
 
-  const [data, action, isPending] = useActionState(updateUserPassword, {
+  const [state, action, isPending] = useActionState(updateUserPassword, {
     success: false,
     message: "",
   });
@@ -30,17 +31,22 @@ export default function UpdatePasswordForm() {
     startTransition(() => {
       action(formData);
     });
-
-    // const res = await updateUserPassword(data);
   }
+
+  useEffect(() => {
+    if (state.success) {
+      toast.success(state.message);
+      reset();
+    }
+  }, [state]);
 
   return (
     <form
       onSubmit={handleSubmit(onFormSubmit)}
       className="card-lg flex flex-col gap-y-4 md:gap-y-2"
     >
-      {data && !data.success && (
-        <div className="text-red-600 text-sm mb-2">{data.message}</div>
+      {state && !state.success && (
+        <div className="text-red-600 text-sm mb-2">{state.message}</div>
       )}
       <div className="grid md:grid-cols-[11rem_1fr_1.2fr] gap-y-1 md:gap-y-2 gap-x-5 items-center">
         <span>New Password</span>

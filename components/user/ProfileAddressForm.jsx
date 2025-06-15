@@ -9,6 +9,7 @@ import {
 import { DialogTitle } from "@headlessui/react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { CiEdit } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 import LabeledInput from "../ui/input/LabeledInput";
@@ -37,8 +38,12 @@ export default function ProfileAddressForm({ address, phone_number }) {
       street_address: data.street_address,
       zip_code: data.zip_code,
     };
+
     const res = await updateUser({ address, phone_number: data.phone_number });
-    if (!res.success) return;
+
+    if (!res.success) return toast.error(res.message);
+
+    toast.success(res.message);
 
     setIsOpen(false);
   }

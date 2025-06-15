@@ -73,40 +73,45 @@ export default function ProductForm({ type, product, productId }) {
         <div>
           <LabeledInput
             {...register("title", {
-              required: true,
-              minLength: 3,
+              required: "Title is required",
+              minLength: {
+                value: 3,
+                message: "Title must be at least 3 characters",
+              },
             })}
             label="Title"
             htmlFor="title"
             error={errors.title}
           />
           {errors.title && (
-            <span className="text-red-600 text-xs">
-              Title should be at least 3 characters
-            </span>
+            <span className="text-red-600 text-xs">{errors.title.message}</span>
           )}
         </div>
         <div>
           <LabeledInput
             {...register("brand", {
-              required: true,
-              minLength: 3,
+              required: "Brand is required",
+              minLength: {
+                value: 3,
+                message: "Brand must be at least 3 characters",
+              },
             })}
             label="Brand"
             htmlFor="brand"
             error={errors.brand}
           />
           {errors.brand && (
-            <span className="text-red-600 text-xs">
-              Brand should be at least 3 characters
-            </span>
+            <span className="text-red-600 text-xs">{errors.brand.message}</span>
           )}
         </div>
         <div>
           <LabeledInput
             {...register("category", {
-              required: true,
-              minLength: 3,
+              required: "Category is required",
+              minLength: {
+                value: 3,
+                message: "Category must be at least 3 characters",
+              },
             })}
             label="Category"
             htmlFor="category"
@@ -114,7 +119,7 @@ export default function ProductForm({ type, product, productId }) {
           />
           {errors.category && (
             <span className="text-red-600 text-xs">
-              Category should be at least 3 characters
+              {errors.category.message}
             </span>
           )}
         </div>
@@ -126,20 +131,27 @@ export default function ProductForm({ type, product, productId }) {
           <textarea
             id="description"
             {...register("description", {
-              required: true,
-              minLength: 3,
+              required: "Description is required",
+              minLength: {
+                value: 20,
+                message: "Description must be at least 20 characters",
+              },
+              maxLength: {
+                value: 300,
+                message: "Description cannot exceed 300 characters",
+              },
             })}
-            className="textarea mt-1"
+            className={`textarea mt-1 ${errors.description ? "border-2 border-red-500 focus:border-red-500" : ""}`}
           />
           {errors.description && (
             <span className="text-red-600 text-xs">
-              Description should be at least 3 characters
+              {errors.description.message}
             </span>
           )}
         </div>
       </div>
 
-      <hr className="border-neutral-800 mt-4 mb-10" />
+      <hr className="border-neutral-300 dark:border-neutral-700 mt-4 mb-10" />
 
       <h3 className="mb-6 font-bold text-xl uppercase text-center">Variants</h3>
 

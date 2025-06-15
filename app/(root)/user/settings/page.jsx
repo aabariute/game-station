@@ -1,15 +1,22 @@
 import UpdatePasswordForm from "@/components/UpdatePasswordForm";
 import DeleteAccountButton from "@/components/user/DeleteAccountButton";
+import { getOAuthProvider } from "@/lib/actions/auth-actions";
 
 export const metadata = {
   title: "Settings",
 };
 
-export default function Page() {
+export default async function Page() {
+  const provider = await getOAuthProvider();
+
   return (
     <div>
-      <h3 className="font-medium text-xl mb-6">Change Password</h3>
-      <UpdatePasswordForm />
+      {!provider && (
+        <>
+          <h3 className="font-medium text-xl mb-6">Change Password</h3>
+          <UpdatePasswordForm />
+        </>
+      )}
 
       <div className="mt-14">
         <DeleteAccountButton />

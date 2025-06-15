@@ -14,7 +14,7 @@ export default async function CheckoutAside({ cart }) {
 
   return (
     <aside className="flex flex-col p-4 md:p-6 xl:pl-8 xl:pr-20 xl:h-full bg-neutral-100 dark:bg-neutral-800">
-      <div className="divide-y divide-neutral-200 dark:divide-neutral-700 overflow-y-auto max-h-[330px] overflow-y-auto">
+      <div className="divide-y divide-neutral-200 dark:divide-neutral-700 overflow-y-auto max-h-[330px]">
         {cart.cart_items.map((item) => (
           <ProductCard
             key={`${item.product_id}%${item.variant_id}`}
@@ -24,7 +24,7 @@ export default async function CheckoutAside({ cart }) {
       </div>
 
       <DiscountCodeInput
-        cart_id={cart.id}
+        cartId={cart.id}
         isDiscountApplied={isDiscountApplied}
       />
 

@@ -20,11 +20,11 @@ export default function VariantForm({
   errors,
 }) {
   return (
-    <div className="flex flex-col gap-y-10 divide-y divide-neutral-800">
+    <div className="flex flex-col gap-y-10 divide-y divide-neutral-200 dark:divide-neutral-800">
       {fields.map((field, index) => (
         <div key={field.id} className="pb-4">
           <div className="flex-between mb-4">
-            <h4 className="font-medium tracking-wide text-base py-2 px-3 rounded-md bg-neutral-700">
+            <h4 className="font-medium tracking-wide text-base py-2 px-3 rounded-md bg-neutral-300 dark:bg-neutral-700">
               Variant #{index + 1}
             </h4>
             {index !== 0 && (

@@ -1,7 +1,6 @@
 import SortBy from "@/components/admin/SortBy";
 import Pagination from "@/components/Pagination";
 import { getAllOrders } from "@/lib/actions/order-actions";
-import { requireAdmin } from "@/lib/auth-guard";
 import { PAGE_SIZE } from "@/lib/constants";
 import { dateFormatter, priceFormatter } from "@/lib/utils";
 import Link from "next/link";
@@ -19,8 +18,6 @@ const sortOptions = [
 ];
 
 export default async function Page({ searchParams }) {
-  await requireAdmin();
-
   const { page = "1", sort } = await searchParams;
   const { orders, total, totalPages } = await getAllOrders(
     page,

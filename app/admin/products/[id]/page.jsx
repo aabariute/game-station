@@ -1,13 +1,10 @@
 import ProductForm from "@/components/admin/ProductForm";
 import { getProductById } from "@/lib/actions/product-actions";
-import { requireAdmin } from "@/lib/auth-guard";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FiArrowLeft } from "react-icons/fi";
 
 export default async function Page({ params }) {
-  await requireAdmin();
-
   const { id } = await params;
   const product = await getProductById(id);
   if (!product) notFound();

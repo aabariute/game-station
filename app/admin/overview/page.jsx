@@ -1,6 +1,5 @@
 import Charts from "@/components/admin/Charts";
 import { getOrderSummary } from "@/lib/actions/order-actions";
-import { requireAdmin } from "@/lib/auth-guard";
 import { dateFormatter, priceFormatter } from "@/lib/utils";
 import Link from "next/link";
 import { AiOutlineDollar } from "react-icons/ai";
@@ -14,8 +13,6 @@ export const metadata = {
 };
 
 export default async function Page() {
-  await requireAdmin();
-
   const summary = await getOrderSummary();
 
   return (

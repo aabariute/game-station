@@ -205,8 +205,8 @@
   input[type="checkbox"]:checked::before,
   input[type="radio"]:checked::before {
     content: "";
-    width: 8.25px;
-    height: 8.25px;
+    width: 8px;
+    height: 8px;
     background-color: black;
 
     @variant dark {

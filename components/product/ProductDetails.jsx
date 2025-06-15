@@ -28,7 +28,7 @@ export default function ProductDetails({ product }) {
           fontSize="text-xl md:text-2xl"
         />
 
-        <div className="mt-4 flex items-center gap-x-2">
+        <div className="mt-6 lg:mt-4 flex items-center gap-x-2">
           <span className="mr-3">Available Colors:</span>
           <ProductColorSwatches
             colors={colors}
@@ -37,11 +37,11 @@ export default function ProductDetails({ product }) {
           />
         </div>
 
-        <p className="mt-4 lg:mt-6 text-sm">{description}</p>
+        <p className="mt-6 lg:mt-4 lg:mt-6 text-sm">{description}</p>
 
         {stock > 0 ? (
           <>
-            <p className="text-center text-sm mb-1 mt-6 lg:mt-auto">
+            <p className="text-center text-sm mb-1 mt-8 lg:mt-auto">
               In stock. Ready to ship
             </p>
 

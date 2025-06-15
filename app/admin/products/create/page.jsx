@@ -1,11 +1,8 @@
 import ProductForm from "@/components/admin/ProductForm";
-import { requireAdmin } from "@/lib/auth-guard";
 import Link from "next/link";
 import { FiArrowLeft } from "react-icons/fi";
 
 export default async function Page() {
-  await requireAdmin();
-
   return (
     <section>
       <div className="grid grid-cols-[auto_auto] md:grid-cols-[100px_auto_100px] mb-8 items-center">

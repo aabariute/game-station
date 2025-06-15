@@ -2,7 +2,7 @@
 
 import { addItemToCart } from "@/lib/actions/cart-actions";
 import { cn } from "@/lib/utils";
-// import { toast } from "sonner";
+import toast from "react-hot-toast";
 
 export default function ButtonAddToCart({
   productId,
@@ -13,9 +13,9 @@ export default function ButtonAddToCart({
   async function handleAddToCart() {
     const res = await addItemToCart(productId, variantId);
 
-    if (res.success) {
-      // handle success and error
-    }
+    if (!res.success) return toast.error(res.message);
+
+    toast.success(res.message);
   }
 
   return (

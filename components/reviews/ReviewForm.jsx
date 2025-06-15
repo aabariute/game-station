@@ -1,15 +1,11 @@
 import { createReview, getUserReview } from "@/lib/actions/review-action";
-import {
-  Description,
-  Dialog,
-  DialogPanel,
-  DialogTitle,
-} from "@headlessui/react";
+import { Description, DialogTitle } from "@headlessui/react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { IoClose } from "react-icons/io5";
-import StarRating from "./StarRating";
 import Modal from "../ui/Modal";
+import StarRating from "./StarRating";
 
 export default function ReviewForm({ productId, isOpen, setIsOpen }) {
   const [rating, setRating] = useState("");
@@ -36,7 +32,9 @@ export default function ReviewForm({ productId, isOpen, setIsOpen }) {
   async function onReviewSubmit(data) {
     const res = await createReview({ ...data, rating, product_id: productId });
 
-    if (!res.success) return;
+    if (!res.success) return toast.error(res.message);
+
+    toast.success(res.message);
 
     setIsOpen(false);
   }

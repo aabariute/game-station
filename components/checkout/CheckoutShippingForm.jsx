@@ -2,14 +2,12 @@
 
 import { updateShippingMethod } from "@/lib/actions/cart-actions";
 import { priceFormatter } from "@/lib/utils";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { useFormStatus } from "react-dom";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import SpinnerMini from "../ui/SpinnerMini";
 
 export default function CheckoutShippingForm({ selectedMethod, totalPrice }) {
-  const router = useRouter();
-
   function SubmitButton() {
     const { pending } = useFormStatus();
 
@@ -78,14 +76,13 @@ export default function CheckoutShippingForm({ selectedMethod, totalPrice }) {
       </div>
 
       <div className="mt-8 xl:mt-auto flex-between">
-        <button
-          type="button"
-          onClick={() => router.push("/checkout/information")}
+        <Link
+          href="/checkout/information"
           className="button-primary w-26 flex-center gap-1"
         >
           <FiArrowLeft className="text-[18px]" />
           <span>Back</span>
-        </button>
+        </Link>
 
         <SubmitButton />
       </div>

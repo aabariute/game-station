@@ -4,6 +4,7 @@ const geist = Geist({
   subsets: ["latin"],
 });
 
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 export const metadata = {
@@ -21,6 +22,22 @@ export default function Layout({ children }) {
     <html lang="en" className={geist.className}>
       <body className="antialiased flex flex-col min-h-screen dark:bg-[var(--color-dark-bg)] text-neutral-900 dark:text-neutral-100">
         {children}
+
+        <Toaster
+          position="bottom-center"
+          gutter={8}
+          containerStyle={{ margin: "8px" }}
+          toastOptions={{
+            success: { duration: 3000 },
+            error: { duration: 4000 },
+            style: {
+              fontSize: "14px",
+              maxWidth: "500px",
+              padding: "8px 12px",
+              color: "var(--color-neutral-700)",
+            },
+          }}
+        />
       </body>
     </html>
   );

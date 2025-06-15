@@ -1,11 +1,10 @@
 import FilterRoles from "@/components/admin/FilterRoles";
+import UserDeleteButton from "@/components/admin/UserDeleteButton";
 import Pagination from "@/components/Pagination";
 import { getAllUsers } from "@/lib/actions/user-actions";
-import { requireAdmin } from "@/lib/auth-guard";
+import { PAGE_SIZE } from "@/lib/constants";
 import Link from "next/link";
 import { FaEye } from "react-icons/fa";
-import { PAGE_SIZE } from "@/lib/constants";
-import UserDeleteButton from "@/components/admin/UserDeleteButton";
 
 export const metadata = {
   title: "Users",
@@ -17,8 +16,6 @@ const roles = [
 ];
 
 export default async function Page({ searchParams }) {
-  await requireAdmin();
-
   const { page = "1", role } = await searchParams;
   const { users, total, totalPages } = await getAllUsers(page, PAGE_SIZE, role);
 

@@ -6,6 +6,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { CiEdit } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 import LabeledInput from "../ui/input/LabeledInput";
@@ -31,10 +32,8 @@ export default function ProfileContactsForm() {
     const name = `${data.first_name} ${data.last_name}`;
 
     const res = await updateUser({ name });
-    if (!res.success) {
-      // handle error
-      return;
-    }
+
+    if (!res.success) return toast.error(res.message);
 
     // Update session
     const newSession = {
@@ -46,7 +45,7 @@ export default function ProfileContactsForm() {
     };
     await update(newSession);
 
-    // router.refresh();
+    toast.success(res.message);
 
     setIsOpen(false);
   }

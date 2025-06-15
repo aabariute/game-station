@@ -10,7 +10,7 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { useState } from "react";
 import { FiArrowLeft } from "react-icons/fi";
 import Spinner from "../ui/Spinner";
@@ -44,7 +44,6 @@ export default function CheckoutPaymentForm({ clientSecret, price }) {
 }
 
 function StripeForm({ clientSecret, price }) {
-  const router = useRouter();
   const stripe = useStripe();
   const elements = useElements();
 
@@ -110,14 +109,13 @@ function StripeForm({ clientSecret, price }) {
       )}
 
       <div className="mt-12 flex-between">
-        <button
-          type="button"
-          onClick={() => router.push("/checkout/shipping")}
+        <Link
+          href="/checkout/shipping"
           className="button-primary w-26 flex-center gap-1"
         >
           <FiArrowLeft className="text-[18px]" />
           <span>Back</span>
-        </button>
+        </Link>
 
         <button
           type="submit"

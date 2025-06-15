@@ -1,8 +1,10 @@
+import { auth } from "@/auth";
 import HamburgerMenu from "@/components/header/HamburgerMenu";
 import Logo from "@/components/header/Logo";
 import NavbarLink from "@/components/header/NavbarLink";
 import { signOutUser } from "@/lib/actions/auth-actions";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import React from "react";
 import { IoIosLogOut } from "react-icons/io";
 import { PiUserCircleLight } from "react-icons/pi";
@@ -15,6 +17,12 @@ const links = [
 ];
 
 export default async function Layout({ children }) {
+  const session = await auth();
+
+  if (session?.user?.role !== "admin") {
+    redirect("/unauthorized");
+  }
+
   return (
     <>
       <header className="flex-between sticky top-0 inset-x-0 z-10 px-3 md:px-6 py-2 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md shadow-lg">

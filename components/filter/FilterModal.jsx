@@ -65,7 +65,10 @@ export default function FilterModal({ filterOptions }) {
         className="relative z-50"
       >
         <div className="fixed inset-0 w-screen flex-center bg-black/40">
-          <DialogPanel className="p-6 bottom-0 top-0 left-0 fixed h-full w-full flex flex-col bg-white dark:bg-black border-r border-neutral-400 dark:border-neutral-800 md:w-[530px] transition duration-1000 data-[closed]:-translate-x-full">
+          <DialogPanel
+            transition
+            className="p-6 bottom-0 top-0 left-0 fixed h-full w-full flex flex-col bg-white dark:bg-black md:border-r md:border-neutral-400 md:dark:border-neutral-800 md:w-[530px] duration-300 data-closed:-translate-x-full"
+          >
             <div className="flex-between pb-4 border-b-2 border-neutral-600">
               <h3 className="text-2xl font-semibold">Filter & Sort</h3>
               <IoClose

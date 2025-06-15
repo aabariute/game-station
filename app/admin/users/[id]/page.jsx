@@ -1,6 +1,5 @@
 import { getUserOrders } from "@/lib/actions/order-actions";
 import { getUserById } from "@/lib/actions/user-actions";
-import { requireAdmin } from "@/lib/auth-guard";
 import { dateFormatter, priceFormatter } from "@/lib/utils";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -8,8 +7,6 @@ import { FaEye } from "react-icons/fa";
 import { FiArrowLeft } from "react-icons/fi";
 
 export default async function Page({ params }) {
-  await requireAdmin();
-
   const { id } = await params;
   const user = await getUserById(id);
 

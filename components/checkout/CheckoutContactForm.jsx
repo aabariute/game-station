@@ -6,6 +6,7 @@ import {
   PHONE_REGEX_VALIDATION,
   ZIP_CODE_REGEX_VALIDATION,
 } from "@/lib/validators";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
@@ -196,14 +197,13 @@ export default function CheckoutContactForm() {
       </div>
 
       <div className="mt-2 xl:mt-auto flex-between">
-        <button
-          type="button"
-          onClick={() => router.back()}
+        <Link
+          href="/products"
           className="button-primary w-26 flex-center gap-1"
         >
           <FiArrowLeft className="text-[18px]" />
           <span>Back</span>
-        </button>
+        </Link>
 
         <button
           type="submit"

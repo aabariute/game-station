@@ -1,11 +1,8 @@
 import CreateAdminForm from "@/components/admin/CreateAdminForm";
-import { requireAdmin } from "@/lib/auth-guard";
 import Link from "next/link";
 import { FiArrowLeft } from "react-icons/fi";
 
 export default async function Page() {
-  await requireAdmin();
-
   return (
     <section className="max-w-[62rem] mx-auto">
       <div className="grid grid-cols-[100px_auto] md:grid-cols-[100px_auto_100px] mb-12 items-center">

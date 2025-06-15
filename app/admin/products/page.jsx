@@ -2,7 +2,6 @@ import ProductsTable from "@/components/admin/ProductsTable";
 import SortBy from "@/components/admin/SortBy";
 import Pagination from "@/components/Pagination";
 import { getAllProducts } from "@/lib/actions/product-actions";
-import { requireAdmin } from "@/lib/auth-guard";
 import Link from "next/link";
 
 export const metadata = {
@@ -17,8 +16,6 @@ const sortOptions = [
 ];
 
 export default async function Page({ searchParams }) {
-  await requireAdmin();
-
   const { page = "1", sort } = await searchParams;
   const { products, total, totalPages } = await getAllProducts({ page, sort });
 

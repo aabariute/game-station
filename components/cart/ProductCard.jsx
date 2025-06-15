@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaTrash } from "react-icons/fa";
 import ProductPrice from "../product/ProductPrice";
 import ChangeQuantityButton from "./ChangeQuantityButton";
+import { truncate } from "@/lib/utils";
 
 export default function ProductCard({ item, onDelete }) {
   const {
@@ -36,7 +37,7 @@ export default function ProductCard({ item, onDelete }) {
       <div className="flex flex-col">
         <div className="flex-between">
           <Link href={`/products/${product_id}`} className="hover-fade-text">
-            {brand} {title}
+            {truncate(`${brand} ${title}`, 35)}
           </Link>
           <FaTrash
             onClick={() => onDelete(cart_items_id)}

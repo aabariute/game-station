@@ -2,6 +2,7 @@
 
 import { EMAIL_REGEX_VALIDATION } from "@/lib/validators";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 export default function ContactForm({ user }) {
   const {
@@ -19,7 +20,7 @@ export default function ContactForm({ user }) {
   async function onFormSubmit(data) {
     await new Promise((res) => setTimeout(res, 2000));
 
-    // Toast
+    toast.success("Email is sent");
 
     reset();
   }
