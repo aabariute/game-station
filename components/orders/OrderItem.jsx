@@ -1,11 +1,10 @@
+import { auth } from "@/auth";
 import { getUserReview } from "@/lib/actions/review-action";
 import { priceFormatter } from "@/lib/utils";
 import Image from "next/image";
 import OrderReviewButton from "./OrderReviewButton";
-import { auth } from "@/auth";
 
 export default async function OrderItem({ item }) {
-  // prideti brand
   const { product_id, color, image, brand, title, quantity, total_price } =
     item;
   const review = await getUserReview(product_id);
@@ -52,8 +51,8 @@ export default async function OrderItem({ item }) {
             </li>
             {!isAdmin && product_id && (
               <OrderReviewButton
-                product_id={product_id}
                 rating={review.rating}
+                productId={product_id}
               />
             )}
           </div>

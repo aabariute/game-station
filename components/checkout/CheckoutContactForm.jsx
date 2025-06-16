@@ -196,10 +196,10 @@ export default function CheckoutContactForm() {
         )}
       </div>
 
-      <div className="mt-2 xl:mt-auto flex-between">
+      <div className="mt-4 xl:mt-auto flex justify-between">
         <Link
           href="/products"
-          className="button-primary w-26 flex-center gap-1"
+          className="button-secondary w-26 flex-center gap-1"
         >
           <FiArrowLeft className="text-[18px]" />
           <span>Back</span>

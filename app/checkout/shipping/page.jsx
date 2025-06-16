@@ -13,7 +13,7 @@ export default async function Page() {
   return (
     <>
       <CheckoutNavigation activePage={2} />
-      <CheckoutSummary user={user} shipping_method={cart.shipping_method} />
+      <CheckoutSummary user={user} shippingMethod={cart.shipping_method} />
       <CheckoutShippingForm
         selectedMethod={cart.shipping_method}
         totalPrice={totalPrice}

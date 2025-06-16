@@ -9,7 +9,7 @@ import "./globals.css";
 
 export const metadata = {
   title: {
-    template: "%s / GAME STATION",
+    template: "%s | GAME STATION",
     default: "GAME STATION",
   },
   // pataisyt

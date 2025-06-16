@@ -4,7 +4,7 @@ import { removeItemFromCart } from "@/lib/actions/cart-actions";
 import { countCartPrice } from "@/lib/utils";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import Link from "next/link";
-import { useOptimistic, useState, useTransition } from "react";
+import { startTransition, useOptimistic, useState } from "react";
 import { FaShippingFast } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { PiBagLight } from "react-icons/pi";
@@ -13,7 +13,6 @@ import ProductCard from "./ProductCard";
 
 export default function CartModal({ cart }) {
   let [isOpen, setIsOpen] = useState(false);
-  const [isPending, startTransition] = useTransition();
   const [optimisticCart, optimisticDelete] = useOptimistic(
     cart,
     (curCart, cart_id) => ({
@@ -21,6 +20,7 @@ export default function CartModal({ cart }) {
       cart_items: curCart.cart_items.filter((item) => item.id !== cart_id),
     })
   );
+
   const cartLength =
     optimisticCart &&
     optimisticCart.cart_items.reduce((acc, item) => item.quantity + acc, 0);

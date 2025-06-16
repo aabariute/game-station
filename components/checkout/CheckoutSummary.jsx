@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function CheckoutSummary({ user, shipping_method }) {
+export default function CheckoutSummary({ user, shippingMethod }) {
   const pathname = usePathname();
   const { first_name, last_name, email, address } = user;
 
@@ -47,10 +47,7 @@ export default function CheckoutSummary({ user, shipping_method }) {
       {pathname.split("/").at(-1) === "payment" && (
         <div className="grid grid-cols-[100px_1fr_80px] items-center pt-3">
           <div className="text-neutral-500 dark:text-neutral-400">Shipping</div>
-          <div className="text-sm">
-            {shipping_method}
-            {/* {shipping_method.charAt(0).toUpperCase() + shipping_method.slice(1)} */}
-          </div>
+          <div className="text-sm">{shippingMethod}</div>
           <Link
             href="/checkout/shipping"
             className="button-tertiary pb-[0.075rem] justify-self-end text-sm"

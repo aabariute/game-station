@@ -1,6 +1,6 @@
+import { countAccruedDiscount } from "@/lib/utils";
 import Image from "next/image";
 import ProductPrice from "../product/ProductPrice";
-import { countAccruedDiscount } from "@/lib/utils";
 
 export default function ProductCard({ item }) {
   const {

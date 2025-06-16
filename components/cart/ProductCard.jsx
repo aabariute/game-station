@@ -1,9 +1,9 @@
+import { truncate } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { FaTrash } from "react-icons/fa";
 import ProductPrice from "../product/ProductPrice";
 import ChangeQuantityButton from "./ChangeQuantityButton";
-import { truncate } from "@/lib/utils";
 
 export default function ProductCard({ item, onDelete }) {
   const {
@@ -50,9 +50,9 @@ export default function ProductCard({ item, onDelete }) {
         <div className="mt-auto flex-between">
           <div className="flex gap-2 items-center">
             <ChangeQuantityButton
-              cart_items_id={cart_items_id}
-              product_id={product_id}
-              variant_id={variant_id}
+              cartItemsId={cart_items_id}
+              productId={product_id}
+              variantId={variant_id}
               quantity={quantity}
             />
             <span className="text-xs font-light">In stock</span>

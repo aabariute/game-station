@@ -72,7 +72,7 @@ export default async function Page({ searchParams }) {
                     >
                       <FaEye className="text-[16px]" />
                     </Link>
-                    <UserDeleteButton user_id={user.id} userName={user.name} />
+                    <UserDeleteButton userId={user.id} userName={user.name} />
                   </div>
                 )}
               </td>

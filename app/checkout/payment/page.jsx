@@ -34,7 +34,7 @@ export default async function Page() {
   return (
     <>
       <CheckoutNavigation activePage={3} />
-      <CheckoutSummary user={user} shipping_method={cart.shipping_method} />
+      <CheckoutSummary user={user} shippingMethod={cart.shipping_method} />
       <CheckoutPaymentForm
         clientSecret={client_secret}
         price={(totalPrice + shippingPrice) * 100}

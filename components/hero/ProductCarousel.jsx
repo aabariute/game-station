@@ -3,8 +3,8 @@
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import ProductCard from "../product/ProductCard";
 
@@ -12,7 +12,6 @@ export default function ProductCarousel({ products }) {
   return (
     <div>
       <Swiper
-        // modules={[Navigation]}
         modules={[Autoplay, FreeMode, Navigation]}
         navigation={true}
         slidesPerView="auto"

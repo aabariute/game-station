@@ -4,11 +4,11 @@ import { useState } from "react";
 import { FaTrash } from "react-icons/fa";
 import Modal from "../ui/Modal";
 
-export default function ProductDeleteButton({ product_id }) {
+export default function ProductDeleteButton({ productId }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  async function handleDeleteProduct(product_id) {
-    const res = await deleteProduct(product_id);
+  async function handleDeleteProduct(productId) {
+    const res = await deleteProduct(productId);
 
     if (res.success) setIsOpen(false);
   }
@@ -35,7 +35,7 @@ export default function ProductDeleteButton({ product_id }) {
           </button>
           <button
             className="button-danger"
-            onClick={() => handleDeleteProduct(product_id)}
+            onClick={() => handleDeleteProduct(productId)}
           >
             Delete
           </button>

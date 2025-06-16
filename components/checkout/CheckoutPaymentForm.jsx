@@ -48,18 +48,21 @@ function StripeForm({ clientSecret, price }) {
   const elements = useElements();
 
   const [isLoading, setIsLoading] = useState(false);
+  const [paymentElementReady, setPaymentElementReady] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
-
     if (!stripe || !elements) return;
 
     setIsLoading(true);
 
     const { error: submitError } = await elements.submit();
-
-    if (submitError) return setIsLoading(false);
+    if (submitError) {
+      setErrorMessage(submitError.message);
+      setIsLoading(false);
+      return;
+    }
 
     const res = await createOrder();
     if (!res.success) {
@@ -91,6 +94,7 @@ function StripeForm({ clientSecret, price }) {
   return (
     <form onSubmit={handleSubmit}>
       <PaymentElement
+        onReady={() => setPaymentElementReady(true)}
         options={{
           style: {
             base: {
@@ -102,31 +106,35 @@ function StripeForm({ clientSecret, price }) {
           },
         }}
       />
+
       {errorMessage && (
         <p className="text-red-600 mt-4 text-center">
           <span className="font-bold">ERROR:</span> {errorMessage}
         </p>
       )}
 
-      <div className="mt-12 flex-between">
-        <Link
-          href="/checkout/shipping"
-          className="button-primary w-26 flex-center gap-1"
-        >
-          <FiArrowLeft className="text-[18px]" />
-          <span>Back</span>
-        </Link>
+      {paymentElementReady && (
+        <div className="mt-8 flex-between">
+          <Link
+            href="/checkout/shipping"
+            className="button-secondary w-26 flex-center gap-1"
+            aria-disabled={isLoading}
+          >
+            <FiArrowLeft className="text-[18px]" />
+            <span>Back</span>
+          </Link>
 
-        <button
-          type="submit"
-          disabled={!stripe || !elements || isLoading}
-          className="button-primary w-50"
-        >
-          {isLoading
-            ? "Processing..."
-            : `Pay now ${priceFormatter(price / 100)}`}
-        </button>
-      </div>
+          <button
+            type="submit"
+            disabled={!stripe || !elements || isLoading}
+            className="button-primary w-50 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isLoading
+              ? "Processing..."
+              : `Pay now ${priceFormatter(price / 100)}`}
+          </button>
+        </div>
+      )}
     </form>
   );
 }

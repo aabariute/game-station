@@ -2,6 +2,10 @@ import ProductForm from "@/components/admin/ProductForm";
 import Link from "next/link";
 import { FiArrowLeft } from "react-icons/fi";
 
+export const metadata = {
+  title: "Create product",
+};
+
 export default async function Page() {
   return (
     <section>

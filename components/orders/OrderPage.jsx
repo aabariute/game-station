@@ -2,12 +2,12 @@ import { auth } from "@/auth";
 import { getOrderById } from "@/lib/actions/order-actions";
 import { dateFormatter, priceFormatter } from "@/lib/utils";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import React, { Suspense } from "react";
 import { FiArrowLeft } from "react-icons/fi";
 import Spinner from "../ui/Spinner";
 import MarkAsDeliveredButton from "./MarkAsDeliveredButton";
 import OrderItem from "./OrderItem";
-import { notFound } from "next/navigation";
 
 export default async function OrderPage({ id }) {
   const order = await getOrderById(id);
@@ -76,9 +76,7 @@ export default async function OrderPage({ id }) {
                 <span>Purchase date: {dateFormatter(created_at)}</span>
               )}
             </div>
-            {isAdmin && !is_delivered && (
-              <MarkAsDeliveredButton order_id={id} />
-            )}
+            {isAdmin && !is_delivered && <MarkAsDeliveredButton orderId={id} />}
           </div>
 
           <div className="card-md flex flex-col gap-2">

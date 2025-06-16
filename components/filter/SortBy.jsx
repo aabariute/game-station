@@ -3,8 +3,8 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from "@headlessui/react";
-import { IoChevronDownOutline } from "react-icons/io5";
 import { useSearchParams } from "next/navigation";
+import { IoChevronDownOutline } from "react-icons/io5";
 
 export default function SortBy({ options, handleSort }) {
   const searchParams = useSearchParams();

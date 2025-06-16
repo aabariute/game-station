@@ -3,7 +3,6 @@
 import { updateUser } from "@/lib/actions/user-actions";
 import { DialogTitle } from "@headlessui/react";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -13,7 +12,6 @@ import LabeledInput from "../ui/input/LabeledInput";
 import Modal from "../ui/Modal";
 
 export default function ProfileContactsForm() {
-  const router = useRouter();
   const { data: session, update } = useSession();
   let [isOpen, setIsOpen] = useState(false);
 

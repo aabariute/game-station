@@ -4,6 +4,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FiArrowLeft } from "react-icons/fi";
 
+export const metadata = {
+  title: "Update product",
+};
+
 export default async function Page({ params }) {
   const { id } = await params;
   const product = await getProductById(id);

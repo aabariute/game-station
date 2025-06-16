@@ -3,6 +3,7 @@
 import { createProduct, updateProduct } from "@/lib/actions/product-actions";
 import { useRouter } from "next/navigation";
 import { useFieldArray, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import LabeledInput from "../ui/input/LabeledInput";
 import VariantForm from "./VariantForm";
 
@@ -46,9 +47,11 @@ export default function ProductForm({ type, product, productId }) {
     if (type === "Create") {
       const res = await createProduct(data);
 
-      if (res.success) {
-        router.push("/admin/products");
-      }
+      if (!res.success) toast.error(res.message);
+
+      toast.success(res.message);
+
+      router.push("/admin/products");
     }
 
     if (type === "Update") {
@@ -59,9 +62,11 @@ export default function ProductForm({ type, product, productId }) {
 
       const res = await updateProduct(data);
 
-      if (res.success) {
-        router.push("/admin/products");
-      }
+      if (!res.success) toast.error(res.message);
+
+      toast.success(res.message);
+
+      router.push("/admin/products");
     }
   }
 
@@ -133,8 +138,8 @@ export default function ProductForm({ type, product, productId }) {
             {...register("description", {
               required: "Description is required",
               minLength: {
-                value: 20,
-                message: "Description must be at least 20 characters",
+                value: 100,
+                message: "Description must be at least 100 characters",
               },
               maxLength: {
                 value: 300,

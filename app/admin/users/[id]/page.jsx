@@ -74,7 +74,7 @@ export default async function Page({ params }) {
 
       {(!orders || orders.length) === 0 && (
         <p className="text-center text-neutral-600 dark:text-neutral-400">
-          No orders made.
+          User has not placed any orders yet.
         </p>
       )}
 

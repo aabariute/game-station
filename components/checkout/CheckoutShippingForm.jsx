@@ -75,10 +75,10 @@ export default function CheckoutShippingForm({ selectedMethod, totalPrice }) {
         </div>
       </div>
 
-      <div className="mt-8 xl:mt-auto flex-between">
+      <div className="mt-8 xl:mt-auto flex justify-between">
         <Link
           href="/checkout/information"
-          className="button-primary w-26 flex-center gap-1"
+          className="button-secondary w-26 flex-center gap-1"
         >
           <FiArrowLeft className="text-[18px]" />
           <span>Back</span>

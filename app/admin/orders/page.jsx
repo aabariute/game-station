@@ -11,10 +11,10 @@ export const metadata = {
 };
 
 const sortOptions = [
-  { value: "date-desc", label: "Date: newest - oldest" },
-  { value: "date-asc", label: "Date: oldest - newest" },
-  { value: "delivery-desc", label: "Delivery: newest - oldest" },
-  { value: "delivery-asc", label: "Delivery: oldest - newest" },
+  { value: "date-desc", label: "Order date: newest - oldest" },
+  { value: "date-asc", label: "Order date: oldest - newest" },
+  { value: "delivery-desc", label: "Delivery date: newest - oldest" },
+  { value: "delivery-asc", label: "Delivery date: oldest - newest" },
 ];
 
 export default async function Page({ searchParams }) {

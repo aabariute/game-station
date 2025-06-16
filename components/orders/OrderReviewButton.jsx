@@ -4,7 +4,7 @@ import { useState } from "react";
 import { IoStar, IoStarOutline } from "react-icons/io5";
 import ReviewForm from "../reviews/ReviewForm";
 
-export default function OrderReviewButton({ rating, product_id }) {
+export default function OrderReviewButton({ rating, productId }) {
   let [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -25,11 +25,7 @@ export default function OrderReviewButton({ rating, product_id }) {
           </button>
         )}
       </div>
-      <ReviewForm
-        productId={product_id}
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-      />
+      <ReviewForm productId={productId} isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   );
 }

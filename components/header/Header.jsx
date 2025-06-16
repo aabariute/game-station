@@ -1,11 +1,11 @@
 import { getUserCart } from "@/lib/actions/cart-actions";
+import React from "react";
 import CartModal from "../cart/CartModal";
 import AccountButton from "./AccountButton";
 import HamburgerMenu from "./HamburgerMenu";
 import Logo from "./Logo";
 import NavbarLink from "./NavbarLink";
 import SearchBar from "./SearchBar";
-import React from "react";
 
 const links = [
   { href: "/products", title: "Products" },

@@ -3,24 +3,27 @@
 import { updateOrderToDelivered } from "@/lib/actions/order-actions";
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
+import toast from "react-hot-toast";
 
-export default function MarkAsDeliveredButton({ order_id }) {
+export default function MarkAsDeliveredButton({ orderId }) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
-  async function handleUpdateOrder(order_id) {
+  async function handleUpdateOrder(orderId) {
     startTransition(async () => {
-      const res = await updateOrderToDelivered(order_id);
+      const res = await updateOrderToDelivered(orderId);
 
-      if (res.success) {
-        router.refresh();
-      }
+      if (!res.success) return toast.error(res.message);
+
+      toast.success(res.message);
+
+      router.refresh();
     });
   }
 
   return (
     <button
-      onClick={() => handleUpdateOrder(order_id)}
+      onClick={() => handleUpdateOrder(orderId)}
       disabled={isPending}
       className="button-secondary mt-4 md:mt-auto"
     >

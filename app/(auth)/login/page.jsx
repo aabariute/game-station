@@ -21,7 +21,7 @@ export default async function Page({ searchParams }) {
   }
 
   return (
-    <main className="flex-center flex-col mx-4 my-6">
+    <main className="flex-1 flex-center flex-col mx-4">
       <section className="w-full max-w-xl py-10 px-6 sm:px-14 bg-neutral-100 dark:bg-neutral-800 rounded-xl">
         <h2 className="mb-4 text-center text-3xl font-bold uppercase">
           Welcome back

@@ -6,20 +6,20 @@ import { useTransition } from "react";
 import SpinnerMini from "../ui/SpinnerMini";
 
 export default function ChangeQuantityButton({
-  cart_items_id,
-  product_id,
-  variant_id,
+  cartItemsId,
+  productId,
+  variantId,
   quantity,
 }) {
   const [isPending, startTransition] = useTransition();
 
   function handleIncreaseQuantity() {
-    startTransition(() => addItemToCart(product_id, variant_id));
+    startTransition(() => addItemToCart(productId, variantId));
   }
 
   function handleDecreaseQuantity() {
     startTransition(() =>
-      decreaseCartItemsQuantity(cart_items_id, product_id, variant_id)
+      decreaseCartItemsQuantity(cartItemsId, productId, variantId)
     );
   }
 

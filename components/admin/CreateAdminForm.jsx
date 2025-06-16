@@ -5,6 +5,7 @@ import { createAdminUser } from "@/lib/actions/user-actions";
 import { EMAIL_REGEX_VALIDATION } from "@/lib/validators";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 export default function CreateAdminForm() {
   const router = useRouter();
@@ -18,14 +19,13 @@ export default function CreateAdminForm() {
   async function onSubmit(data) {
     const res = await createAdminUser(data);
 
-    if (!res.success) {
-      // handle error
-    }
+    if (!res.success) return toast.error(res.message);
 
-    if (res.success) {
-      reset();
-      router.push("/admin/users");
-    }
+    toast.success(res.message);
+
+    reset();
+
+    router.push("/admin/users");
   }
 
   return (

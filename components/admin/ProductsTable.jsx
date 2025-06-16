@@ -1,12 +1,12 @@
 "use client";
 
 import { priceFormatter } from "@/lib/utils";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaPen } from "react-icons/fa";
 import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
 import ProductDeleteButton from "./ProductDeleteButton";
-import Image from "next/image";
 
 export default function ProductsTable({ products }) {
   const [expandedProductId, setExpandedProductId] = useState(null);
@@ -56,7 +56,7 @@ export default function ProductsTable({ products }) {
                   >
                     <FaPen className="text-[16px]" />
                   </Link>
-                  <ProductDeleteButton product_id={product.product_id} />
+                  <ProductDeleteButton productId={product.product_id} />
                 </div>
               </td>
               <td className="text-center align-middle border-t border-gray-300 dark:border-gray-700 py-2 pr-4">
