@@ -1,4 +1,4 @@
-import RecentProducts from "@/components/hero/RecentProducts";
+import RecentProducts from "@/components/RecentProducts";
 import Spinner from "@/components/ui/Spinner";
 import banner from "@/public/banner.jpg";
 import Image from "next/image";

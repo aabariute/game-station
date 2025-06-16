@@ -10,7 +10,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
-import LabeledInput from "../ui/input/LabeledInput";
+import LabeledInput from "../ui/LabeledInput";
 import SpinnerMini from "../ui/SpinnerMini";
 
 export default function CheckoutContactForm() {

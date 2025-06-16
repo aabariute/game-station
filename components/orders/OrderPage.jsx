@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import React, { Suspense } from "react";
 import { FiArrowLeft } from "react-icons/fi";
 import Spinner from "../ui/Spinner";
-import MarkAsDeliveredButton from "./MarkAsDeliveredButton";
+import MarkAsDeliveredButton from "../admin/MarkAsDeliveredButton";
 import OrderItem from "./OrderItem";
 
 export default async function OrderPage({ id }) {
@@ -38,7 +38,7 @@ export default async function OrderPage({ id }) {
   );
 
   return (
-    <main className="flex-1 w-full max-w-[62rem] mx-auto px-4 md:px-8 py-10">
+    <>
       <div className="grid grid-cols-[auto_auto] md:grid-cols-[100px_auto_100px] mb-8 items-center">
         <Link href={isAdmin ? "/admin/orders" : "/user/orders"}>
           <button className="button-primary flex-between gap-1">
@@ -51,8 +51,8 @@ export default async function OrderPage({ id }) {
         </h2>
       </div>
 
-      <section className="mb-10">
-        <article className="grid md:grid-cols-3 gap-6">
+      <article className="mb-10">
+        <div className="grid md:grid-cols-3 gap-6">
           <div className="card-md flex flex-col gap-2">
             <h3 className="font-semibold uppercase text-lg">Order status</h3>
             {is_delivered ? (
@@ -102,10 +102,10 @@ export default async function OrderPage({ id }) {
               <span>{email}</span>
             </div>
           </div>
-        </article>
-      </section>
+        </div>
+      </article>
 
-      <section className="card-lg flex flex-col">
+      <article className="card-lg flex flex-col">
         <h3 className="font-semibold uppercase text-lg">Order details</h3>
         <span className="text-sm text-neutral-500 dark:text-neutral-400">
           {orderItemsCount === 1 ? "1 product" : `${orderItemsCount} products`}
@@ -141,7 +141,7 @@ export default async function OrderPage({ id }) {
             <span>{priceFormatter(total_price)}</span>
           </li>
         </ul>
-      </section>
-    </main>
+      </article>
+    </>
   );
 }

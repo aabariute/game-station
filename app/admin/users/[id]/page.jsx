@@ -16,7 +16,7 @@ export default async function Page({ params }) {
   const { name, email, address, phone_number, created_at, role } = user;
 
   return (
-    <section className="max-w-[62rem] mx-auto">
+    <section className="w-full max-w-4xl mx-auto">
       <div className="grid grid-cols-[100px_auto] md:grid-cols-[100px_auto_100px] mb-8 items-center">
         <Link href="/admin/users" className="button-primary flex-between gap-1">
           <FiArrowLeft className="text-[18px]" />

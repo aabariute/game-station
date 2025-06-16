@@ -1,5 +1,5 @@
 import { auth } from "@/auth";
-import UpdatePasswordForm from "@/components/UpdatePasswordForm";
+import UpdatePasswordForm from "@/components/user/UpdatePasswordForm";
 
 export const metadata = {
   title: "Profile",

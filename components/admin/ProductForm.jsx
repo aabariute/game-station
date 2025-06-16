@@ -4,7 +4,7 @@ import { createProduct, updateProduct } from "@/lib/actions/product-actions";
 import { useRouter } from "next/navigation";
 import { useFieldArray, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import LabeledInput from "../ui/input/LabeledInput";
+import LabeledInput from "../ui/LabeledInput";
 import VariantForm from "./VariantForm";
 
 export default function ProductForm({ type, product, productId }) {

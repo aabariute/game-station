@@ -28,7 +28,7 @@ export default async function Layout({ children }) {
       <header className="flex-between sticky top-0 inset-x-0 z-10 px-3 md:px-6 py-2 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md shadow-lg">
         <div className="flex-center gap-2">
           <div className="lg:hidden">
-            <HamburgerMenu links={links} />
+            <HamburgerMenu links={links} positionTop="58px" />
           </div>
           <Logo />
           <nav className="hidden lg:ml-6 lg:flex lg:gap-3">

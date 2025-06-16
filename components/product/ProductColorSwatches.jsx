@@ -12,11 +12,6 @@ export default function ProductColorSwatches({
           key={color}
           className="border-2 border-neutral-900 dark:border-neutral-200 w-[32px] h-[32px] rounded-full cursor-pointer hover:scale-105 transition duration-200"
           style={{ backgroundColor: `${color}` }}
-          onMouseEnter={() =>
-            setDisplayedVariant(
-              variants.find((variant) => variant.color === color)
-            )
-          }
           onClick={() =>
             setDisplayedVariant(
               variants.find((variant) => variant.color === color)

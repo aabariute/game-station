@@ -12,7 +12,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { CiEdit } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
-import LabeledInput from "../ui/input/LabeledInput";
+import LabeledInput from "../ui/LabeledInput";
 import Modal from "../ui/Modal";
 
 export default function ProfileAddressForm({ address, phone_number }) {

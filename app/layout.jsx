@@ -12,9 +12,8 @@ export const metadata = {
     template: "%s | GAME STATION",
     default: "GAME STATION",
   },
-  // pataisyt
   description:
-    "Luxurious cabin hotel, located in the heart of the Italian Dolomites, surrounded by beautiful mountains and dark forests",
+    "Shop high-performance gaming gear and accessories at Game Station. Get the latest products, exclusive discounts, and free shipping on orders over $50. Perfect for casual and pro gamers alike.",
 };
 
 export default function Layout({ children }) {

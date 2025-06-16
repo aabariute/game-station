@@ -63,8 +63,7 @@ export default async function Products({ searchParams }) {
   }
 
   return (
-    <div className="py-8 xl:mx-28">
-      {/* <div className="py-8 mx-auto xl:max-w-[calc(100vw-300px)] w-full"> */}
+    <div className="max-w-7xl w-full mx-auto py-8 px-2 md:px-4">
       {searchQuery && products.length > 0 && (
         <div className="flex items-center gap-2 ml-6 mb-4">
           <Link href="/products">
@@ -79,7 +78,7 @@ export default async function Products({ searchParams }) {
       )}
 
       {products.length > 0 ? (
-        <section className="px-2 md:px-4">
+        <section>
           <div className="ml-2 mb-4">
             <FilterModal filterOptions={filterOptions} />
           </div>

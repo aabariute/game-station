@@ -1,4 +1,4 @@
-import UpdatePasswordForm from "@/components/UpdatePasswordForm";
+import UpdatePasswordForm from "@/components/user/UpdatePasswordForm";
 import DeleteAccountButton from "@/components/user/DeleteAccountButton";
 import { getOAuthProvider } from "@/lib/actions/auth-actions";
 

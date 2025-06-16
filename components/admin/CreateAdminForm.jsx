@@ -1,6 +1,6 @@
 "use client";
 
-import LabeledInput from "@/components/ui/input/LabeledInput";
+import LabeledInput from "@/components/ui/LabeledInput";
 import { createAdminUser } from "@/lib/actions/user-actions";
 import { EMAIL_REGEX_VALIDATION } from "@/lib/validators";
 import { useRouter } from "next/navigation";

@@ -28,14 +28,16 @@ export default function ProductDetails({ product }) {
           fontSize="text-xl md:text-2xl"
         />
 
-        <div className="mt-6 lg:mt-4 flex items-center gap-x-2">
-          <span className="mr-3">Available Colors:</span>
-          <ProductColorSwatches
-            colors={colors}
-            variants={product.variants}
-            setDisplayedVariant={setDisplayedVariant}
-          />
-        </div>
+        {colors.length > 1 && (
+          <div className="mt-6 lg:mt-4 flex items-center gap-x-2">
+            <span className="mr-3">Available Colors:</span>
+            <ProductColorSwatches
+              colors={colors}
+              variants={product.variants}
+              setDisplayedVariant={setDisplayedVariant}
+            />
+          </div>
+        )}
 
         <p className="mt-6 lg:mt-4 lg:mt-6 text-sm">{description}</p>
 

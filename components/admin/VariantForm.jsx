@@ -8,7 +8,7 @@ import {
 import Image from "next/image";
 import { Controller } from "react-hook-form";
 import { IoChevronDownOutline, IoClose, IoCloseCircle } from "react-icons/io5";
-import LabeledInput from "../ui/input/LabeledInput";
+import LabeledInput from "../ui/LabeledInput";
 
 export default function VariantForm({
   watch,

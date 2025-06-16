@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import ProductCard from "../product/ProductCard";
-import Spinner from "../ui/Spinner";
+import ProductCard from "./product/ProductCard";
+import Spinner from "./ui/Spinner";
 
 export default function RecentProducts() {
   const [products, setProducts] = useState(null);

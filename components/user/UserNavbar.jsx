@@ -28,7 +28,9 @@ export default function UserNavbar() {
           <Link
             href="/user/orders"
             className={`${
-              pathname === "/user/orders" ? "border-b-4 border-b-pink-700" : ""
+              pathname.includes("/user/orders")
+                ? "border-b-4 border-b-pink-700"
+                : ""
             } px-3 py-2`}
           >
             Orders
