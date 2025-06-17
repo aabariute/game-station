@@ -12,10 +12,10 @@ export default function ReviewSummary({
     ).toFixed(2);
 
   return (
-    <div className="mb-6 flex-center flex-col-reverse gap-4 md:gap-0 md:flex-row">
+    <div className="flex-center mb-6 flex-col-reverse gap-4 md:flex-row md:gap-0">
       <div className="flex flex-col-reverse md:border-r-1 md:border-neutral-300 md:pr-24">
         {filteredByStars && (
-          <div className="col-span-full flex justify-center mt-4 text-center">
+          <div className="col-span-full mt-4 flex justify-center text-center">
             <button
               className="button-tertiary text-sm"
               onClick={() => setFilteredByStars("")}
@@ -36,9 +36,9 @@ export default function ReviewSummary({
         ))}
       </div>
 
-      <div className="pl-8 md:pl-24 flex flex-col items-center">
-        <div className="flex items-center text-lg mb-[0.1rem]">
-          <IoStar className="text-[16px] mr-1 text-pink-600" />
+      <div className="flex flex-col items-center pl-8 md:pl-24">
+        <div className="mb-[0.1rem] flex items-center text-lg">
+          <IoStar className="mr-1 text-[16px] text-pink-600" />
           <div>
             <span className="mr-2 font-semibold text-pink-600">
               {averageRating}
@@ -72,16 +72,16 @@ function ProductRatingSummary({
           ? setFilteredByStars(stars)
           : null
       }
-      className={`dark:text-neutral-300 grid grid-cols-[auto_auto_auto] items-center gap-x-6 mb-[1px] ${
-        filteredByStars === stars ? "opacity-65 cursor-pointer" : ""
+      className={`mb-[1px] grid grid-cols-[auto_auto_auto] items-center gap-x-6 dark:text-neutral-300 ${
+        filteredByStars === stars ? "cursor-pointer opacity-65" : ""
       } ${
         reviews.length === 1 ||
         reviews.filter((review) => review.rating === stars).length === 0
           ? ""
-          : "hover:opacity-65 cursor-pointer"
+          : "cursor-pointer hover:opacity-65"
       }`}
     >
-      <span className="flex mb-1">
+      <span className="mb-1 flex">
         {Array.from({ length: stars }, (_, i) => i + 1).map((num) => (
           <IoStar className="text-[17px]" key={num} />
         ))}
@@ -92,14 +92,14 @@ function ProductRatingSummary({
       </span>
 
       <div className="float-left w-[150px]">
-        <div className="w-full bg-neutral-200 dark:bg-neutral-300 rounded-full">
+        <div className="w-full rounded-full bg-neutral-200 dark:bg-neutral-300">
           <div
-            className="h-[14px] bg-neutral-900 dark:bg-neutral-700 rounded-full"
+            className="h-[14px] rounded-full bg-neutral-900 dark:bg-neutral-700"
             style={{
               width: `${Math.round(
                 (reviews.filter((review) => review.rating === stars).length /
                   reviews.length) *
-                  100
+                  100,
               )}%`,
             }}
           ></div>

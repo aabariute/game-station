@@ -12,10 +12,10 @@ export const metadata = {
 export default async function Page() {
   return (
     <>
-      <section className="mb-20 relative h-[75vh] flex flex-col justify-center items-start">
-        <div className="z-5 px-8 md:px-12 lg:px-16 max-w-[54rem] flex flex-col items-center gap-36">
+      <section className="relative mb-20 flex h-[75vh] flex-col items-start justify-center">
+        <div className="z-5 flex max-w-[54rem] flex-col items-center gap-36 px-8 md:px-12 lg:px-16">
           <div>
-            <h2 className="mb-6 text-5xl md:text-6xl lg:text-7xl drop-shadow-sm flex flex-col items-start gap-2">
+            <h2 className="mb-6 flex flex-col items-start gap-2 text-5xl drop-shadow-sm md:text-6xl lg:text-7xl">
               <span className="font-extralight text-neutral-100">
                 Gear Up for the
               </span>
@@ -23,7 +23,7 @@ export default async function Page() {
                 Future of Play
               </span>
             </h2>
-            <p className="max-w-[20rem] md:max-w-[28rem] font-thin md:text-lg xl:text-xl text-neutral-100 drop-shadow-sm">
+            <p className="max-w-[20rem] font-thin text-neutral-100 drop-shadow-sm md:max-w-[28rem] md:text-lg xl:text-xl">
               Premium peripherals & pro-grade gear for every gamer and creator.
             </p>
           </div>
@@ -43,7 +43,7 @@ export default async function Page() {
       </section>
 
       <section className="mb-16">
-        <h3 className="mb-8 ml-8 md:ml-14 lg:ml-20 text-xl md:text-2xl lg:text-3xl">
+        <h3 className="mb-8 ml-8 text-xl md:ml-14 md:text-2xl lg:ml-20 lg:text-3xl">
           <span className="font-semibold">The latest. </span>
           <span className="text-neutral-600 dark:text-neutral-400">
             Take a look at what&apos;s new.

@@ -27,7 +27,7 @@ export default function ContactForm({ user }) {
 
   return (
     <form onSubmit={handleSubmit(onFormSubmit)} className="flex flex-col gap-4">
-      <div className="flex flex-col md:flex-row gap-4">
+      <div className="flex flex-col gap-4 md:flex-row">
         <input
           {...register("name", { required: false })}
           className="input flex-1"
@@ -47,7 +47,7 @@ export default function ContactForm({ user }) {
             className={`input ${errors.email ? "border-2 border-red-500 focus:border-red-500" : ""}`}
           />
           {errors.email && (
-            <span className="text-red-600 text-xs">{errors.email.message}</span>
+            <span className="text-xs text-red-600">{errors.email.message}</span>
           )}
         </div>
       </div>
@@ -63,7 +63,7 @@ export default function ContactForm({ user }) {
           placeholder="Your message*"
         />
         {errors.message && (
-          <span className="text-red-600 text-xs">{errors.message.message}</span>
+          <span className="text-xs text-red-600">{errors.message.message}</span>
         )}
       </div>
 

@@ -5,20 +5,20 @@ export default function ProductImage({ images, discount }) {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="relative flex flex-col w-full">
+    <div className="relative flex w-full flex-col">
       {discount && (
-        <span className="absolute z-4 top-4 left-4 text-[15px] text-center w-[55px] h-[55px] leading-[55px] bg-pink-700 text-white rounded-full">
+        <span className="absolute top-4 left-4 z-4 h-[55px] w-[55px] rounded-full bg-pink-700 text-center text-[15px] leading-[55px] text-white">
           -{discount}%
         </span>
       )}
 
-      <div className="relative w-full min-h-[25rem] overflow-hidden">
+      <div className="relative min-h-[25rem] w-full overflow-hidden">
         <div
-          className="flex transition-transform ease-in-out duration-300 h-full"
+          className="flex h-full transition-transform duration-300 ease-in-out"
           style={{ transform: `translateX(-${100 * index}%)` }}
         >
           {images.map((img, i) => (
-            <div key={i} className="relative min-w-full h-full">
+            <div key={i} className="relative h-full min-w-full">
               <Image
                 src={img}
                 fill
@@ -31,12 +31,12 @@ export default function ProductImage({ images, discount }) {
         </div>
       </div>
 
-      <div className="flex justify-center gap-3 mt-3">
+      <div className="mt-3 flex justify-center gap-3">
         {images.map((img, i) => (
           <button
             key={i}
             onClick={() => setIndex(i)}
-            className={`relative cursor-pointer border-[2.5px] rounded-md h-[80px] w-[80px] overflow-hidden ${
+            className={`relative h-[80px] w-[80px] cursor-pointer overflow-hidden rounded-md border-[2.5px] ${
               i === index
                 ? "border-pink-500"
                 : "border-neutral-300 dark:border-neutral-700"

@@ -18,7 +18,7 @@ export default function CartModal({ cart }) {
     (curCart, cart_id) => ({
       ...curCart,
       cart_items: curCart.cart_items.filter((item) => item.id !== cart_id),
-    })
+    }),
   );
 
   const cartLength =
@@ -40,7 +40,7 @@ export default function CartModal({ cart }) {
           onClick={() => setIsOpen(true)}
         />
         {cartLength > 0 && (
-          <div className="absolute flex-center w-[18px] h-[18px] right-[-4px] bottom-[-5px] rounded-full bg-pink-700 text-white text-[9px]">
+          <div className="flex-center absolute right-[-4px] bottom-[-5px] h-[18px] w-[18px] rounded-full bg-pink-700 text-[9px] text-white">
             <span>{cartLength}</span>
           </div>
         )}
@@ -49,37 +49,37 @@ export default function CartModal({ cart }) {
       <Dialog
         open={isOpen}
         onClose={() => setIsOpen(false)}
-        className="relative z-50 "
+        className="relative z-50"
       >
-        <div className="fixed inset-0 w-screen flex-center bg-black/40">
+        <div className="flex-center fixed inset-0 w-screen bg-black/40">
           <DialogPanel
             as="div"
             transition
-            className="p-6 bottom-0 top-0 right-0 fixed h-full w-full flex flex-col bg-white dark:bg-black md:border-l md:border-neutral-400 md:dark:border-neutral-800 md:w-[530px] duration-300 data-closed:translate-x-full"
+            className="fixed top-0 right-0 bottom-0 flex h-full w-full flex-col bg-white p-6 duration-300 data-closed:translate-x-full md:w-[530px] md:border-l md:border-neutral-400 dark:bg-black md:dark:border-neutral-800"
           >
             <div className="flex-between mb-4">
               <h3 className="text-2xl font-semibold">My Cart</h3>
               <IoClose
                 onClick={() => setIsOpen(false)}
-                className="text-3xl cursor-pointer hover:text-pink-500"
+                className="cursor-pointer text-3xl hover:text-pink-500"
               />
             </div>
 
-            <div className="flex-center py-2 border-y-2 border-neutral-600">
+            <div className="flex-center border-y-2 border-neutral-600 py-2">
               {totalPrice < 50 ? (
                 "Free shipping on orders over $50"
               ) : (
                 <>
-                  <FaShippingFast className="text-xl mr-2 text-green-600" />
+                  <FaShippingFast className="mr-2 text-xl text-green-600" />
                   Your order qualifies for free shipping
                 </>
               )}
             </div>
 
             {(!optimisticCart || optimisticCart?.cart_items?.length === 0) && (
-              <div className="flex flex-col items-center my-10 mx-auto text-center">
-                <span className="bg-indigo-200 dark:bg-indigo-700 rounded-full p-4 mb-2 inline-block">
-                  <PiBagLight className="w-8 h-8" />
+              <div className="mx-auto my-10 flex flex-col items-center text-center">
+                <span className="mb-2 inline-block rounded-full bg-indigo-200 p-4 dark:bg-indigo-700">
+                  <PiBagLight className="h-8 w-8" />
                 </span>
                 <p className="mb-4 text-lg font-semibold">
                   Your cart is empty.
@@ -90,7 +90,7 @@ export default function CartModal({ cart }) {
 
             {optimisticCart && optimisticCart?.cart_items.length > 0 && (
               <>
-                <ul className="pt-8 pb-10 px-2 flex flex-col overflow-y-auto divide-y divide-neutral-200 dark:divide-neutral-700">
+                <ul className="flex flex-col divide-y divide-neutral-200 overflow-y-auto px-2 pt-8 pb-10 dark:divide-neutral-700">
                   {optimisticCart.cart_items.map((item) => (
                     <ProductCard
                       key={`${item.product_id}%${item.variant_id}`}
@@ -106,8 +106,11 @@ export default function CartModal({ cart }) {
                   totalPrice={totalPrice}
                 />
 
-                <Link href="/checkout/information" className="">
-                  <button className="button-primary w-full">Checkout</button>
+                <Link
+                  href="/checkout/information"
+                  className="button-primary w-full"
+                >
+                  Checkout
                 </Link>
               </>
             )}

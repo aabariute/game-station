@@ -4,7 +4,7 @@ export default async function Page({ params }) {
   const { id } = await params;
 
   return (
-    <section className="w-full max-w-4xl mx-auto">
+    <section className="mx-auto w-full max-w-4xl">
       <OrderPage id={id} />;
     </section>
   );

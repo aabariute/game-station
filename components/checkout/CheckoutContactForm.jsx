@@ -64,7 +64,7 @@ export default function CheckoutContactForm() {
             })}
           />
           {errors.first_name && (
-            <span className="text-red-600 text-xs">
+            <span className="text-xs text-red-600">
               {errors.first_name.message}
             </span>
           )}
@@ -83,7 +83,7 @@ export default function CheckoutContactForm() {
             })}
           />
           {errors.last_name && (
-            <span className="text-red-600 text-xs">
+            <span className="text-xs text-red-600">
               {errors.last_name.message}
             </span>
           )}
@@ -107,7 +107,7 @@ export default function CheckoutContactForm() {
         ))}
       </select>
       {errors.address?.country && (
-        <span className="text-red-600 text-xs">
+        <span className="text-xs text-red-600">
           {errors.address?.country.message}
         </span>
       )}
@@ -126,14 +126,14 @@ export default function CheckoutContactForm() {
           })}
         />
         {errors.address?.street_address && (
-          <span className="text-red-600 text-xs">
+          <span className="text-xs text-red-600">
             {errors.address?.street_address.message}
           </span>
         )}
       </div>
 
       <div className="flex items-start gap-4">
-        <div className="flex-3 flex items-center relative">
+        <div className="relative flex flex-3 items-center">
           <div className="w-full">
             <LabeledInput
               htmlFor="city"
@@ -148,7 +148,7 @@ export default function CheckoutContactForm() {
               })}
             />
             {errors.address?.city && (
-              <span className="text-red-600 text-xs">
+              <span className="text-xs text-red-600">
                 {errors.address?.city.message}
               </span>
             )}
@@ -170,7 +170,7 @@ export default function CheckoutContactForm() {
               })}
             />
             {errors.address?.zip_code && (
-              <span className="text-red-600 text-xs">Invalid zip code</span>
+              <span className="text-xs text-red-600">Invalid zip code</span>
             )}
           </div>
         </div>
@@ -190,16 +190,16 @@ export default function CheckoutContactForm() {
           })}
         />
         {errors.phone_number && (
-          <span className="text-red-600 text-xs">
+          <span className="text-xs text-red-600">
             {errors.phone_number.message}
           </span>
         )}
       </div>
 
-      <div className="mt-4 xl:mt-auto flex justify-between">
+      <div className="mt-4 flex justify-between xl:mt-auto">
         <Link
           href="/products"
-          className="button-secondary w-26 flex-center gap-1"
+          className="button-secondary flex-center w-26 gap-1"
         >
           <FiArrowLeft className="text-[18px]" />
           <span>Back</span>
@@ -208,7 +208,7 @@ export default function CheckoutContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="button-primary w-26 flex-center gap-1"
+          className="button-primary flex-center w-26 gap-1"
         >
           {isSubmitting ? (
             <SpinnerMini />

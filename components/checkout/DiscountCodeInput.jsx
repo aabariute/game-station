@@ -46,16 +46,16 @@ export default function DiscountCodeInput({ cartId, isDiscountApplied }) {
           {isSubmitting ? <SpinnerMini /> : "Apply"}
         </button>
       </form>
-      <div className="mt-2 text-sm h-[1rem]">
+      <div className="mt-2 h-[1rem] text-sm">
         {isDiscountApplied && (
-          <div className="text-green-600 flex-between">
+          <div className="flex-between text-green-600">
             <span>Discount successfully applied</span>
 
             <div className="flex items-center gap-2">
               <span className="font-semibold">APP15</span>
               <IoCloseCircleSharp
                 title="Remove discount code"
-                className="text-[20px] hover-fade-text"
+                className="hover-fade-text text-[20px]"
                 onClick={async () => await updateCartDiscount(cartId, null)}
               />
             </div>

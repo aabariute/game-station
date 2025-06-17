@@ -24,7 +24,7 @@ export default function VariantForm({
       {fields.map((field, index) => (
         <div key={field.id} className="pb-4">
           <div className="flex-between mb-4">
-            <h4 className="font-medium tracking-wide text-base py-2 px-3 rounded-md bg-neutral-300 dark:bg-neutral-700">
+            <h4 className="rounded-md bg-neutral-300 px-3 py-2 text-base font-medium tracking-wide dark:bg-neutral-700">
               Variant #{index + 1}
             </h4>
             {index !== 0 && (
@@ -38,7 +38,7 @@ export default function VariantForm({
             )}
           </div>
 
-          <div className="grid grid-cols-1 gap-3 md:gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-4">
             <Controller
               control={control}
               name={`variants.${index}.color`}
@@ -56,22 +56,22 @@ export default function VariantForm({
                     onChange={(color) => field.onChange(color.value)}
                     className="text-sm"
                   >
-                    <ListboxButton className="flex-between text-left w-full border border-gray-300 dark:border-gray-700 rounded-md shadow-sm py-[calc(0.75rem+1px)] px-3 cursor-pointer">
+                    <ListboxButton className="flex-between w-full cursor-pointer rounded-md border border-gray-300 px-3 py-[calc(0.75rem+1px)] text-left shadow-sm dark:border-gray-700">
                       {selectedColorObj.label}
                       <IoChevronDownOutline className="w-5" />
                     </ListboxButton>
                     <ListboxOptions
                       anchor="bottom start"
-                      className="w-(--button-width) h-40 bg-neutral-800 px-2 py-2"
+                      className="h-40 w-(--button-width) bg-neutral-800 px-2 py-2"
                     >
                       {colors.map((color) => (
                         <ListboxOption
                           key={color.value}
                           value={color}
-                          className="flex items-center gap-2 cursor-pointer p-1 data-focus:bg-neutral-700 rounded-sm"
+                          className="flex cursor-pointer items-center gap-2 rounded-sm p-1 data-focus:bg-neutral-700"
                         >
                           <span
-                            className="border-2 border-neutral-900 w-[20px] h-[20px] rounded-full cursor-pointer hover:scale-105 transition duration-200"
+                            className="h-[20px] w-[20px] cursor-pointer rounded-full border-2 border-neutral-900 transition duration-200 hover:scale-105"
                             style={{ backgroundColor: `${color.value}` }}
                           ></span>
                           <span className="text-sm">{color.label}</span>
@@ -95,7 +95,7 @@ export default function VariantForm({
                 error={errors.variants?.[index]?.stock}
               />
               {errors.variants?.[index]?.stock && (
-                <span className="text-red-600 text-xs">
+                <span className="text-xs text-red-600">
                   Stock cannot be below 1
                 </span>
               )}
@@ -120,7 +120,7 @@ export default function VariantForm({
                 error={errors.variants?.[index]?.price}
               />
               {errors.variants?.[index]?.price && (
-                <span className="text-red-600 text-xs">
+                <span className="text-xs text-red-600">
                   {errors.variants[index].price.message}
                 </span>
               )}
@@ -138,14 +138,14 @@ export default function VariantForm({
                 error={errors.variants?.[index]?.discount}
               />
               {errors.variants?.[index]?.discount && (
-                <span className="text-red-600 text-xs">
+                <span className="text-xs text-red-600">
                   Discount range is between 1% and 99%
                 </span>
               )}
             </div>
           </div>
 
-          <div className="px-[calc(0.75rem+1px)] mt-4 mb-3 flex items-center gap-4">
+          <div className="mt-4 mb-3 flex items-center gap-4 px-[calc(0.75rem+1px)]">
             <Controller
               control={control}
               name={`variants.${index}.images`}
@@ -162,7 +162,7 @@ export default function VariantForm({
                 <>
                   <label
                     htmlFor={`variants.${index}.images`}
-                    className="pb-[0.10rem] border-b border-b-indigo-700 text-indigo-700 font-medium cursor-pointer"
+                    className="cursor-pointer border-b border-b-indigo-700 pb-[0.10rem] font-medium text-indigo-700"
                   >
                     Upload images
                   </label>
@@ -183,30 +183,27 @@ export default function VariantForm({
               )}
             />
             {errors?.variants?.[index]?.images && (
-              <p className="text-red-500 text-sm">
+              <p className="text-sm text-red-500">
                 {errors.variants[index].images.message}
               </p>
             )}
           </div>
 
-          <div className="px-[calc(0.75rem+1px)] mb-3">
+          <div className="mb-3 px-[calc(0.75rem+1px)]">
             {watch(`variants.${index}.images`).map((img, imgIndex) => {
               return (
                 img.name && (
-                  <span
-                    key={imgIndex}
-                    className="block flex items-center gap-2"
-                  >
+                  <span key={imgIndex} className="flex items-center gap-2">
                     <IoClose
                       onClick={() => {
                         const currentImages =
                           watch(`variants.${index}.images`) || [];
                         const newImages = currentImages.filter(
-                          (_, i) => i !== imgIndex
+                          (_, i) => i !== imgIndex,
                         );
                         setValue(`variants.${index}.images`, newImages);
                       }}
-                      className="text-[18px] text-neutral-500 cursor-pointer hover:text-pink-500"
+                      className="cursor-pointer text-[18px] text-neutral-500 hover:text-pink-500"
                     />
                     {img.name}
                   </span>
@@ -221,7 +218,7 @@ export default function VariantForm({
                 !(img instanceof File) && (
                   <div
                     key={img}
-                    className="border border-neutral-300 bg-white shadow-md rounded-md relative p-2"
+                    className="relative rounded-md border border-neutral-300 bg-white p-2 shadow-md"
                   >
                     <Image
                       src={img}
@@ -232,20 +229,20 @@ export default function VariantForm({
 
                     <button
                       type="button"
-                      className="absolute right-[-6px] top-[-6px]"
+                      className="absolute top-[-6px] right-[-6px]"
                       onClick={() => {
                         const currentImages =
                           watch(`variants.${index}.images`) || [];
                         const newImages = currentImages.filter(
-                          (_, i) => i !== imgIndex
+                          (_, i) => i !== imgIndex,
                         );
                         setValue(`variants.${index}.images`, newImages);
                       }}
                     >
-                      <IoCloseCircle className="text-[24px] text-neutral-400 cursor-pointer hover:text-pink-500" />
+                      <IoCloseCircle className="cursor-pointer text-[24px] text-neutral-400 hover:text-pink-500" />
                     </button>
                   </div>
-                )
+                ),
             )}
           </div>
         </div>
@@ -253,6 +250,3 @@ export default function VariantForm({
     </div>
   );
 }
-
-// const files = Array.from(e.target.files).slice(0, 4);
-// field.onChange(files);

@@ -15,7 +15,7 @@ export default function CheckoutShippingForm({ selectedMethod, totalPrice }) {
       <button
         type="submit"
         disabled={pending}
-        className="button-primary w-26 flex-center gap-1"
+        className="button-primary flex-center w-26 gap-1"
       >
         {pending ? (
           <SpinnerMini />
@@ -33,9 +33,9 @@ export default function CheckoutShippingForm({ selectedMethod, totalPrice }) {
     <form action={updateShippingMethod} className="flex flex-1 flex-col">
       <h3 className="mt-8 mb-6 text-xl font-semibold">Shipping Method</h3>
 
-      <div className="border border-neutral-300 dark:border-gray-700 rounded-md shadow-sm">
-        <div className="px-4 flex-between border-b border-neutral-300 dark:border-gray-700">
-          <div className="flex-1 flex items-center gap-3">
+      <div className="rounded-md border border-neutral-300 shadow-sm dark:border-gray-700">
+        <div className="flex-between border-b border-neutral-300 px-4 dark:border-gray-700">
+          <div className="flex flex-1 items-center gap-3">
             <input
               type="radio"
               id="standard"
@@ -55,8 +55,8 @@ export default function CheckoutShippingForm({ selectedMethod, totalPrice }) {
           <strong>{totalPrice >= 50 ? "FREE" : priceFormatter(4.99)}</strong>
         </div>
 
-        <div className="px-4 flex-between">
-          <div className="flex-1 flex items-center gap-3">
+        <div className="flex-between px-4">
+          <div className="flex flex-1 items-center gap-3">
             <input
               type="radio"
               id="express"
@@ -75,10 +75,10 @@ export default function CheckoutShippingForm({ selectedMethod, totalPrice }) {
         </div>
       </div>
 
-      <div className="mt-8 xl:mt-auto flex justify-between">
+      <div className="mt-8 flex justify-between xl:mt-auto">
         <Link
           href="/checkout/information"
-          className="button-secondary w-26 flex-center gap-1"
+          className="button-secondary flex-center w-26 gap-1"
         >
           <FiArrowLeft className="text-[18px]" />
           <span>Back</span>

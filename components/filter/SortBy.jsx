@@ -14,7 +14,7 @@ export default function SortBy({ options, handleSort }) {
       as="div"
       className="border-b border-b-neutral-200 dark:border-b-neutral-800"
     >
-      <DisclosureButton className="group flex-between pb-4 pt-6 w-full">
+      <DisclosureButton className="group flex-between w-full pt-6 pb-4">
         Sort By
         <IoChevronDownOutline className="w-5 group-data-open:rotate-180" />
       </DisclosureButton>
@@ -33,7 +33,7 @@ export default function SortBy({ options, handleSort }) {
               }
               onChange={() => handleSort(item.value)}
             />
-            <label htmlFor={item.label} className="text-sm w-full">
+            <label htmlFor={item.label} className="w-full text-sm">
               {item.label}
             </label>
           </div>

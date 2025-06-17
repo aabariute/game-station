@@ -22,7 +22,7 @@ export default function DeleteAccountButton() {
       </button>
 
       <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
-        <DialogTitle as="h3" className="font-semibold text-xl">
+        <DialogTitle as="h3" className="text-xl font-semibold">
           Are you sure?
         </DialogTitle>
         <Description

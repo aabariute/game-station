@@ -12,9 +12,9 @@ export default function ProductPrice({
       <span>{priceFormatter(priceAfterDiscount)}</span>
 
       {discount && (
-        <div className="relative inline-block mt-[-7px] text-[calc(1em/1.35)] text-neutral-400">
+        <div className="relative mt-[-7px] inline-block text-[calc(1em/1.35)] text-neutral-400">
           <span>{priceFormatter(price)}</span>
-          <span className="absolute w-full h-[1px] bg-neutral-400 rotate-[160deg] left-[0px] top-3/7"></span>
+          <span className="absolute top-3/7 left-[0px] h-[1px] w-full rotate-[160deg] bg-neutral-400"></span>
         </div>
       )}
     </div>

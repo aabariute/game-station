@@ -15,16 +15,16 @@ export default function ProductCard({ product }) {
   const { images, price, discount, stock } = displayedVariant;
 
   return (
-    <div className="p-3 md:p-4 lg:p-5 dark:bg-neutral-800 dark:text-neutral-300 relative w-full flex flex-col rounded-xl border border-neutral-200 hover:border-neutral-300 dark:border-pink-400/30 dark:hover:border-pink-500/50 shadow-sm hover:shadow-md">
+    <div className="relative flex w-full flex-col rounded-xl border border-neutral-200 p-3 shadow-sm hover:border-neutral-300 hover:shadow-md md:p-4 lg:p-5 dark:border-pink-400/30 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:border-pink-500/50">
       <div className="flex flex-col">
         <div>
           {discount > 0 && (
-            <span className="absolute z-4 top-4 left-4 text-[13px] text-center w-[45px] h-[45px] leading-[45px] bg-pink-700 text-white rounded-full">
+            <span className="absolute top-4 left-4 z-4 h-[45px] w-[45px] rounded-full bg-pink-700 text-center text-[13px] leading-[45px] text-white">
               -{discount}%
             </span>
           )}
           {productColors.length > 1 && (
-            <div className="absolute z-4 top-4 right-4 flex flex-col gap-1">
+            <div className="absolute top-4 right-4 z-4 flex flex-col gap-1">
               <ProductColorSwatches
                 colors={productColors}
                 variants={product.variants}
@@ -34,18 +34,18 @@ export default function ProductCard({ product }) {
           )}
         </div>
 
-        <div className="relative aspect-[4/3] mb-2">
+        <div className="relative mb-2 aspect-[4/3]">
           <Link href={`/products/${product_id}`}>
             <Image
               src={images[0]}
               alt={`Product ${title}`}
               fill
-              className="object-contain hover:scale-105 transition duration-300"
+              className="object-contain transition duration-300 hover:scale-105"
             />
           </Link>
         </div>
 
-        <p className="text-center tracking-wide uppercase font-semibold mb-0">
+        <p className="mb-0 text-center font-semibold tracking-wide uppercase">
           {brand}
         </p>
 
@@ -57,7 +57,7 @@ export default function ProductCard({ product }) {
         </Link>
       </div>
 
-      <div className="mt-auto flex-between">
+      <div className="flex-between mt-auto">
         <ProductPrice price={price} discount={discount} />
 
         {stock > 0 ? (

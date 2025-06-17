@@ -46,9 +46,9 @@ export default function UpdatePasswordForm() {
       className="card-lg flex flex-col gap-y-4 md:gap-y-2"
     >
       {state && !state.success && (
-        <div className="text-red-600 text-sm mb-2">{state.message}</div>
+        <div className="mb-2 text-sm text-red-600">{state.message}</div>
       )}
-      <div className="grid md:grid-cols-[11rem_1fr_1.2fr] gap-y-1 md:gap-y-2 gap-x-5 items-center">
+      <div className="grid items-center gap-x-5 gap-y-1 md:grid-cols-[11rem_1fr_1.2fr] md:gap-y-2">
         <span>New Password</span>
         <input
           className="input"
@@ -56,12 +56,12 @@ export default function UpdatePasswordForm() {
           {...register("password", { required: true, minLength: 3 })}
         />
         {errors.password && (
-          <span className="text-red-600 text-xs">
+          <span className="text-xs text-red-600">
             Password must be at least 3 characters
           </span>
         )}
       </div>
-      <div className="grid md:grid-cols-[11rem_1fr_1.2fr] gap-y-1 md:gap-y-2 gap-x-5 items-center">
+      <div className="grid items-center gap-x-5 gap-y-1 md:grid-cols-[11rem_1fr_1.2fr] md:gap-y-2">
         <span>Confirm Password</span>
 
         <input
@@ -70,7 +70,7 @@ export default function UpdatePasswordForm() {
           {...register("confirmPassword", { required: true, minLength: 3 })}
         />
         {errors.confirmPassword && (
-          <span className="text-red-600 text-xs">
+          <span className="text-xs text-red-600">
             Password must be at least 3 characters
           </span>
         )}

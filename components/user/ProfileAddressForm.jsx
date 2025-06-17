@@ -52,23 +52,23 @@ export default function ProfileAddressForm({ address, phone_number }) {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="cursor-pointer font-semibold hover-fade-text"
+        className="hover-fade-text cursor-pointer font-semibold"
       >
         {!address.city ? (
           "+ Add"
         ) : (
-          <CiEdit className="text-[17px] mb-[-1.5px]" />
+          <CiEdit className="mb-[-1.5px] text-[17px]" />
         )}
       </button>
 
       <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
         <div className="flex-between mb-8">
-          <DialogTitle as="h3" className="font-semibold text-xl">
+          <DialogTitle as="h3" className="text-xl font-semibold">
             Add Address
           </DialogTitle>
           <IoClose
             onClick={() => setIsOpen(false)}
-            className="text-2xl cursor-pointer hover:text-pink-500"
+            className="cursor-pointer text-2xl hover:text-pink-500"
           />
         </div>
 
@@ -92,7 +92,7 @@ export default function ProfileAddressForm({ address, phone_number }) {
               ))}
             </select>
             {errors.country && (
-              <span className="text-red-600 text-xs">
+              <span className="text-xs text-red-600">
                 {errors.country.message}
               </span>
             )}
@@ -112,14 +112,14 @@ export default function ProfileAddressForm({ address, phone_number }) {
               })}
             />
             {errors.street_address && (
-              <span className="text-red-600 text-xs">
+              <span className="text-xs text-red-600">
                 {errors.street_address.message}
               </span>
             )}
           </div>
 
           <div className="flex gap-4">
-            <div className="flex-3 flex-col relative">
+            <div className="relative flex-3 flex-col">
               <LabeledInput
                 htmlFor="city"
                 error={errors.city}
@@ -133,7 +133,7 @@ export default function ProfileAddressForm({ address, phone_number }) {
                 })}
               />
               {errors.city && (
-                <span className="text-red-600 text-xs">
+                <span className="text-xs text-red-600">
                   {errors.city.message}
                 </span>
               )}
@@ -153,7 +153,7 @@ export default function ProfileAddressForm({ address, phone_number }) {
                 })}
               />
               {errors.zip_code && (
-                <span className="text-red-600 text-xs">
+                <span className="text-xs text-red-600">
                   {errors.zip_code.message}
                 </span>
               )}
@@ -174,7 +174,7 @@ export default function ProfileAddressForm({ address, phone_number }) {
               })}
             />
             {errors.phone_number && (
-              <span className="text-red-600 text-xs">
+              <span className="text-xs text-red-600">
                 {errors.phone_number.message}
               </span>
             )}

@@ -13,7 +13,7 @@ export default function FilterOption({ label, items, handleFilter }) {
 
   return (
     <Disclosure as="div">
-      <DisclosureButton className="group flex-between pb-4 pt-6 w-full">
+      <DisclosureButton className="group flex-between w-full pt-6 pb-4">
         {capitalize(label)}
         <IoChevronDownOutline className="w-5 group-data-open:rotate-180" />
       </DisclosureButton>
@@ -27,7 +27,7 @@ export default function FilterOption({ label, items, handleFilter }) {
               checked={activeFilters.includes(item)}
               onChange={() => handleFilter(label, item)}
             />
-            <label htmlFor={item} className="text-sm w-full">
+            <label htmlFor={item} className="w-full text-sm">
               {item}
             </label>
           </li>

@@ -16,20 +16,20 @@ export default async function Page({ params }) {
   const { name, email, address, phone_number, created_at, role } = user;
 
   return (
-    <section className="w-full max-w-4xl mx-auto">
-      <div className="grid grid-cols-[100px_auto] md:grid-cols-[100px_auto_100px] mb-8 items-center">
+    <section className="mx-auto w-full max-w-4xl">
+      <div className="mb-8 grid grid-cols-[100px_auto] items-center md:grid-cols-[100px_auto_100px]">
         <Link href="/admin/users" className="button-primary flex-between gap-1">
           <FiArrowLeft className="text-[18px]" />
           <span>Users</span>
         </Link>
-        <h2 className="md:col-2 text-2xl font-bold uppercase text-right md:text-center">
+        <h2 className="text-right text-2xl font-bold uppercase md:col-2 md:text-center">
           User #...{id.split("-").at(-1).toUpperCase()}
         </h2>
       </div>
 
-      <article className="grid md:grid-cols-3 gap-6 mb-14">
+      <article className="mb-14 grid gap-6 md:grid-cols-3">
         <div className="card-md flex flex-col gap-2">
-          <h3 className="font-semibold uppercase text-lg">Identity</h3>
+          <h3 className="text-lg font-semibold uppercase">Identity</h3>
           <div className="text-sm">
             <div className="flex-between">
               <span>Name:</span>
@@ -47,7 +47,7 @@ export default async function Page({ params }) {
         </div>
 
         <div className="card-md flex flex-col gap-2">
-          <h3 className="font-semibold uppercase text-lg">Contacts</h3>
+          <h3 className="text-lg font-semibold uppercase">Contacts</h3>
           <div className="flex flex-col text-sm">
             <span>{email}</span>
             {phone_number && <span>{phone_number}</span>}
@@ -55,7 +55,7 @@ export default async function Page({ params }) {
         </div>
 
         <div className="card-md flex flex-col gap-2">
-          <h3 className="font-semibold uppercase text-lg">Address</h3>
+          <h3 className="text-lg font-semibold uppercase">Address</h3>
           {address && (
             <div className="flex flex-col text-sm">
               <span>{address.street_address}</span>
@@ -68,7 +68,7 @@ export default async function Page({ params }) {
         </div>
       </article>
 
-      <h2 className="text-xl font-bold uppercase text-center mb-6">
+      <h2 className="mb-6 text-center text-xl font-bold uppercase">
         User orders
       </h2>
 
@@ -79,7 +79,7 @@ export default async function Page({ params }) {
       )}
 
       {orders?.length > 0 && (
-        <table className="w-full border border-gray-300 dark:border-gray-700 dark:bg-neutral-800 border-separate rounded-lg text-sm">
+        <table className="w-full border-separate rounded-lg border border-gray-300 text-sm dark:border-gray-700 dark:bg-neutral-800">
           <thead>
             <tr>
               <th className="py-3 pl-4 text-left">ID</th>
@@ -93,7 +93,7 @@ export default async function Page({ params }) {
           <tbody>
             {orders.map((order) => (
               <tr key={order.order_id}>
-                <td className="border-t min-w-[180px] border-gray-300 dark:border-gray-700 py-2 pl-4 pr-3">
+                <td className="min-w-[180px] border-t border-gray-300 py-2 pr-3 pl-4 dark:border-gray-700">
                   <Link
                     href={`/admin/orders/${order.order_id}`}
                     className="hover:text-neutral-500 dark:hover:text-neutral-300"
@@ -101,26 +101,27 @@ export default async function Page({ params }) {
                     {order.order_id}
                   </Link>
                 </td>
-                <td className="text-nowrap border-t border-gray-300 dark:border-gray-700 py-2 pr-3">
+                <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
                   {dateFormatter(order.created_at)}
                 </td>
-                <td className="text-nowrap border-t border-gray-300 dark:border-gray-700 py-2 pr-3">
+                <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
                   {priceFormatter(order.total_price)}
                 </td>
-                <td className="text-nowrap border-t border-gray-300 dark:border-gray-700 py-2 pr-3">
+                <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
                   {order.is_delivered && order.delivered_at ? (
                     dateFormatter(order.delivered_at)
                   ) : (
-                    <span className="text-red-600 dark:text-red-500 font-medium">
+                    <span className="font-medium text-red-600 dark:text-red-500">
                       Not delivered
                     </span>
                   )}
                 </td>
-                <td className="text-center align-middle border-t border-gray-300 dark:border-gray-700 py-2 pr-4">
-                  <Link href={`/admin/orders/${order.order_id}`}>
-                    <button className="cursor-pointer rounded-md border border-neutral-300 p-2 hover:bg-neutral-100 dark:hover:bg-neutral-700">
-                      <FaEye className="text-[16px]" />
-                    </button>
+                <td className="border-t border-gray-300 py-2 pr-4 text-center align-middle dark:border-gray-700">
+                  <Link
+                    href={`/admin/orders/${order.order_id}`}
+                    className="cursor-pointer rounded-md border border-neutral-300 p-2 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                  >
+                    <FaEye className="text-[16px]" />
                   </Link>
                 </td>
               </tr>

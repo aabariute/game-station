@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function NotificationBar() {
   return (
-    <div className="bg-neutral-800 dark:bg-black text-white tracking-wide py-[0.35rem] text-nowrap overflow-hidden text-xs">
+    <div className="overflow-hidden bg-neutral-800 py-[0.35rem] text-xs tracking-wide text-nowrap text-white dark:bg-black">
       <Swiper
         modules={[Autoplay]}
         loop={true}
@@ -21,19 +21,19 @@ export default function NotificationBar() {
       >
         <SwiperSlide>
           <Link href="/products" className="flex-center">
-            <HiSparkles className="text-amber-400 w-10" />
+            <HiSparkles className="w-10 text-amber-400" />
             <div>
               Use <span className="font-bold">APP15</span> to save up additional
               15%
             </div>
-            <HiSparkles className="text-amber-400 w-10" />
+            <HiSparkles className="w-10 text-amber-400" />
           </Link>
         </SwiperSlide>
         <SwiperSlide>
           <Link href="/products" className="flex-center">
-            <HiSparkles className="text-amber-400 w-10" />
+            <HiSparkles className="w-10 text-amber-400" />
             <span>Free shipping for all orders over $50</span>
-            <HiSparkles className="text-amber-400 w-10" />
+            <HiSparkles className="w-10 text-amber-400" />
           </Link>
         </SwiperSlide>
       </Swiper>

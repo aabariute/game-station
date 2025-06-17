@@ -15,7 +15,7 @@ export default async function Page({ params }) {
   const product = await getProductById(productId);
 
   return (
-    <div className="max-w-7xl w-full mx-auto py-8 px-2 md:px-4 flex flex-col gap-y-16">
+    <div className="mx-auto flex w-full max-w-7xl flex-col gap-y-16 px-2 py-8 md:px-4">
       <ProductDetails product={product} />
 
       <Suspense

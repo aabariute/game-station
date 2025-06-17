@@ -17,7 +17,7 @@ export default function Pagination({ page, totalPages }) {
   }
 
   return (
-    <div className="pb-4 pt-12 flex-center gap-2">
+    <div className="flex-center gap-2 pt-12 pb-4">
       {page > 1 && (
         <button className="cursor-pointer text-xl text-gray-600 hover:text-pink-500">
           <IoIosArrowBack onClick={() => handlePagination(+page - 1)} />
@@ -27,8 +27,8 @@ export default function Pagination({ page, totalPages }) {
         {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
           <button
             key={p}
-            className={`px-2 py-1 border border-gray-300 dark:border-gray-700 shadow-xs rounded-md min-w-[30px] cursor-pointer duration-100 transition-color hover:shadow-sm ${
-              p === +page && "bg-gray-100 dark:bg-neutral-800 hover:shadow-xs"
+            className={`transition-color min-w-[30px] cursor-pointer rounded-md border border-gray-300 px-2 py-1 shadow-xs duration-100 hover:shadow-sm dark:border-gray-700 ${
+              p === +page && "bg-gray-100 hover:shadow-xs dark:bg-neutral-800"
             }`}
             onClick={() => handlePagination(p)}
           >

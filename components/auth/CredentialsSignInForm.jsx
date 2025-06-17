@@ -31,8 +31,8 @@ export default function CredentialsSignInForm() {
     <form action={action} className="w-full">
       <input type="hidden" name="callbackUrl" value={callbackUrl} />
 
-      <div className="w-full mb-4">
-        <label htmlFor="email" className="block ml-1 mb-1 font-semibold">
+      <div className="mb-4 w-full">
+        <label htmlFor="email" className="mb-1 ml-1 block font-semibold">
           Email{" "}
           <span className="text-red-600" title="Required input">
             *
@@ -48,7 +48,7 @@ export default function CredentialsSignInForm() {
       </div>
 
       <div className="w-full">
-        <label htmlFor="password" className="block ml-1 mb-1 font-semibold">
+        <label htmlFor="password" className="mb-1 ml-1 block font-semibold">
           Password{" "}
           <span className="text-red-600" title="Required input">
             *

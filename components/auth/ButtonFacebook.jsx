@@ -8,10 +8,10 @@ export default function ButtonFacebook() {
         "use server";
         await signIn("facebook", { redirectTo: "/" });
       }}
-      className="text-center mb-1"
+      className="mb-1 text-center"
     >
       <button
-        className="py-3 w-full bg-white dark:bg-neutral-600 border border-neutral-300 font-medium rounded-full flex-center gap-4 cursor-pointer"
+        className="flex-center w-full cursor-pointer gap-4 rounded-full border border-neutral-300 bg-white py-3 font-medium dark:bg-neutral-600"
         type="submit"
       >
         <Image

@@ -20,7 +20,7 @@ export default function ProductDeleteButton({ productId }) {
       </button>
 
       <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
-        <DialogTitle as="h3" className="font-semibold text-xl">
+        <DialogTitle as="h3" className="text-xl font-semibold">
           Are you sure?
         </DialogTitle>
         <Description
@@ -29,7 +29,7 @@ export default function ProductDeleteButton({ productId }) {
         >
           This will permanently delete a product from database.
         </Description>
-        <div className="mt-16 flex-between">
+        <div className="flex-between mt-16">
           <button className="button-secondary" onClick={() => setIsOpen(false)}>
             Cancel
           </button>

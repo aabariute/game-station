@@ -63,11 +63,11 @@ export default async function Products({ searchParams }) {
   }
 
   return (
-    <div className="max-w-7xl w-full mx-auto py-8 px-2 md:px-4">
+    <div className="mx-auto w-full max-w-7xl px-2 py-8 md:px-4">
       {searchQuery && products.length > 0 && (
-        <div className="flex items-center gap-2 ml-6 mb-4">
+        <div className="flex-center mb-4 gap-2">
           <Link href="/products">
-            <AiFillCloseSquare className="text-2xl text-indigo-700" />
+            <AiFillCloseSquare className="text-2xl text-indigo-700 duration-150 hover:text-indigo-800" />
           </Link>
           <p>
             {products.length} {products.length === 1 ? "product" : "products"}{" "}
@@ -79,21 +79,21 @@ export default async function Products({ searchParams }) {
 
       {products.length > 0 ? (
         <section>
-          <div className="ml-2 mb-4">
+          <div className="mb-4 ml-2">
             <FilterModal filterOptions={filterOptions} />
           </div>
 
-          <article className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
+          <article className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 md:gap-5 lg:grid-cols-4">
             {products.map((product) => (
               <ProductCard key={product.product_id} product={product} />
             ))}
           </article>
         </section>
       ) : (
-        <section className="flex items-center">
-          <div className="max-w-xl mx-auto text-center">
-            <span className="bg-indigo-200 dark:bg-indigo-700 rounded-full p-4 mb-2 inline-block">
-              <PiMagnifyingGlassLight className="w-8 h-8" />
+        <section className="flex items-center py-10">
+          <div className="mx-auto max-w-xl text-center">
+            <span className="mb-2 inline-block rounded-full bg-indigo-200 p-4 dark:bg-indigo-700">
+              <PiMagnifyingGlassLight className="h-8 w-8" />
             </span>
             <p className="mb-4 text-lg font-semibold">
               No results found{" "}
@@ -106,7 +106,7 @@ export default async function Products({ searchParams }) {
             </p>
             <p className="text-sm">
               Sorry, we can't find any products that match your filters. Please
-              <Link href="/products" className="mx-1 button-tertiary inline">
+              <Link href="/products" className="button-tertiary mx-1 inline">
                 clear
               </Link>
               your selected filters and try again.

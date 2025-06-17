@@ -17,7 +17,7 @@ export default async function Page() {
 
   if (!orders?.length) {
     return (
-      <div className="card-lg py-10 flex-center flex-col gap-4">
+      <div className="card-lg flex-center flex-col gap-4 py-10">
         <h3 className="text-xl font-semibold">No orders yet</h3>
         <p className="text-neutral-600 dark:text-neutral-400">
           Go to store to place an order.

@@ -19,7 +19,7 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
     <html lang="en" className={geist.className}>
-      <body className="antialiased flex flex-col min-h-screen dark:bg-[var(--color-dark-bg)] text-neutral-900 dark:text-neutral-100">
+      <body className="flex min-h-screen flex-col text-neutral-900 antialiased dark:bg-[var(--color-dark-bg)] dark:text-neutral-100">
         {children}
 
         <Toaster

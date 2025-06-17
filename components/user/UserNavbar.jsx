@@ -11,9 +11,9 @@ export default function UserNavbar() {
   if (!pageName) return null;
 
   return (
-    <div className="w-full bg-neutral-800 dark:bg-black/20 text-white pt-12 flex-center">
+    <div className="flex-center w-full bg-neutral-800 pt-12 text-white dark:bg-black/20">
       <div className="w-full max-w-4xl px-4">
-        <h2 className="text-4xl text-center font-medium mb-14">
+        <h2 className="mb-14 text-center text-4xl font-medium">
           {capitalize(pageName)}
         </h2>
 

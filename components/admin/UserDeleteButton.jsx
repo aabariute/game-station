@@ -26,7 +26,7 @@ export default function UserDeleteButton({ userId, userName }) {
       </button>
 
       <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
-        <DialogTitle as="h3" className="font-semibold text-xl">
+        <DialogTitle as="h3" className="text-xl font-semibold">
           Are you sure?
         </DialogTitle>
         <Description
@@ -36,7 +36,7 @@ export default function UserDeleteButton({ userId, userName }) {
           This will permanently delete user{" "}
           <span className="px-1 font-medium">{userName}</span> from database.
         </Description>
-        <div className="mt-16 flex-between gap-4">
+        <div className="flex-between mt-16 gap-4">
           <button className="button-secondary" onClick={() => setIsOpen(false)}>
             Cancel
           </button>

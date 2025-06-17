@@ -6,8 +6,8 @@ export default function Footer() {
   const year = new Date();
 
   return (
-    <footer className="pt-6 pb-10 bg-neutral-800 dark:bg-black text-white text-center flex-center flex-col gap-6">
-      <ul className="text-xl flex gap-3">
+    <footer className="flex-center flex-col gap-6 bg-neutral-800 pt-6 pb-10 text-center text-white dark:bg-black">
+      <ul className="flex gap-3 text-xl">
         <FooterIcon>
           <FaInstagram className="text-2xl" />
         </FooterIcon>
@@ -32,7 +32,7 @@ export default function Footer() {
 
 function FooterIcon({ children }) {
   return (
-    <li className="w-[40px] h-[40px] bg-white/20 rounded-full flex-center hover:bg-neutral-700 transition-all duration-300">
+    <li className="flex-center h-[40px] w-[40px] rounded-full bg-white/20 transition-all duration-300 hover:bg-neutral-700">
       <Link href="/">{children}</Link>
     </li>
   );

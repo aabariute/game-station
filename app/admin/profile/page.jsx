@@ -10,21 +10,21 @@ export default async function Page() {
 
   return (
     <section>
-      <h2 className="mb-6 text-2xl font-bold uppercase text-center tracking-wide">
+      <h2 className="mb-6 text-center text-2xl font-bold tracking-wide uppercase">
         Profile
       </h2>
 
-      <div className="max-w-4xl mx-auto">
-        <article className="card-lg flex flex-col gap-6 mb-8">
+      <div className="mx-auto max-w-4xl">
+        <article className="card-lg mb-8 flex flex-col gap-6">
           <div className="flex flex-col gap-1">
-            <span className="text-neutral-700 dark:text-neutral-400 font-bold">
+            <span className="font-bold text-neutral-700 dark:text-neutral-400">
               Name
             </span>
             <span className="text-sm">{session.user.name}</span>
           </div>
 
           <div className="flex flex-col gap-1">
-            <span className="text-neutral-700 dark:text-neutral-400 font-bold">
+            <span className="font-bold text-neutral-700 dark:text-neutral-400">
               Email
             </span>
             <span className="text-sm">{session.user.email}</span>

@@ -21,7 +21,7 @@ export default function SearchBar() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="relative row-start-2 col-span-2 lg:w-full"
+      className="relative col-span-2 row-start-2 lg:w-full"
     >
       <input
         className="input"
@@ -32,7 +32,7 @@ export default function SearchBar() {
 
       <button
         type="submit"
-        className="absolute top-1/2 -translate-y-1/2 right-2 cursor-pointer"
+        className="absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer"
       >
         <PiMagnifyingGlassLight className="text-[28px]" />
       </button>

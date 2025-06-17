@@ -51,17 +51,17 @@ export default function ProfileContactsForm() {
   return (
     <>
       <button onClick={() => setIsOpen(true)} className="cursor-pointer">
-        <CiEdit className="hover-fade-text text-[17px] mb-[-1.5px]" />
+        <CiEdit className="hover-fade-text mb-[-1.5px] text-[17px]" />
       </button>
 
       <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
         <div className="flex-between mb-8">
-          <DialogTitle as="h3" className="font-semibold text-xl">
+          <DialogTitle as="h3" className="text-xl font-semibold">
             Edit Profile
           </DialogTitle>
           <IoClose
             onClick={() => setIsOpen(false)}
-            className="text-2xl cursor-pointer hover:text-pink-500"
+            className="cursor-pointer text-2xl hover:text-pink-500"
           />
         </div>
 
@@ -84,7 +84,7 @@ export default function ProfileContactsForm() {
                 error={errors.first_name}
               />
               {errors.first_name && (
-                <span className="text-red-600 text-xs">
+                <span className="text-xs text-red-600">
                   {errors.first_name.message}
                 </span>
               )}
@@ -103,7 +103,7 @@ export default function ProfileContactsForm() {
                 error={errors.last_name}
               />
               {errors.last_name && (
-                <span className="text-red-600 text-xs">
+                <span className="text-xs text-red-600">
                   {errors.last_name.message}
                 </span>
               )}
@@ -117,14 +117,14 @@ export default function ProfileContactsForm() {
               label="Email"
               disabled
             />
-            <span className="col-span-2 text-neutral-500 text-xs">
+            <span className="col-span-2 text-xs text-neutral-500">
               Email used for login can not be changed
             </span>
           </div>
 
           <button
             type="submit"
-            className="button-primary self-end w-24"
+            className="button-primary w-24 self-end"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Saving..." : "Save"}

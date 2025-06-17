@@ -46,16 +46,16 @@ export default function ReviewForm({ productId, isOpen, setIsOpen }) {
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
       <div className="flex-between">
-        <DialogTitle as="h3" className="font-semibold text-xl">
+        <DialogTitle as="h3" className="text-xl font-semibold">
           Write a Review
         </DialogTitle>
         <IoClose
           onClick={() => setIsOpen(false)}
-          className="text-2xl cursor-pointer hover:text-pink-500"
+          className="cursor-pointer text-2xl hover:text-pink-500"
         />
       </div>
 
-      <Description as="p" className="text-neutral-500 text-sm mb-6">
+      <Description as="p" className="mb-6 text-sm text-neutral-500">
         Share your thoughts with other customers
       </Description>
 
@@ -89,7 +89,7 @@ export default function ReviewForm({ productId, isOpen, setIsOpen }) {
                 className={inputClasses(errors.title)}
               />
               {errors.title && (
-                <span className="text-red-600 text-xs">
+                <span className="text-xs text-red-600">
                   {errors.title.message}
                 </span>
               )}

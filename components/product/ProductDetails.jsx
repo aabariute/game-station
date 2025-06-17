@@ -14,11 +14,11 @@ export default function ProductDetails({ product }) {
   const { images, price, discount, stock } = displayedVariant;
 
   return (
-    <section className="grid lg:grid-cols-[4fr_3fr] gap-x-6 gap-y-8">
+    <section className="grid gap-x-6 gap-y-8 lg:grid-cols-[4fr_3fr]">
       <ProductImage images={images} discount={discount} />
 
-      <article className="h-full lg:pt-4 lg:pb-22 flex flex-col">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium mb-2 md:mb-6">
+      <article className="flex h-full flex-col lg:pt-4 lg:pb-22">
+        <h2 className="mb-2 text-2xl font-medium md:mb-6 md:text-3xl lg:text-4xl">
           {brand} {title}
         </h2>
 
@@ -29,7 +29,7 @@ export default function ProductDetails({ product }) {
         />
 
         {colors.length > 1 && (
-          <div className="mt-6 lg:mt-4 flex items-center gap-x-2">
+          <div className="mt-6 flex items-center gap-x-2 lg:mt-4">
             <span className="mr-3">Available Colors:</span>
             <ProductColorSwatches
               colors={colors}
@@ -39,11 +39,11 @@ export default function ProductDetails({ product }) {
           </div>
         )}
 
-        <p className="mt-6 lg:mt-4 lg:mt-6 text-sm">{description}</p>
+        <p className="mt-6 text-sm lg:mt-6">{description}</p>
 
         {stock > 0 ? (
           <>
-            <p className="text-center text-sm mb-1 mt-8 lg:mt-auto">
+            <p className="mt-8 mb-1 text-center text-sm lg:mt-auto">
               In stock. Ready to ship
             </p>
 
@@ -54,7 +54,7 @@ export default function ProductDetails({ product }) {
             />
           </>
         ) : (
-          <p className="text-center font-medium text-red-600 mb-1 mt-6 lg:mt-auto">
+          <p className="mt-6 mb-1 text-center font-medium text-red-600 lg:mt-auto">
             SOLD OUT
           </p>
         )}

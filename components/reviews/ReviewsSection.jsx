@@ -12,7 +12,7 @@ export default async function ReviewsSection({ productId }) {
   return (
     <section>
       <div>
-        <div className="mb-2 sm:flex sm:justify-between sm:items-center">
+        <div className="mb-2 sm:flex sm:items-center sm:justify-between">
           <h3 className="text-2xl font-semibold">Customer Reviews</h3>
           <ReviewButton userId={userId} productId={productId} />
         </div>
@@ -20,7 +20,7 @@ export default async function ReviewsSection({ productId }) {
 
         {!reviews ||
           (reviews.length === 0 && (
-            <p className="ml-1 mb-6 text-neutral-500 italic text-sm">
+            <p className="mb-6 ml-1 text-sm text-neutral-500 italic">
               This product has no reviews.
             </p>
           ))}

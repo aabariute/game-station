@@ -12,7 +12,7 @@ export default function NavbarLink({ link }) {
     <Link
       href={link.href}
       onClick={() => close()}
-      className={`py-2 px-3 rounded-lg font-light ${
+      className={`rounded-lg px-3 py-2 font-light ${
         pathname.includes(link.href) ? "font-semibold" : ""
       }`}
     >

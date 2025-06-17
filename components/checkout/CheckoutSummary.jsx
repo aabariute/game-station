@@ -9,15 +9,15 @@ export default function CheckoutSummary({ user, shippingMethod }) {
   const { first_name, last_name, email, address } = user;
 
   return (
-    <div className="p-4 border border-neutral-200 dark:border-gray-700 rounded-md shadow-sm">
-      <div className="grid grid-cols-[100px_1fr_80px] items-center border-b border-neutral-200 dark:border-gray-700 pb-3">
+    <div className="rounded-md border border-neutral-200 p-4 shadow-sm dark:border-gray-700">
+      <div className="grid grid-cols-[100px_1fr_80px] items-center border-b border-neutral-200 pb-3 dark:border-gray-700">
         <div className="text-neutral-500 dark:text-neutral-400">Contact</div>
         <div className="text-sm">
           {first_name} {last_name}
         </div>
         <Link
           href="/checkout/information"
-          className="button-tertiary pb-[0.075rem] justify-self-end text-sm"
+          className="button-tertiary justify-self-end pb-[0.075rem] text-sm"
         >
           Change
         </Link>
@@ -27,10 +27,10 @@ export default function CheckoutSummary({ user, shippingMethod }) {
       <div
         className={`grid grid-cols-[100px_1fr_80px] items-center pt-3 ${
           pathname.split("/").at(-1) === "payment" &&
-          "border-b border-neutral-200 dark:border-gray-700 pb-3"
+          "border-b border-neutral-200 pb-3 dark:border-gray-700"
         }`}
       >
-        <div className="col-1 text-neutral-500 dark:text-neutral-400 self-start">
+        <div className="col-1 self-start text-neutral-500 dark:text-neutral-400">
           Ship to
         </div>
         <div className="text-sm">
@@ -39,7 +39,7 @@ export default function CheckoutSummary({ user, shippingMethod }) {
         </div>
         <Link
           href="/checkout/information"
-          className="button-tertiary pb-[0.075rem] justify-self-end text-sm"
+          className="button-tertiary justify-self-end pb-[0.075rem] text-sm"
         >
           Change
         </Link>
@@ -51,7 +51,7 @@ export default function CheckoutSummary({ user, shippingMethod }) {
           <div className="text-sm">{capitalize(shippingMethod)}</div>
           <Link
             href="/checkout/shipping"
-            className="button-tertiary pb-[0.075rem] justify-self-end text-sm"
+            className="button-tertiary justify-self-end pb-[0.075rem] text-sm"
           >
             Change
           </Link>

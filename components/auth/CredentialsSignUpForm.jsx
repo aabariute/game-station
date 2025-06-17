@@ -44,7 +44,7 @@ export default function CredentialsSignUpForm() {
       <input type="hidden" name="callbackUrl" value={callbackUrl} />
 
       <div>
-        <label htmlFor="firstName" className="block ml-1 mb-1 font-semibold">
+        <label htmlFor="firstName" className="mb-1 ml-1 block font-semibold">
           First name <span className="text-red-600">*</span>
         </label>
         <input
@@ -60,14 +60,14 @@ export default function CredentialsSignUpForm() {
           })}
         />
         {errors.firstName && (
-          <span className="text-red-600 text-xs mt-1">
+          <span className="mt-1 text-xs text-red-600">
             {errors.firstName.message}
           </span>
         )}
       </div>
 
       <div className="mt-3">
-        <label htmlFor="lastName" className="block ml-1 mb-1 font-semibold">
+        <label htmlFor="lastName" className="mb-1 ml-1 block font-semibold">
           Last name <span className="text-red-600">*</span>
         </label>
         <input
@@ -83,14 +83,14 @@ export default function CredentialsSignUpForm() {
           })}
         />
         {errors.lastName && (
-          <span className="text-red-600 text-xs mt-1">
+          <span className="mt-1 text-xs text-red-600">
             {errors.lastName.message}
           </span>
         )}
       </div>
 
       <div className="mt-3">
-        <label htmlFor="email" className="block ml-1 mb-1 font-semibold">
+        <label htmlFor="email" className="mb-1 ml-1 block font-semibold">
           Email <span className="text-red-600">*</span>
         </label>
         <input
@@ -106,14 +106,14 @@ export default function CredentialsSignUpForm() {
           })}
         />
         {errors.email && (
-          <span className="text-red-600 text-xs mt-1">
+          <span className="mt-1 text-xs text-red-600">
             {errors.email.message}
           </span>
         )}
       </div>
 
       <div className="mt-3">
-        <label htmlFor="password" className="block ml-1 mb-1 font-semibold">
+        <label htmlFor="password" className="mb-1 ml-1 block font-semibold">
           Password <span className="text-red-600">*</span>
         </label>
         <input
@@ -129,7 +129,7 @@ export default function CredentialsSignUpForm() {
           })}
         />
         {errors.password && (
-          <span className="text-red-600 text-xs mt-1">
+          <span className="mt-1 text-xs text-red-600">
             {errors.password.message}
           </span>
         )}
@@ -138,7 +138,7 @@ export default function CredentialsSignUpForm() {
       <div className="mt-3">
         <label
           htmlFor="confirmPassword"
-          className="block ml-1 mb-1 font-semibold"
+          className="mb-1 ml-1 block font-semibold"
         >
           Confirm Password <span className="text-red-600">*</span>
         </label>
@@ -151,7 +151,7 @@ export default function CredentialsSignUpForm() {
           })}
         />
         {errors.confirmPassword && (
-          <span className="text-red-600 text-xs mt-1">
+          <span className="mt-1 text-xs text-red-600">
             {errors.confirmPassword.message}
           </span>
         )}
@@ -169,7 +169,7 @@ export default function CredentialsSignUpForm() {
         <div className="mt-2 mb-4 text-center text-red-600">{data.message}</div>
       )}
 
-      <div className="text-sm text-center">
+      <div className="text-center text-sm">
         Already have an account?
         <Link href="/login" className="button-tertiary ml-1 inline">
           Sign In

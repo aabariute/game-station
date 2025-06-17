@@ -9,8 +9,8 @@ export default async function Page() {
   const session = await auth();
 
   return (
-    <div className="flex-1 flex-center pt-8 pb-16">
-      <section className="px-4 sm:px-10 md:px-18 max-w-6xl mx-auto w-full gap-y-10 lg:grid lg:grid-cols-[2fr_1fr] lg:gap-x-18">
+    <div className="flex-center flex-1 pt-8 pb-16">
+      <section className="mx-auto w-full max-w-6xl gap-y-10 px-4 sm:px-10 md:px-18 lg:grid lg:grid-cols-[2fr_1fr] lg:gap-x-18">
         <h2 className="text-4xl font-semibold lg:col-span-full">
           Have any questions?<br></br> Contact us.
         </h2>

@@ -22,20 +22,20 @@ export default async function Page({ searchParams }) {
   const { orders, total, totalPages } = await getAllOrders(
     page,
     PAGE_SIZE,
-    sort
+    sort,
   );
 
   return (
     <section>
-      <h2 className="mb-6 text-2xl font-bold uppercase text-center tracking-wide">
+      <h2 className="mb-6 text-center text-2xl font-bold tracking-wide uppercase">
         Orders
       </h2>
 
-      <div className="flex justify-end mb-4">
+      <div className="mb-4 flex justify-end">
         <SortBy sortOptions={sortOptions} />
       </div>
 
-      <table className="w-full border border-gray-300 dark:border-gray-700 dark:bg-neutral-800 border-separate rounded-lg text-sm">
+      <table className="w-full border-separate rounded-lg border border-gray-300 text-sm dark:border-gray-700 dark:bg-neutral-800">
         <thead>
           <tr>
             <th className="py-3 pl-4 text-left">ID</th>
@@ -50,7 +50,7 @@ export default async function Page({ searchParams }) {
         <tbody>
           {orders.map((order) => (
             <tr key={order.order_id}>
-              <td className="border-t min-w-[180px] border-gray-300 dark:border-gray-700 py-2 pl-4 pr-3">
+              <td className="min-w-[180px] border-t border-gray-300 py-2 pr-3 pl-4 dark:border-gray-700">
                 <Link
                   href={`/admin/orders/${order.order_id}`}
                   className="hover:text-neutral-500 dark:hover:text-neutral-300"
@@ -58,10 +58,10 @@ export default async function Page({ searchParams }) {
                   {order.order_id}
                 </Link>
               </td>
-              <td className="text-nowrap border-t border-gray-300 dark:border-gray-700 py-2 pr-3">
+              <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
                 {dateFormatter(order.created_at)}
               </td>
-              <td className="border-t min-w-[150px] border-gray-300 dark:border-gray-700 py-2 pr-3">
+              <td className="min-w-[150px] border-t border-gray-300 py-2 pr-3 dark:border-gray-700">
                 <Link
                   href={`/admin/users/${order.user_id}`}
                   className="hover:text-neutral-500 dark:hover:text-neutral-300"
@@ -69,23 +69,24 @@ export default async function Page({ searchParams }) {
                   {order.user_id}
                 </Link>
               </td>
-              <td className="text-nowrap border-t border-gray-300 dark:border-gray-700 py-2 pr-3">
+              <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
                 {priceFormatter(order.total_price)}
               </td>
-              <td className="text-nowrap border-t border-gray-300 dark:border-gray-700 py-2 pr-3">
+              <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
                 {order.is_delivered && order.delivered_at ? (
                   dateFormatter(order.delivered_at)
                 ) : (
-                  <span className="text-red-600 dark:text-red-500 font-medium">
+                  <span className="font-medium text-red-600 dark:text-red-500">
                     Not delivered
                   </span>
                 )}
               </td>
-              <td className="text-center align-middle border-t border-gray-300 dark:border-gray-700 py-2 pr-4">
-                <Link href={`/admin/orders/${order.order_id}`}>
-                  <button className="cursor-pointer rounded-md border border-neutral-300 p-2 hover:bg-neutral-100 dark:hover:bg-neutral-700">
-                    <FaEye className="text-[16px]" />
-                  </button>
+              <td className="border-t border-gray-300 py-2 pr-4 text-center align-middle dark:border-gray-700">
+                <Link
+                  href={`/admin/orders/${order.order_id}`}
+                  className="cursor-pointer rounded-md border border-neutral-300 p-2 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                >
+                  <FaEye className="text-[16px]" />
                 </Link>
               </td>
             </tr>

@@ -21,7 +21,7 @@ export default async function Page({ searchParams }) {
 
   return (
     <section>
-      <h2 className="mb-6 text-2xl font-bold uppercase text-center tracking-wide">
+      <h2 className="mb-6 text-center text-2xl font-bold tracking-wide uppercase">
         Products
       </h2>
 

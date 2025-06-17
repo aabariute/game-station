@@ -21,8 +21,8 @@ export default async function Page({ searchParams }) {
   }
 
   return (
-    <main className="flex-1 flex-center flex-col mx-4">
-      <section className="w-full max-w-xl py-10 px-6 sm:px-14 bg-neutral-100 dark:bg-neutral-800 rounded-xl">
+    <main className="flex-center mx-4 flex-1 flex-col">
+      <section className="w-full max-w-xl rounded-xl bg-neutral-100 px-6 py-10 sm:px-14 dark:bg-neutral-800">
         <h2 className="mb-4 text-center text-3xl font-bold uppercase">
           Welcome back
         </h2>
@@ -36,10 +36,10 @@ export default async function Page({ searchParams }) {
         <ButtonGoogle />
         <ButtonFacebook />
 
-        <div className="mt-8 mb-3 w-full flex-center">
-          <span className="relative w-full after:absolute after:content-[''] after:left-0 after:top-[50%] after:h-[1px] after:bg-neutral-300 after:w-full after:block"></span>
-          <span className="text-nowrap px-3">Or continue with email</span>
-          <span className="relative w-full after:absolute after:content-[''] after:left-0 after:top-[50%] after:h-[1px] after:bg-neutral-300 after:w-full after:block"></span>
+        <div className="flex-center mt-8 mb-3 w-full">
+          <span className="relative w-full after:absolute after:top-[50%] after:left-0 after:block after:h-[1px] after:w-full after:bg-neutral-300 after:content-['']"></span>
+          <span className="px-3 text-nowrap">Or continue with email</span>
+          <span className="relative w-full after:absolute after:top-[50%] after:left-0 after:block after:h-[1px] after:w-full after:bg-neutral-300 after:content-['']"></span>
         </div>
 
         <CredentialsSignInForm />

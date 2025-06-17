@@ -25,7 +25,7 @@ export default async function Layout({ children }) {
 
   return (
     <>
-      <header className="flex-between sticky top-0 inset-x-0 z-10 px-3 md:px-6 py-2 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md shadow-lg">
+      <header className="flex-between sticky inset-x-0 top-0 z-10 bg-white/90 px-3 py-2 shadow-lg backdrop-blur-md md:px-6 dark:bg-neutral-900/90">
         <div className="flex-center gap-2">
           <div className="lg:hidden">
             <HamburgerMenu links={links} positionTop="58px" />
@@ -42,18 +42,18 @@ export default async function Layout({ children }) {
 
         <div className="flex items-center gap-4">
           <Link href="/admin/profile">
-            <PiUserCircleLight className="text-[28px] cursor-pointer" />
+            <PiUserCircleLight className="cursor-pointer text-[28px]" />
           </Link>
 
           <form action={signOutUser} className="flex items-center">
             <button type="submit">
-              <IoIosLogOut className="text-[28px] cursor-pointer" />
+              <IoIosLogOut className="cursor-pointer text-[28px]" />
             </button>
           </form>
         </div>
       </header>
 
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 md:px-6 lg:px-8 py-10">
+      <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-10 md:px-6 lg:px-8">
         {children}
       </main>
     </>

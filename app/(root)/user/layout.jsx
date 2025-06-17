@@ -16,7 +16,7 @@ export default async function Layout({ children }) {
     <div>
       <UserNavbar />
 
-      <section className="w-full max-w-4xl mx-auto px-4 pt-10 pb-16">
+      <section className="mx-auto w-full max-w-4xl px-4 pt-10 pb-16">
         {children}
       </section>
     </div>

@@ -17,12 +17,12 @@ export default async function OrderItem({ item }) {
     : "https://qzjoaseklvxaztlbgrmt.supabase.co/storage/v1/object/public/product-images//unavailable.PNG";
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex w-full flex-col">
       <div className="flex-between mb-1">
         <h5 className="font-semibold">
           {brand} {title}
         </h5>
-        <span className="font-semibold text-lg">
+        <span className="text-lg font-semibold">
           {priceFormatter(total_price)}
         </span>
       </div>
@@ -35,17 +35,17 @@ export default async function OrderItem({ item }) {
             className="object-contain"
           />
         </div>
-        <ul className="text-sm w-full text-neutral-500 dark:text-neutral-400 flex flex-col">
-          <li className="w-1/2 sm:w-2/5 md:w-1/4 flex-between">
+        <ul className="flex w-full flex-col text-sm text-neutral-500 dark:text-neutral-400">
+          <li className="flex-between w-1/2 sm:w-2/5 md:w-1/4">
             <span>Quantity:</span>
             <span className="text-right">{quantity}</span>
           </li>
-          <li className="w-1/2 sm:w-2/5 md:w-1/4 flex-between">
+          <li className="flex-between w-1/2 sm:w-2/5 md:w-1/4">
             <span>Color:</span>
             <span className="text-right">{color}</span>
           </li>
           <div className="flex-between">
-            <li className="w-1/2 sm:w-2/5 md:w-1/4 flex-between">
+            <li className="flex-between w-1/2 sm:w-2/5 md:w-1/4">
               <span>Price:</span>
               <span className="text-right">{priceFormatter(total_price)}</span>
             </li>

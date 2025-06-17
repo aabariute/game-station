@@ -72,9 +72,9 @@ export default function ProductForm({ type, product, productId }) {
 
   return (
     <form onSubmit={handleSubmit(onFormSubmit)}>
-      <h3 className="mb-6 font-bold text-xl uppercase text-center">Product</h3>
+      <h3 className="mb-6 text-center text-xl font-bold uppercase">Product</h3>
 
-      <div className="grid grid-cols-1 gap-3 md:gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
         <div>
           <LabeledInput
             {...register("title", {
@@ -89,7 +89,7 @@ export default function ProductForm({ type, product, productId }) {
             error={errors.title}
           />
           {errors.title && (
-            <span className="text-red-600 text-xs">{errors.title.message}</span>
+            <span className="text-xs text-red-600">{errors.title.message}</span>
           )}
         </div>
         <div>
@@ -106,7 +106,7 @@ export default function ProductForm({ type, product, productId }) {
             error={errors.brand}
           />
           {errors.brand && (
-            <span className="text-red-600 text-xs">{errors.brand.message}</span>
+            <span className="text-xs text-red-600">{errors.brand.message}</span>
           )}
         </div>
         <div>
@@ -123,7 +123,7 @@ export default function ProductForm({ type, product, productId }) {
             error={errors.category}
           />
           {errors.category && (
-            <span className="text-red-600 text-xs">
+            <span className="text-xs text-red-600">
               {errors.category.message}
             </span>
           )}
@@ -149,16 +149,16 @@ export default function ProductForm({ type, product, productId }) {
             className={`textarea mt-1 ${errors.description ? "border-2 border-red-500 focus:border-red-500" : ""}`}
           />
           {errors.description && (
-            <span className="text-red-600 text-xs">
+            <span className="text-xs text-red-600">
               {errors.description.message}
             </span>
           )}
         </div>
       </div>
 
-      <hr className="border-neutral-300 dark:border-neutral-700 mt-4 mb-10" />
+      <hr className="mt-4 mb-10 border-neutral-300 dark:border-neutral-700" />
 
-      <h3 className="mb-6 font-bold text-xl uppercase text-center">Variants</h3>
+      <h3 className="mb-6 text-center text-xl font-bold uppercase">Variants</h3>
 
       <VariantForm
         watch={watch}

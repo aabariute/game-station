@@ -20,17 +20,17 @@ export default function ProductCard({ item, onDelete }) {
   } = item;
 
   return (
-    <li className="grid grid-cols-[75px_1fr] gap-4 pb-4 mb-4">
+    <li className="mb-4 grid grid-cols-[75px_1fr] gap-4 pb-4">
       <Link
         href={`/products/${product_id}`}
-        className="border border-pink-600/30 dark:border-pink-400/50 p-1 rounded-md shadow-xs bg-white/10"
+        className="rounded-md border border-pink-600/30 bg-white/10 p-1 shadow-xs dark:border-pink-400/50"
       >
         <Image
           width={100}
           height={100}
           src={image}
           alt={title}
-          className="object-contain aspect-square"
+          className="aspect-square object-contain"
         />
       </Link>
 
@@ -47,8 +47,8 @@ export default function ProductCard({ item, onDelete }) {
 
         <span className="text-xs font-light">Color: {color}</span>
 
-        <div className="mt-auto flex-between">
-          <div className="flex gap-2 items-center">
+        <div className="flex-between mt-auto">
+          <div className="flex items-center gap-2">
             <ChangeQuantityButton
               cartItemsId={cart_items_id}
               productId={product_id}

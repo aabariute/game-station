@@ -5,14 +5,14 @@ import { IoIosArrowForward } from "react-icons/io";
 
 export default function CheckoutNavigation({ activePage }) {
   return (
-    <ol className="mb-8 text-sm flex items-center">
+    <ol className="mb-8 flex items-center text-sm">
       <li>
         {activePage === 1 ? (
           <span className="font-bold">Information</span>
         ) : (
           <Link
             href="/checkout/information"
-            className="text-[#f5025b] font-medium hover:text-[#ab0240]"
+            className="font-medium text-[#f5025b] hover:text-[#ab0240]"
           >
             Information
           </Link>
@@ -20,8 +20,8 @@ export default function CheckoutNavigation({ activePage }) {
         <IoIosArrowForward
           className={
             activePage === 1
-              ? "text-neutral-600 dark:text-neutral-400 inline mx-2"
-              : "inline mx-2"
+              ? "mx-2 inline text-neutral-600 dark:text-neutral-400"
+              : "mx-2 inline"
           }
         />
       </li>
@@ -35,12 +35,12 @@ export default function CheckoutNavigation({ activePage }) {
         ) : (
           <Link
             href="/checkout/shipping"
-            className="text-[#f5025b] font-medium hover:text-[#ab0240]"
+            className="font-medium text-[#f5025b] hover:text-[#ab0240]"
           >
             Shipping
           </Link>
         )}
-        <IoIosArrowForward className="text-neutral-600 dark:text-neutral-400 inline mx-2" />
+        <IoIosArrowForward className="mx-2 inline text-neutral-600 dark:text-neutral-400" />
       </li>
       <li>
         {activePage === 3 ? (

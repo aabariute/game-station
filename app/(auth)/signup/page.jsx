@@ -17,8 +17,8 @@ export default async function Page({ searchParams }) {
   }
 
   return (
-    <main className="flex-1 flex-center flex-col mx-4">
-      <section className="w-full max-w-xl py-10 px-6 sm:px-14 bg-neutral-100 dark:bg-neutral-800 rounded-xl">
+    <main className="flex-center mx-4 flex-1 flex-col">
+      <section className="w-full max-w-xl rounded-xl bg-neutral-100 px-6 py-10 sm:px-14 dark:bg-neutral-800">
         <h2 className="mb-2 text-center text-3xl font-bold uppercase">
           Create Account
         </h2>

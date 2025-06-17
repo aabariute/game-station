@@ -17,7 +17,7 @@ export default function ProductsTable({ products }) {
   }
 
   return (
-    <table className="w-full border border-gray-300 dark:border-gray-700 dark:bg-neutral-800 border-separate rounded-lg text-sm">
+    <table className="w-full border-separate rounded-lg border border-gray-300 text-sm dark:border-gray-700 dark:bg-neutral-800">
       <thead>
         <tr>
           <th className="py-3 pl-4 text-left">ID</th>
@@ -33,20 +33,20 @@ export default function ProductsTable({ products }) {
         {products.map((product) => (
           <React.Fragment key={product.product_id}>
             <tr onClick={(e) => toggleExpand(e, product.product_id)}>
-              <td className="border-t min-w-[180px] border-gray-300 dark:border-gray-700 py-2 pl-4 pr-3">
+              <td className="min-w-[180px] border-t border-gray-300 py-2 pr-3 pl-4 dark:border-gray-700">
                 {product.product_id}
               </td>
-              <td className="text-nowrap border-t border-gray-300 dark:border-gray-700 py-2 pr-3">
+              <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
                 {product.title}
               </td>
-              <td className="text-nowrap border-t border-gray-300 dark:border-gray-700 py-2 pr-3">
+              <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
                 {product.brand}
               </td>
-              <td className="text-nowrap border-t border-gray-300 dark:border-gray-700 py-2 pr-3">
+              <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
                 {product.category}
               </td>
               <td
-                className="border-t border-gray-300 dark:border-gray-700 py-2"
+                className="border-t border-gray-300 py-2 dark:border-gray-700"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex items-center justify-center gap-x-2">
@@ -59,7 +59,7 @@ export default function ProductsTable({ products }) {
                   <ProductDeleteButton productId={product.product_id} />
                 </div>
               </td>
-              <td className="text-center align-middle border-t border-gray-300 dark:border-gray-700 py-2 pr-4">
+              <td className="border-t border-gray-300 py-2 pr-4 text-center align-middle dark:border-gray-700">
                 <button
                   className="cursor-pointer rounded-md border border-neutral-300 p-2 hover:bg-neutral-100 dark:hover:bg-neutral-700"
                   style={{
@@ -82,7 +82,7 @@ export default function ProductsTable({ products }) {
               <tr>
                 <td
                   colSpan={6}
-                  className="px-4 pt-2 bg-gray-100 dark:bg-neutral-700"
+                  className="bg-gray-100 px-4 pt-2 dark:bg-neutral-700"
                 >
                   <table className="w-full text-sm">
                     <thead>
@@ -101,7 +101,7 @@ export default function ProductsTable({ products }) {
                           key={variant.variant_id}
                           className="border-t border-gray-300 dark:border-gray-600"
                         >
-                          <td className="py-2 min-w-[80px] max-w-[130px]">
+                          <td className="max-w-[130px] min-w-[80px] py-2">
                             {variant.variant_id}
                           </td>
                           <td className="py-2">{capitalize(variant.color)}</td>
@@ -111,7 +111,7 @@ export default function ProductsTable({ products }) {
                               alt="Variant image"
                               width={45}
                               height={45}
-                              className="object-cover aspect-square"
+                              className="aspect-square object-cover"
                             />
                           </td>
                           <td className="py-2">{variant.stock}</td>

@@ -34,7 +34,7 @@ function Review({ review }) {
   const [first_name, last_name] = name.split(" ");
 
   return (
-    <div className="py-4 mb-4 flex flex-col gap-1">
+    <div className="mb-4 flex flex-col gap-1 py-4">
       <div className="flex-between">
         <div>
           {Array.from({ length: rating }, (_, i) => i + 1).map((num) => (
@@ -45,14 +45,14 @@ function Review({ review }) {
           ))}
         </div>
         {is_verified_purchase && (
-          <div className="border border-neutral-200 rounded-full py-1 px-2 text-sm flex-center">
+          <div className="flex-center rounded-full border border-neutral-200 px-2 py-1 text-sm">
             <PiCheckCircleFill className="mr-1 text-[18px]" />
             <span className="mb-[1px]">Verified Purchase</span>
           </div>
         )}
       </div>
       <h5 className="font-semibold">{title}</h5>
-      <p className="text-neutral-500 dark:text-neutral-400 mt-2 mb-3">
+      <p className="mt-2 mb-3 text-neutral-500 dark:text-neutral-400">
         {description}
       </p>
       {name.toLowerCase() === "deleted user" ? (

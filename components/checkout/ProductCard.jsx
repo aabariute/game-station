@@ -16,14 +16,14 @@ export default function ProductCard({ item }) {
   const accruedDiscount = countAccruedDiscount(discount, additional_discount);
 
   return (
-    <li className="grid grid-cols-[75px_1fr] gap-4 pb-4 mb-4">
-      <div className="border border-pink-600/30 p-1 rounded-md shadow-xs bg-white">
+    <li className="mb-4 grid grid-cols-[75px_1fr] gap-4 pb-4">
+      <div className="rounded-md border border-pink-600/30 bg-white p-1 shadow-xs">
         <Image
           width={100}
           height={100}
           src={image}
           alt={title}
-          className="object-contain aspect-square"
+          className="aspect-square object-contain"
         />
       </div>
       <div className="flex flex-col">

@@ -29,7 +29,7 @@ export default function RecentProducts() {
         disableOnInteraction: false,
       }}
       allowTouchMove={true}
-      className="w-full swiper-transition"
+      className="swiper-transition w-full"
     >
       {products.map((p) => (
         <SwiperSlide key={p.product_id} className="!w-76 py-4">

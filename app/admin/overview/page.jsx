@@ -17,14 +17,14 @@ export default async function Page() {
 
   return (
     <section>
-      <h2 className="mb-6 text-2xl font-bold uppercase text-center tracking-wide">
+      <h2 className="mb-6 text-center text-2xl font-bold tracking-wide uppercase">
         Dashboard
       </h2>
 
       <article className="mb-4 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <div className="card-md">
           <div className="flex-between pb-4">
-            <h3 className="font-medium text-lg">Total Revenue</h3>
+            <h3 className="text-lg font-medium">Total Revenue</h3>
             <AiOutlineDollar className="text-[25px]" />
           </div>
           <div>
@@ -36,7 +36,7 @@ export default async function Page() {
 
         <div className="card-md">
           <div className="flex-between pb-4">
-            <h3 className="font-medium text-lg">Sales</h3>
+            <h3 className="text-lg font-medium">Sales</h3>
             <HiOutlineCreditCard className="text-[25px]" />
           </div>
           <div>
@@ -46,7 +46,7 @@ export default async function Page() {
 
         <div className="card-md">
           <div className="flex-between pb-4">
-            <h3 className="font-medium text-lg">Customers</h3>
+            <h3 className="text-lg font-medium">Customers</h3>
             <LuUsers className="text-[25px]" />
           </div>
           <div>
@@ -56,7 +56,7 @@ export default async function Page() {
 
         <div className="card-md">
           <div className="flex-between pb-4">
-            <h3 className="font-medium text-lg">Products</h3>
+            <h3 className="text-lg font-medium">Products</h3>
             <BiBarcodeReader className="text-[25px]" />
           </div>
           <div>
@@ -67,14 +67,14 @@ export default async function Page() {
 
       <article className="flex flex-col gap-y-4 lg:grid lg:grid-cols-7 lg:gap-x-4">
         <div className="card-md col-span-4">
-          <h4 className="text-xl font-medium mb-6">Overview</h4>
+          <h4 className="mb-6 text-xl font-medium">Overview</h4>
           <Charts data={summary.monthlySales} />
         </div>
 
         <div className="card-md col-span-3">
-          <h4 className="text-xl font-medium mb-6">Recent Sales</h4>
+          <h4 className="mb-6 text-xl font-medium">Recent Sales</h4>
 
-          <table className="w-full border border-gray-300 dark:border-gray-500 dark:bg-neutral-600 border-separate rounded-lg text-sm">
+          <table className="w-full border-separate rounded-lg border border-gray-300 text-sm dark:border-gray-500 dark:bg-neutral-600">
             <thead>
               <tr>
                 <th className="py-3 pl-4 text-left">BUYER</th>
@@ -87,20 +87,21 @@ export default async function Page() {
             <tbody>
               {summary.latestOrders.map((order) => (
                 <tr key={order.order_id}>
-                  <td className="border-t border-gray-300 dark:border-gray-500 py-2 pl-4 pr-3">
+                  <td className="border-t border-gray-300 py-2 pr-3 pl-4 dark:border-gray-500">
                     {order.user_id}
                   </td>
-                  <td className="border-t border-gray-300 dark:border-gray-500 py-2 pr-3 text-nowrap">
+                  <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-500">
                     {dateFormatter(order.created_at)}
                   </td>
-                  <td className="border-t border-gray-300 dark:border-gray-500 py-2 pr-3">
+                  <td className="border-t border-gray-300 py-2 pr-3 dark:border-gray-500">
                     {priceFormatter(order.total_price || 0)}
                   </td>
-                  <td className="border-t border-gray-300 dark:border-gray-500 py-2 pr-4 text-center">
-                    <Link href={`/admin/orders/${order.order_id}`}>
-                      <button className="cursor-pointer rounded-md border border-neutral-300 p-2 hover:bg-neutral-100">
-                        <FaEye className="text-[16px]" />
-                      </button>
+                  <td className="border-t border-gray-300 py-2 pr-4 text-center dark:border-gray-500">
+                    <Link
+                      href={`/admin/orders/${order.order_id}`}
+                      className="cursor-pointer rounded-md border border-neutral-300 p-2 hover:bg-neutral-100"
+                    >
+                      <FaEye className="text-[16px]" />
                     </Link>
                   </td>
                 </tr>

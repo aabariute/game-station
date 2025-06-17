@@ -20,7 +20,7 @@ export default function OrderReviewButton({ rating, productId }) {
             ))}
           </span>
         ) : (
-          <button className="button-tertiary text-sm pb-[0.075rem]">
+          <button className="button-tertiary pb-[0.075rem] text-sm">
             Write a Review
           </button>
         )}

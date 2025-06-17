@@ -22,7 +22,7 @@ export default async function Page({ searchParams }) {
 
   return (
     <section>
-      <h2 className="mb-6 text-2xl font-bold uppercase text-center tracking-wide">
+      <h2 className="mb-6 text-center text-2xl font-bold tracking-wide uppercase">
         Users
       </h2>
 
@@ -33,7 +33,7 @@ export default async function Page({ searchParams }) {
         <FilterRoles roles={roles} />
       </div>
 
-      <table className="w-full border border-gray-300 dark:border-gray-700 dark:bg-neutral-800 border-separate rounded-lg text-sm">
+      <table className="w-full border-separate rounded-lg border border-gray-300 text-sm dark:border-gray-700 dark:bg-neutral-800">
         <thead>
           <tr>
             <th className="py-3 pl-4 text-left">ID</th>
@@ -47,7 +47,7 @@ export default async function Page({ searchParams }) {
         <tbody>
           {users.map((user) => (
             <tr key={user.id}>
-              <td className="border-t min-w-[180px] border-gray-300 dark:border-gray-700 py-2 pl-4 pr-3">
+              <td className="min-w-[180px] border-t border-gray-300 py-2 pr-3 pl-4 dark:border-gray-700">
                 <Link
                   href={`/admin/users/${user.id}`}
                   className="hover:text-neutral-500"
@@ -55,16 +55,16 @@ export default async function Page({ searchParams }) {
                   {user.id}
                 </Link>
               </td>
-              <td className="text-nowrap border-t border-gray-300 dark:border-gray-700 py-2 pr-3">
+              <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
                 {user.name}
               </td>
-              <td className="text-nowrap border-t border-gray-300 dark:border-gray-700 py-2 pr-3">
+              <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
                 {user.email}
               </td>
-              <td className="text-nowrap border-t border-gray-300 dark:border-gray-700 py-2 pr-3">
+              <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
                 {capitalize(user.role)}
               </td>
-              <td className="border-t border-gray-300 dark:border-gray-700 py-2 pr-4">
+              <td className="border-t border-gray-300 py-2 pr-4 dark:border-gray-700">
                 {user.role === "user" && (
                   <div className="flex items-center justify-center gap-x-2">
                     <Link

@@ -6,10 +6,10 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <div className="flex-1 flex-center pt-8 pb-16">
-      <section className="px-4 max-w-6xl mx-auto font-light w-full flex flex-col gap-10">
-        <article className="flex-center flex-col md:flex-row gap-2 md:gap-8">
-          <div className="relative h-58 aspect-[4/3]">
+    <div className="flex-center flex-1 pt-8 pb-16">
+      <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 font-light">
+        <article className="flex-center flex-col gap-2 md:flex-row md:gap-8">
+          <div className="relative aspect-[4/3] h-58">
             <Image
               src="about-1.svg"
               alt="Image"
@@ -30,7 +30,7 @@ export default function Page() {
           </div>
         </article>
 
-        <article className="flex-center flex-col-reverse md:flex-row gap-8">
+        <article className="flex-center flex-col-reverse gap-8 md:flex-row">
           <div>
             <h2 className="mb-4 text-center text-xl font-semibold">
               We proudly offer a guarantee on all repairs
@@ -42,7 +42,7 @@ export default function Page() {
               your device is back in working order quickly.
             </p>
           </div>
-          <div className="relative h-58 aspect-[4/3]">
+          <div className="relative aspect-[4/3] h-58">
             <Image
               src="about-2.svg"
               alt="Image"
@@ -52,8 +52,8 @@ export default function Page() {
           </div>
         </article>
 
-        <article className="flex-center flex-col md:flex-row gap-8">
-          <div className="relative h-58 aspect-[4/3]">
+        <article className="flex-center flex-col gap-8 md:flex-row">
+          <div className="relative aspect-[4/3] h-58">
             <Image
               src="about-3.svg"
               alt="Image"
@@ -73,7 +73,7 @@ export default function Page() {
           </div>
         </article>
 
-        <article className="flex-center flex-col-reverse md:flex-row gap-6 md:gap-8">
+        <article className="flex-center flex-col-reverse gap-6 md:flex-row md:gap-8">
           <div>
             <h2 className="mb-4 text-center text-xl font-semibold">
               We ensure secure & trusted payment process
@@ -86,7 +86,7 @@ export default function Page() {
               times.
             </p>
           </div>
-          <div className="relative h-58 aspect-[4/3]">
+          <div className="relative aspect-[4/3] h-58">
             <Image
               src="about-4.svg"
               alt="Image"

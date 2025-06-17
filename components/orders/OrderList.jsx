@@ -14,12 +14,12 @@ export default function OrderList({ order }) {
 
   const orderItemsCount = order_items.reduce(
     (acc, cur) => acc + cur.quantity,
-    0
+    0,
   );
 
   return (
     <div className="card-lg flex flex-col gap-4">
-      <p className="font-semibold text-lg">
+      <p className="text-lg font-semibold">
         ORDER #...{order_id.split("-").at(-1).toUpperCase()}
       </p>
 
@@ -46,8 +46,8 @@ export default function OrderList({ order }) {
 
       <hr className="border-neutral-200 dark:border-neutral-700" />
 
-      <div className="flex-between gap-4 mt-1">
-        <div className="dark:bg-neutral-700 p-2 rounded-sm w-full overflow-x-auto">
+      <div className="flex-between mt-1 gap-4">
+        <div className="w-full overflow-x-auto rounded-sm p-2 dark:bg-neutral-700">
           <div className="flex gap-4">
             {order_items.map((item, i) => (
               <div
@@ -65,9 +65,9 @@ export default function OrderList({ order }) {
           </div>
         </div>
         <div className="shrink-0">
-          <button className="button-primary">
-            <Link href={`/user/orders/${order_id}`}>Details</Link>
-          </button>
+          <Link href={`/user/orders/${order_id}`} className="button-primary">
+            Details
+          </Link>
         </div>
       </div>
     </div>

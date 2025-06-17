@@ -13,7 +13,7 @@ export default async function Page() {
     <div>
       {!provider && (
         <>
-          <h3 className="font-medium text-xl mb-6">Change Password</h3>
+          <h3 className="mb-6 text-xl font-medium">Change Password</h3>
           <UpdatePasswordForm />
         </>
       )}
@@ -21,7 +21,7 @@ export default async function Page() {
       <div className="mt-14">
         <DeleteAccountButton />
 
-        <p className="text-xs max-w-xl text-neutral-600 dark:text-neutral-400">
+        <p className="max-w-xl text-xs text-neutral-600 dark:text-neutral-400">
           Caution! After your account is deleted, you will no longer have access
           to your order history or any other personalized data associated with
           your account. This action is permanent and cannot be undone. If you

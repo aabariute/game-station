@@ -30,7 +30,7 @@ export default function CreateAdminForm() {
 
   return (
     <form
-      className="max-w-xl mx-auto flex flex-col gap-4"
+      className="mx-auto flex max-w-xl flex-col gap-4"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div>
@@ -41,7 +41,7 @@ export default function CreateAdminForm() {
           error={errors.first_name}
         />
         {errors.first_name && (
-          <span className="text-red-600 text-xs">
+          <span className="text-xs text-red-600">
             First name should be at least 3 characters
           </span>
         )}
@@ -54,7 +54,7 @@ export default function CreateAdminForm() {
           error={errors.last_name}
         />
         {errors.last_name && (
-          <span className="text-red-600 text-xs">
+          <span className="text-xs text-red-600">
             Last name should be at least 3 characters
           </span>
         )}
@@ -70,7 +70,7 @@ export default function CreateAdminForm() {
           error={errors.email}
         />
         {errors.email && (
-          <span className="text-red-600 text-xs">Email address is invalid</span>
+          <span className="text-xs text-red-600">Email address is invalid</span>
         )}
       </div>
       <div>
@@ -82,7 +82,7 @@ export default function CreateAdminForm() {
           error={errors.password}
         />
         {errors.password && (
-          <span className="text-red-600 text-xs">
+          <span className="text-xs text-red-600">
             Password should be at least 3 characters
           </span>
         )}

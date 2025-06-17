@@ -17,8 +17,8 @@ export default async function Header() {
   const cart = await getUserCart();
 
   return (
-    <header className="flex flex-col sticky top-0 inset-x-0 z-10">
-      <div className="grid grid-cols-[auto_auto] lg:flex gap-y-3 lg:gap-x-3 items-center justify-between px-3 md:px-6 py-2 bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md shadow-lg">
+    <header className="sticky inset-x-0 top-0 z-10 flex flex-col">
+      <div className="grid grid-cols-[auto_auto] items-center justify-between gap-y-3 bg-white/90 px-3 py-2 shadow-lg backdrop-blur-md md:px-6 lg:flex lg:gap-x-3 dark:bg-neutral-900/90">
         <div className="flex items-center gap-2">
           <div className="lg:hidden">
             <HamburgerMenu links={links} positionTop="107.5px" />
@@ -26,7 +26,7 @@ export default async function Header() {
 
           <Logo />
 
-          <nav className="hidden lg:ml-6 lg:mr-4 lg:text-nowrap lg:flex lg:items-center lg:gap-2">
+          <nav className="hidden lg:mr-4 lg:ml-6 lg:flex lg:items-center lg:gap-2 lg:text-nowrap">
             {links.map((link) => (
               <React.Fragment key={link.href}>
                 <NavbarLink link={link} />

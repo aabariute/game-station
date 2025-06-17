@@ -13,8 +13,8 @@ export default async function CheckoutAside({ cart }) {
   const isDiscountApplied = additionalDiscount > 0;
 
   return (
-    <aside className="flex flex-col p-4 md:p-6 xl:pl-8 xl:pr-20 xl:h-full bg-neutral-100 dark:bg-neutral-800">
-      <div className="divide-y divide-neutral-200 dark:divide-neutral-700 overflow-y-auto max-h-[330px]">
+    <aside className="flex flex-col bg-neutral-100 p-4 md:p-6 xl:h-full xl:pr-20 xl:pl-8 dark:bg-neutral-800">
+      <div className="max-h-[330px] divide-y divide-neutral-200 overflow-y-auto dark:divide-neutral-700">
         {cart.cart_items.map((item) => (
           <ProductCard
             key={`${item.product_id}%${item.variant_id}`}
@@ -55,7 +55,7 @@ export default async function CheckoutAside({ cart }) {
           <span className="text-right">{priceFormatter(shippingPrice)}</span>
         </div>
 
-        <div className="mt-6 text-lg font-semibold flex-between">
+        <div className="flex-between mt-6 text-lg font-semibold">
           <span>Total</span>
           <span>{priceFormatter(totalPrice + shippingPrice)}</span>
         </div>

@@ -17,10 +17,9 @@ import Spinner from "../ui/Spinner";
 
 export default function CheckoutPaymentForm({ clientSecret, price }) {
   const stripePromise = loadStripe(
-    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
   );
   const [mode, setMode] = useState("light");
-  console.log(mode);
 
   useEffect(() => {
     window
@@ -30,7 +29,7 @@ export default function CheckoutPaymentForm({ clientSecret, price }) {
     setMode(
       window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
-        : "light"
+        : "light",
     );
 
     return () => {
@@ -41,7 +40,7 @@ export default function CheckoutPaymentForm({ clientSecret, price }) {
   }, []);
 
   return (
-    <div className="flex-1 flex flex-col">
+    <div className="flex flex-1 flex-col">
       <h3 className="mt-10 mb-4 text-xl font-semibold">Payment</h3>
 
       <Elements
@@ -112,7 +111,7 @@ function StripeForm({ clientSecret, price }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex-1 flex flex-col gap-y-8">
+    <form onSubmit={handleSubmit} className="flex flex-1 flex-col gap-y-8">
       <div>
         <PaymentElement
           onReady={() => setPaymentElementReady(true)}
@@ -128,17 +127,17 @@ function StripeForm({ clientSecret, price }) {
           }}
         />
         {errorMessage && (
-          <p className="text-red-600 mt-4 text-center">
+          <p className="mt-4 text-center text-red-600">
             <span className="font-bold">ERROR:</span> {errorMessage}
           </p>
         )}
       </div>
 
       {paymentElementReady && (
-        <div className="mt-8 xl:mt-auto flex-between">
+        <div className="flex-between mt-8 xl:mt-auto">
           <Link
             href="/checkout/shipping"
-            className="button-secondary w-26 flex-center gap-1"
+            className="button-secondary flex-center w-26 gap-1"
             aria-disabled={isLoading}
           >
             <FiArrowLeft className="text-[18px]" />
@@ -148,7 +147,7 @@ function StripeForm({ clientSecret, price }) {
           <button
             type="submit"
             disabled={!stripe || !elements || isLoading}
-            className="button-primary w-50 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="button-primary w-50 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {isLoading
               ? "Processing..."

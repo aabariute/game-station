@@ -10,11 +10,11 @@ export default function ProductColorSwatches({
       {colors.map((color) => (
         <button
           key={color}
-          className="border-2 border-neutral-900 dark:border-neutral-200 w-[32px] h-[32px] rounded-full cursor-pointer hover:scale-105 transition duration-200"
+          className="h-[32px] w-[32px] cursor-pointer rounded-full border-2 border-neutral-900 transition duration-200 hover:scale-105 dark:border-neutral-200"
           style={{ backgroundColor: `${color}` }}
           onClick={() =>
             setDisplayedVariant(
-              variants.find((variant) => variant.color === color)
+              variants.find((variant) => variant.color === color),
             )
           }
         ></button>

@@ -34,27 +34,28 @@ export default async function OrderPage({ id }) {
 
   const orderItemsCount = order_items.reduce(
     (acc, cur) => acc + cur.quantity,
-    0
+    0,
   );
 
   return (
     <>
-      <div className="grid grid-cols-[auto_auto] md:grid-cols-[100px_auto_100px] mb-8 items-center">
-        <Link href={isAdmin ? "/admin/orders" : "/user/orders"}>
-          <button className="button-primary flex-between gap-1">
-            <FiArrowLeft className="text-[18px]" />
-            <span>Orders</span>
-          </button>
+      <div className="mb-8 grid grid-cols-[auto_auto] items-center md:grid-cols-[100px_auto_100px]">
+        <Link
+          href={isAdmin ? "/admin/orders" : "/user/orders"}
+          className="button-primary flex-between gap-1"
+        >
+          <FiArrowLeft className="text-[18px]" />
+          <span>Orders</span>
         </Link>
-        <h2 className="md:col-2 text-2xl font-bold uppercase text-right md:text-center">
+        <h2 className="text-right text-2xl font-bold uppercase md:col-2 md:text-center">
           Order #...{id.split("-").at(-1).toUpperCase()}
         </h2>
       </div>
 
       <article className="mb-10">
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid gap-6 md:grid-cols-3">
           <div className="card-md flex flex-col gap-2">
-            <h3 className="font-semibold uppercase text-lg">Order status</h3>
+            <h3 className="text-lg font-semibold uppercase">Order status</h3>
             {is_delivered ? (
               <span className="font-bold text-green-600">DELIVERED</span>
             ) : (
@@ -63,11 +64,11 @@ export default async function OrderPage({ id }) {
             <div className="w-full text-sm">
               {is_delivered ? (
                 <div>
-                  <div className="w-3/5 sm:w-2/5 md:w-full flex-between">
+                  <div className="flex-between w-3/5 sm:w-2/5 md:w-full">
                     <span>Delivery date:</span>
                     <span>{dateFormatter(delivered_at)}</span>
                   </div>
-                  <div className="w-3/5 sm:w-2/5 md:w-full flex-between">
+                  <div className="flex-between w-3/5 sm:w-2/5 md:w-full">
                     <span>Purchase date:</span>
                     <span>{dateFormatter(created_at)}</span>
                   </div>
@@ -80,7 +81,7 @@ export default async function OrderPage({ id }) {
           </div>
 
           <div className="card-md flex flex-col gap-2">
-            <h3 className="font-semibold uppercase text-lg">Payment method</h3>
+            <h3 className="text-lg font-semibold uppercase">Payment method</h3>
             <span className="text-neutral-500 dark:text-neutral-400">
               Credit Card
             </span>
@@ -88,7 +89,7 @@ export default async function OrderPage({ id }) {
           </div>
 
           <div className="card-md flex flex-col gap-2">
-            <h3 className="font-semibold uppercase text-lg">Delivery method</h3>
+            <h3 className="text-lg font-semibold uppercase">Delivery method</h3>
             <span className="text-neutral-500 dark:text-neutral-400">
               {capitalize(shipping_method)}
             </span>
@@ -106,7 +107,7 @@ export default async function OrderPage({ id }) {
       </article>
 
       <article className="card-lg flex flex-col">
-        <h3 className="font-semibold uppercase text-lg">Order details</h3>
+        <h3 className="text-lg font-semibold uppercase">Order details</h3>
         <span className="text-sm text-neutral-500 dark:text-neutral-400">
           {orderItemsCount === 1 ? "1 product" : `${orderItemsCount} products`}
         </span>
@@ -120,23 +121,23 @@ export default async function OrderPage({ id }) {
           </div>
         </Suspense>
 
-        <hr className="border-neutral-200 mt-4 mb-8" />
+        <hr className="mt-4 mb-8 border-neutral-200" />
         <ul className="flex flex-col items-end">
-          <li className="w-full md:w-1/2 mb-1 flex-between">
+          <li className="flex-between mb-1 w-full md:w-1/2">
             <span>Subtotal amount</span>
             <span>{priceFormatter(subtotal_price)}</span>
           </li>
           {discount_amount > 0 && (
-            <li className="w-full md:w-1/2 mb-1 flex-between">
+            <li className="flex-between mb-1 w-full md:w-1/2">
               <span>Discounts applied</span>
               <span>-{priceFormatter(discount_amount)}</span>
             </li>
           )}
-          <li className="w-full md:w-1/2 mb-3 flex-between">
+          <li className="flex-between mb-3 w-full md:w-1/2">
             <span>Delivery</span>
             <span>{priceFormatter(shipping_price)}</span>
           </li>
-          <li className="w-full md:w-1/2 flex-between text-lg font-semibold">
+          <li className="flex-between w-full text-lg font-semibold md:w-1/2">
             <span>Order amount</span>
             <span>{priceFormatter(total_price)}</span>
           </li>

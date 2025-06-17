@@ -12,7 +12,7 @@ export default function ReviewButton({ userId, productId }) {
     return (
       <div className="my-3 sm:my-0">
         Please{" "}
-        <Link className="button-tertiary inline mx-1" href="/login">
+        <Link className="button-tertiary mx-1 inline" href="/login">
           sign in
         </Link>{" "}
         to write a review
@@ -26,7 +26,7 @@ export default function ReviewButton({ userId, productId }) {
         onClick={() => setIsOpen(true)}
         className="button-secondary my-3 sm:my-0"
       >
-        <PiNotePencilLight className="text-[18px] mr-2" />
+        <PiNotePencilLight className="mr-2 text-[18px]" />
         Write a review
       </button>
 
