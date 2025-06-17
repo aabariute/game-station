@@ -1,5 +1,6 @@
 "use client";
 
+import { capitalize } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -47,7 +48,7 @@ export default function CheckoutSummary({ user, shippingMethod }) {
       {pathname.split("/").at(-1) === "payment" && (
         <div className="grid grid-cols-[100px_1fr_80px] items-center pt-3">
           <div className="text-neutral-500 dark:text-neutral-400">Shipping</div>
-          <div className="text-sm">{shippingMethod}</div>
+          <div className="text-sm">{capitalize(shippingMethod)}</div>
           <Link
             href="/checkout/shipping"
             className="button-tertiary pb-[0.075rem] justify-self-end text-sm"

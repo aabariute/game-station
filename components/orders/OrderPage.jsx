@@ -1,12 +1,12 @@
 import { auth } from "@/auth";
 import { getOrderById } from "@/lib/actions/order-actions";
-import { dateFormatter, priceFormatter } from "@/lib/utils";
+import { capitalize, dateFormatter, priceFormatter } from "@/lib/utils";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import React, { Suspense } from "react";
 import { FiArrowLeft } from "react-icons/fi";
-import Spinner from "../ui/Spinner";
 import MarkAsDeliveredButton from "../admin/MarkAsDeliveredButton";
+import Spinner from "../ui/Spinner";
 import OrderItem from "./OrderItem";
 
 export default async function OrderPage({ id }) {
@@ -90,7 +90,7 @@ export default async function OrderPage({ id }) {
           <div className="card-md flex flex-col gap-2">
             <h3 className="font-semibold uppercase text-lg">Delivery method</h3>
             <span className="text-neutral-500 dark:text-neutral-400">
-              {shipping_method[0].toUpperCase() + shipping_method.slice(1)}
+              {capitalize(shipping_method)}
             </span>
             <div className="flex flex-col text-sm">
               <span>{street_address}</span>

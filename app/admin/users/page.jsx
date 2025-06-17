@@ -3,6 +3,7 @@ import UserDeleteButton from "@/components/admin/UserDeleteButton";
 import Pagination from "@/components/Pagination";
 import { getAllUsers } from "@/lib/actions/user-actions";
 import { PAGE_SIZE } from "@/lib/constants";
+import { capitalize } from "@/lib/utils";
 import Link from "next/link";
 import { FaEye } from "react-icons/fa";
 
@@ -61,7 +62,7 @@ export default async function Page({ searchParams }) {
                 {user.email}
               </td>
               <td className="text-nowrap border-t border-gray-300 dark:border-gray-700 py-2 pr-3">
-                {user.role.charAt(0).toUpperCase() + user.role.slice(1)}
+                {capitalize(user.role)}
               </td>
               <td className="border-t border-gray-300 dark:border-gray-700 py-2 pr-4">
                 {user.role === "user" && (

@@ -11,7 +11,7 @@ import {
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiArrowLeft } from "react-icons/fi";
 import Spinner from "../ui/Spinner";
 
@@ -19,9 +19,29 @@ export default function CheckoutPaymentForm({ clientSecret, price }) {
   const stripePromise = loadStripe(
     process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
   );
+  const [mode, setMode] = useState("light");
+  console.log(mode);
+
+  useEffect(() => {
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (e) => setMode(e.matches ? "dark" : "light"));
+
+    setMode(
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light"
+    );
+
+    return () => {
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .removeEventListener("change", () => {});
+    };
+  }, []);
 
   return (
-    <div>
+    <div className="flex-1 flex flex-col">
       <h3 className="mt-10 mb-4 text-xl font-semibold">Payment</h3>
 
       <Elements
@@ -29,10 +49,10 @@ export default function CheckoutPaymentForm({ clientSecret, price }) {
         options={{
           clientSecret,
           appearance: {
-            theme: "stripe",
+            theme: mode === "dark" ? "night" : "stripe",
             variables: {
-              colorPrimary: "#372aac",
-              colorText: "#171717",
+              colorPrimary: mode === "dark" ? "#a3a3a3" : "#372aac",
+              colorText: mode === "dark" ? "#fff" : "#171717",
             },
           },
         }}
@@ -92,29 +112,30 @@ function StripeForm({ clientSecret, price }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <PaymentElement
-        onReady={() => setPaymentElementReady(true)}
-        options={{
-          style: {
-            base: {
-              fontSize: "16px",
-              color: "#424770",
-              "::placeholder": { color: "#aab7c4" },
+    <form onSubmit={handleSubmit} className="flex-1 flex flex-col gap-y-8">
+      <div>
+        <PaymentElement
+          onReady={() => setPaymentElementReady(true)}
+          options={{
+            style: {
+              base: {
+                fontSize: "16px",
+                color: "#424770",
+                "::placeholder": { color: "#aab7c4" },
+              },
+              invalid: { color: "#9e2146" },
             },
-            invalid: { color: "#9e2146" },
-          },
-        }}
-      />
-
-      {errorMessage && (
-        <p className="text-red-600 mt-4 text-center">
-          <span className="font-bold">ERROR:</span> {errorMessage}
-        </p>
-      )}
+          }}
+        />
+        {errorMessage && (
+          <p className="text-red-600 mt-4 text-center">
+            <span className="font-bold">ERROR:</span> {errorMessage}
+          </p>
+        )}
+      </div>
 
       {paymentElementReady && (
-        <div className="mt-8 flex-between">
+        <div className="mt-8 xl:mt-auto flex-between">
           <Link
             href="/checkout/shipping"
             className="button-secondary w-26 flex-center gap-1"

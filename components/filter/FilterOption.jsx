@@ -1,3 +1,4 @@
+import { capitalize } from "@/lib/utils";
 import {
   Disclosure,
   DisclosureButton,
@@ -13,7 +14,7 @@ export default function FilterOption({ label, items, handleFilter }) {
   return (
     <Disclosure as="div">
       <DisclosureButton className="group flex-between pb-4 pt-6 w-full">
-        {label.at(0).toUpperCase() + label.slice(1)}
+        {capitalize(label)}
         <IoChevronDownOutline className="w-5 group-data-open:rotate-180" />
       </DisclosureButton>
 

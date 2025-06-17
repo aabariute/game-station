@@ -1,6 +1,6 @@
 import { getUserOrders } from "@/lib/actions/order-actions";
 import { getUserById } from "@/lib/actions/user-actions";
-import { dateFormatter, priceFormatter } from "@/lib/utils";
+import { capitalize, dateFormatter, priceFormatter } from "@/lib/utils";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaEye } from "react-icons/fa";
@@ -41,7 +41,7 @@ export default async function Page({ params }) {
             </div>
             <div className="flex-between">
               <span>Role:</span>
-              <span>{role.charAt(0).toUpperCase() + role.slice(1)}</span>
+              <span>{capitalize(role)}</span>
             </div>
           </div>
         </div>

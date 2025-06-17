@@ -1,5 +1,6 @@
 "use client";
 
+import { capitalize } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -13,7 +14,7 @@ export default function UserNavbar() {
     <div className="w-full bg-neutral-800 dark:bg-black/20 text-white pt-12 flex-center">
       <div className="w-full max-w-4xl px-4">
         <h2 className="text-4xl text-center font-medium mb-14">
-          {pageName.charAt(0).toUpperCase() + pageName.slice(1)}
+          {capitalize(pageName)}
         </h2>
 
         <nav className="flex gap-4 text-lg">

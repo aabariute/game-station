@@ -1,6 +1,6 @@
 "use client";
 
-import { priceFormatter } from "@/lib/utils";
+import { capitalize, priceFormatter } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -104,10 +104,7 @@ export default function ProductsTable({ products }) {
                           <td className="py-2 min-w-[80px] max-w-[130px]">
                             {variant.variant_id}
                           </td>
-                          <td className="py-2">
-                            {variant.color.charAt(0).toUpperCase() +
-                              variant.color.slice(1)}
-                          </td>
+                          <td className="py-2">{capitalize(variant.color)}</td>
                           <td className="py-2">
                             <Image
                               src={variant.images[0]}
