@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-avocado-100: oklch(0.99 0 0);
-  --color-dark-bg: oklch(0.1957 0 0);
   --shadow-xs: 0 0 2px rgba(0, 0, 0, 0.1);
   --shadow-sm: 0 0 8px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 2px 12px rgba(0, 0, 0, 0.12);
   --shadow-lg: 0 6px 20px rgba(0, 0, 0, 0.14);
   --shadow-xl: 0 10px 32px rgba(0, 0, 0, 0.16);
+
+  --color-dark-bg: oklch(0.1957 0 0);
   --color-indigo-700: oklch(0.5093 0.2092 276.966);
   --color-indigo-800: oklch(0.3282 0.1302 278.697);
 }
@@ -177,11 +177,11 @@
   input[type="radio"] {
     appearance: none;
     cursor: pointer;
+    box-sizing: content-box;
     display: grid;
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
     border: 1px solid var(--color-neutral-500);
-
     place-items: center;
   }
 
@@ -190,7 +190,7 @@
   }
 
   input[type="radio"] {
-    border-radius: 9999px;
+    border-radius: 50%;
   }
 
   input[type="checkbox"]:checked,
@@ -205,24 +205,19 @@
   input[type="checkbox"]:checked::before,
   input[type="radio"]:checked::before {
     content: "";
-    width: 8px;
-    height: 8px;
-    background-color: black;
-
-    @variant dark {
-      background-color: white;
-    }
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    background-color: var(--color-pink-600);
   }
 
   input[type="checkbox"]:checked::before {
-    border-radius: 2px;
+    border-radius: 1px;
   }
 
   input[type="radio"]:checked::before {
-    border-radius: 9999px;
+    border-radius: 50%;
   }
 
-  /* ICONS */
   .hover-fade-text {
     color: var(--color-neutral-900);
     cursor: pointer;

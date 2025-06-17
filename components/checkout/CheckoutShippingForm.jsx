@@ -38,11 +38,11 @@ export default function CheckoutShippingForm({ selectedMethod, totalPrice }) {
           <div className="flex-1 flex items-center gap-3">
             <input
               type="radio"
+              id="standard"
               name="shipping_method"
               defaultChecked={
                 selectedMethod === "standard" || selectedMethod === null
               }
-              id="standard"
               value="standard"
             />
             <label htmlFor="standard" className="w-full py-3">
@@ -59,9 +59,9 @@ export default function CheckoutShippingForm({ selectedMethod, totalPrice }) {
           <div className="flex-1 flex items-center gap-3">
             <input
               type="radio"
+              id="express"
               name="shipping_method"
               defaultChecked={selectedMethod === "express"}
-              id="express"
               value="express"
             />
             <label htmlFor="express" className="w-full py-3">
