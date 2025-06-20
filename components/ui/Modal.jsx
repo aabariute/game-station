@@ -10,7 +10,7 @@ export default function Modal({ isOpen, setIsOpen, children }) {
       <div className="flex-center fixed inset-0 z-40 bg-black/40">
         <DialogPanel
           transition
-          className="w-full max-w-xl rounded-lg bg-white p-8 shadow-lg duration-300 ease-out data-closed:transform-[scale(95%)] data-closed:opacity-0 dark:bg-neutral-800"
+          className="bg-primary-100 dark:bg-primary-200 w-full max-w-xl rounded-lg p-8 shadow-lg duration-300 ease-out data-closed:transform-[scale(95%)] data-closed:opacity-0"
         >
           {children}
         </DialogPanel>

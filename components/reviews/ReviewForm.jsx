@@ -51,11 +51,11 @@ export default function ReviewForm({ productId, isOpen, setIsOpen }) {
         </DialogTitle>
         <IoClose
           onClick={() => setIsOpen(false)}
-          className="cursor-pointer text-2xl hover:text-pink-500"
+          className="hover:text-accent-magenta cursor-pointer text-2xl"
         />
       </div>
 
-      <Description as="p" className="mb-6 text-sm text-neutral-500">
+      <Description as="p" className="text-primary-500 mb-6 text-sm">
         Share your thoughts with other customers
       </Description>
 

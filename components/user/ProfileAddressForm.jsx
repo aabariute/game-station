@@ -68,7 +68,7 @@ export default function ProfileAddressForm({ address, phone_number }) {
           </DialogTitle>
           <IoClose
             onClick={() => setIsOpen(false)}
-            className="cursor-pointer text-2xl hover:text-pink-500"
+            className="hover:text-accent-magenta cursor-pointer text-2xl"
           />
         </div>
 

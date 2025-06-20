@@ -39,7 +39,7 @@ function Star({ full, onRate, onHoverIn, onHoverOut }) {
       onMouseLeave={onHoverOut}
     >
       {full ? (
-        <IoStar className="cursor-pointer text-[17px] text-black dark:text-neutral-200" />
+        <IoStar className="text-primary-900 cursor-pointer text-[17px]" />
       ) : (
         <IoStarOutline className="cursor-pointer text-[17px]" />
       )}

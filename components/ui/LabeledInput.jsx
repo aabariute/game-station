@@ -6,7 +6,7 @@ export default function LabeledInput({
 }) {
   const inputBorderClass = error
     ? "border-2 border-red-500 focus:border-red-500"
-    : "border border-gray-300 dark:border-gray-700 focus:border-2 focus:border-indigo-400";
+    : "border border-primary-300 focus:border-2 focus:border-indigo-400";
 
   return (
     <div className="relative w-full">

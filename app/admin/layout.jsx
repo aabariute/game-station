@@ -25,7 +25,7 @@ export default async function Layout({ children }) {
 
   return (
     <>
-      <header className="flex-between sticky inset-x-0 top-0 z-10 bg-white/90 px-3 py-2 shadow-lg backdrop-blur-md md:px-6 dark:bg-neutral-900/90">
+      <header className="flex-between sticky inset-x-0 top-0 z-10 bg-white/90 px-3 py-2 shadow-lg backdrop-blur-md md:px-6 dark:bg-[#0f0f12]/90">
         <div className="flex-center gap-2">
           <div className="lg:hidden">
             <HamburgerMenu links={links} positionTop="58px" />

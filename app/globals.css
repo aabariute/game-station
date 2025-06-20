@@ -7,290 +7,203 @@
   --shadow-lg: 0 6px 20px rgba(0, 0, 0, 0.14);
   --shadow-xl: 0 10px 32px rgba(0, 0, 0, 0.16);
 
-  --color-dark-bg: oklch(0.1957 0 0);
+  --color-background: hsl(var(--background));
+
+  --color-primary-900: hsl(var(--primary-900));
+  --color-primary-800: hsl(var(--primary-800));
+  --color-primary-700: hsl(var(--primary-700));
+  --color-primary-600: hsl(var(--primary-600));
+  --color-primary-500: hsl(var(--primary-500));
+  --color-primary-400: hsl(var(--primary-400));
+  --color-primary-300: hsl(var(--primary-300));
+  --color-primary-200: hsl(var(--primary-200));
+  --color-primary-100: hsl(var(--primary-100));
+
+  --color-accent-indigo: hsl(var(--accent-indigo));
+  --color-accent-indigo-foreground: hsl(var(--accent-indigo-foreground));
+
+  --color-accent-magenta: hsl(var(--accent-magenta));
+  --color-accent-magenta-foreground: hsl(var(--accent-magenta-foreground));
+
+  --color-danger: hsl(var(--danger));
+  --color-danger-foreground: hsl(var(--danger-foreground));
+
   --color-indigo-700: oklch(0.5093 0.2092 276.966);
   --color-indigo-800: oklch(0.3282 0.1302 278.697);
 }
 
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@layer base {
+  :root {
+    --background: 0 0% 100%;
 
-.flex-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    --primary-900: 240.02 6% 10%;
+    --primary-800: 223.81 0% 15%;
+    --primary-700: 223.81 0% 25%;
+    --primary-600: 223.81 0% 32%;
+    --primary-500: 223.81 0% 45%;
+    --primary-400: 223.81 0% 63%;
+    --primary-300: 223.81 0% 83%;
+    --primary-200: 223.81 0% 90%;
+    --primary-100: 223.81 0% 96%;
 
-@layer components {
-  .card-lg {
-    padding: 1.25rem;
-    border: 1px solid var(--color-neutral-300);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+    --accent-indigo: 241.36 65% 58%;
+    --accent-indigo-foreground: 243.73 56% 40%;
+    --accent-magenta: 332.1 81% 51%;
+    --accent-magenta-foreground: 331.88 77% 41%;
 
-    @variant dark {
-      border: 1px solid var(--color-neutral-700);
-      background-color: var(--color-neutral-800);
-    }
+    --danger: 0.01 74% 51%;
+    --danger-foreground: 0 71% 46%;
   }
 
-  .card-md {
-    padding: 1rem;
-    border: 1px solid var(--color-neutral-300);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-sm);
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: 240.02 6% 10%;
 
-    @variant dark {
-      border: 1px solid var(--color-neutral-700);
-      background-color: var(--color-neutral-800);
-    }
-  }
+      --primary-900: 223.81 0% 96%;
+      --primary-800: 223.81 0% 90%;
+      --primary-700: 223.81 0% 83%;
+      --primary-600: 223.81 0% 63%;
+      --primary-500: 223.81 0% 45%;
+      --primary-400: 223.81 0% 32%;
+      --primary-300: 223.81 0% 25%;
+      --primary-200: 223.81 0% 15%;
+      --primary-100: 240.02 6% 10%;
 
-  /* Buttons */
-  .button-primary,
-  .button-secondary,
-  .button-tertiary,
-  .button-danger {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.385rem 1rem;
-    text-wrap: nowrap;
-    font-weight: 500;
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    transition: all 100ms ease-in-out;
-  }
+      --accent-indigo: 243.78 55% 45%;
+      --accent-indigo-foreground: 244.24 56% 35%;
+      --accent-magenta: 332.01 77% 46%;
+      --accent-magenta-foreground: 332.14 77% 36%;
 
-  .button-primary {
-    color: var(--color-neutral-50);
-    background-color: var(--color-indigo-700);
-    border: 2px solid var(--color-indigo-700);
-
-    @variant dark {
-      background-color: var(--color-indigo-800);
-    }
-  }
-
-  .button-primary:hover {
-    background-color: var(--color-indigo-800);
-  }
-
-  .button-secondary {
-    color: var(--color-indigo-700);
-    border: 2px solid var(--color-indigo-700);
-
-    @variant dark {
-      color: var(--color-neutral-100);
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-  }
-
-  .button-secondary:hover {
-    background-color: var(--color-indigo-700);
-  }
-
-  .button-tertiary {
-    color: var(--color-indigo-700);
-    padding: 0 0 0.15rem;
-    border-bottom: 1px solid var(--color-indigo-700);
-    border-radius: 0;
-    line-height: 1;
-  }
-
-  .button-danger {
-    color: var(--color-neutral-100);
-    background-color: var(--color-red-600);
-    border: 2px solid var(--color-red-700);
-
-    @variant dark {
-      background-color: var(--color-red-700);
-      border: 2px solid var(--color-red-800);
-    }
-  }
-
-  .button-danger:hover {
-    background-color: var(--color-red-700);
-
-    @variant dark {
-      background-color: var(--color-red-600);
-    }
-  }
-
-  /* Inputs */
-  .select,
-  .textarea,
-  .input {
-    height: 2.5rem;
-    padding: 0.5rem 0.75rem;
-    font-size: 0.875rem;
-    width: 100%;
-    outline: none;
-    border: 1px solid var(--color-gray-300);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-sm);
-
-    @variant dark {
-      border: 1px solid var(--color-gray-700);
-    }
-  }
-
-  .select option {
-    @variant dark {
-      background-color: var(--color-neutral-800);
-    }
-  }
-
-  .textarea {
-    height: 4.5rem;
-    resize: none;
-  }
-
-  .select:focus,
-  .textarea:focus,
-  .input:focus {
-    border: 2px solid var(--color-indigo-400);
-    padding: calc(0.5rem - 1px) calc(0.75rem - 1px);
-
-    @variant dark {
-      border: 2px solid var(--color-indigo-400);
-    }
-  }
-
-  .textarea:disabled,
-  .input:disabled {
-    color: var(--color-gray-500);
-    background-color: var(--color-neutral-50);
-    border: 1px solid var(--color-gray-200);
-    box-shadow: none;
-
-    @variant dark {
-      border: 1px solid var(--color-gray-700);
-      background-color: var(--color-neutral-800);
-    }
-  }
-
-  input[type="checkbox"],
-  input[type="radio"] {
-    appearance: none;
-    cursor: pointer;
-    box-sizing: content-box;
-    display: grid;
-    width: 15px;
-    height: 15px;
-    border: 1px solid var(--color-neutral-500);
-    place-items: center;
-  }
-
-  input[type="checkbox"] {
-    border-radius: var(--radius-sm);
-  }
-
-  input[type="radio"] {
-    border-radius: 50%;
-  }
-
-  input[type="checkbox"]:checked,
-  input[type="radio"]:checked {
-    border-color: black;
-
-    @variant dark {
-      border-color: white;
-    }
-  }
-
-  input[type="checkbox"]:checked::before,
-  input[type="radio"]:checked::before {
-    content: "";
-    width: calc(100% - 6px);
-    height: calc(100% - 6px);
-    background-color: var(--color-pink-600);
-  }
-
-  input[type="checkbox"]:checked::before {
-    border-radius: 1px;
-  }
-
-  input[type="radio"]:checked::before {
-    border-radius: 50%;
-  }
-
-  .hover-fade-text {
-    color: var(--color-neutral-900);
-    cursor: pointer;
-    transition: color 150ms ease-in-out;
-
-    @variant dark {
-      color: var(--color-neutral-100);
-    }
-  }
-
-  .hover-fade-text:hover {
-    color: var(--color-neutral-500);
-
-    @variant dark {
-      color: var(--color-neutral-400);
+      --danger: 0 71% 46%;
+      --danger-foreground: 0 71% 41%;
     }
   }
 }
 
-@layer utilities {
-  .swiper-transition {
-    .swiper-wrapper {
-      -webkit-transition-timing-function: linear !important;
-      -o-transition-timing-function: linear !important;
-      transition-timing-function: linear !important;
-    }
+@layer base {
+  body {
+    @apply bg-background;
   }
+}
 
-  .spinner {
-    margin: auto;
-    width: 80px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 8px solid #666666;
-    border-right-color: #282727;
-    animation: rotate 1s infinite linear;
-  }
+@utility hover-fade-text {
+  @apply text-primary-900 hover:text-primary-600 cursor-pointer transition-colors duration-150 ease-in-out;
+}
 
-  .spinner-mini {
-    margin: 0;
-    width: 20px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 2px solid #666666;
-    border-right-color: transparent;
-    animation: rotate 1s infinite linear;
-  }
+/* Spinners */
+@utility spinner {
+  @apply border-primary-400 border-r-primary-800 m-auto aspect-square w-20 animate-spin rounded-full border-8;
+}
+@utility spinner-mini {
+  @apply border-primary-400 m-auto aspect-square w-[20px] animate-spin rounded-full border-2 border-r-transparent;
+}
 
-  .highlight {
-    position: relative;
-    z-index: 5;
-    color: var(--color-pink-600);
-    font-weight: 600;
-    opacity: 0.9;
-  }
+/* Positioning */
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+@utility flex-between {
+  @apply flex items-center justify-between;
+}
 
-  .highlight::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    opacity: 0.8;
-    transform: scale(1.07, 1.05) skewX(-15deg);
-    background-color: var(--color-indigo-800);
-  }
+/* Cards */
+@utility card-lg {
+  @apply border-primary-300 rounded-lg border p-5 shadow-md dark:bg-neutral-800;
+}
+@utility card-md {
+  @apply border-primary-300 rounded-md border p-4 shadow-sm dark:bg-neutral-800;
+}
 
-  @keyframes rotate {
-    to {
-      transform: rotate(1turn);
-    }
+/* Buttons */
+@utility button-base {
+  @apply flex-center cursor-pointer rounded-md px-4 py-[0.385rem] font-medium whitespace-nowrap transition-all duration-100 ease-in-out;
+}
+@utility button-primary {
+  @apply button-base border-accent-indigo bg-accent-indigo hover:bg-accent-indigo-foreground border-2 text-neutral-50;
+}
+@utility button-secondary {
+  @apply button-base border-accent-indigo text-accent-indigo hover:bg-accent-indigo/10 hover:dark:bg-accent-indigo/20 border-2 dark:text-neutral-100;
+}
+@utility button-tertiary {
+  @apply border-accent-indigo text-accent-indigo rounded-none border-b pb-[0.15rem] leading-none;
+}
+@utility button-danger {
+  @apply button-base border-danger bg-danger hover:bg-danger-foreground border-2 text-neutral-100;
+}
+
+/* Inputs */
+@utility form-control {
+  @apply h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm outline-none focus:border-2 focus:border-indigo-400 focus:px-[calc(0.75rem-1px)] focus:py-[calc(0.5rem-1px)] dark:border-gray-700 dark:bg-transparent dark:focus:border-indigo-400;
+}
+@utility form-control-disabled {
+  @apply bg-primary-200 text-primary-700 dark:bg-primary-300 dark:text-primary-700 shadow-none;
+}
+@utility select {
+  @apply form-control;
+}
+@utility input {
+  @apply form-control disabled:form-control-disabled;
+}
+@utility textarea {
+  @apply form-control disabled:form-control-disabled h-[4.5rem] resize-none;
+}
+@media (prefers-color-scheme: dark) {
+  select option {
+    background-color: var(--color-neutral-800);
   }
+}
+input[type="checkbox"],
+input[type="radio"] {
+  @apply border-primary-500 box-content grid h-[15px] w-[15px] cursor-pointer appearance-none place-items-center border;
+}
+input[type="checkbox"] {
+  @apply rounded-sm;
+}
+input[type="radio"] {
+  @apply rounded-full;
+}
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  @apply border-black dark:border-white;
+}
+input[type="checkbox"]:checked::before,
+input[type="radio"]:checked::before {
+  content: "";
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  background-color: var(--color-accent-magenta);
+  display: block;
+}
+input[type="checkbox"]:checked::before {
+  border-radius: 1px;
+}
+input[type="radio"]:checked::before {
+  border-radius: 50%;
+}
+
+/* React Swiper */
+.swiper-transition {
+  .swiper-wrapper {
+    -webkit-transition-timing-function: linear !important;
+    -o-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+  }
+}
+
+/* Hero */
+.highlight {
+  @apply text-accent-magenta relative z-5 font-semibold opacity-90;
+}
+.highlight::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.8;
+  transform: scale(1.07, 1.05) skewX(-15deg);
+  background-color: hsl(var(--accent-indigo-foreground));
 }

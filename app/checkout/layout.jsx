@@ -14,7 +14,7 @@ export default async function Layout({ children }) {
 
   return (
     <>
-      <header className="sticky inset-x-0 top-0 z-50 flex h-[58px] items-center bg-white/90 px-6 shadow-md dark:bg-neutral-900/90">
+      <header className="sticky inset-x-0 top-0 z-50 flex h-[58px] items-center bg-white/90 px-6 shadow-md dark:bg-[#0f0f12]/90">
         <Logo />
       </header>
 

@@ -23,9 +23,7 @@ export default async function page({ searchParams }) {
     <main className="flex-center flex-1 flex-col gap-8">
       <div className="text-center">
         <h2 className="my-1 text-2xl font-bold">Thanks for your purchase</h2>
-        <p className="text-neutral-600 dark:text-neutral-400">
-          We are processing your order.
-        </p>
+        <p className="text-primary-600">We are processing your order.</p>
       </div>
 
       <button className="button-primary">

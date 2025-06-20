@@ -10,10 +10,7 @@ export default function SortBy({ options, handleSort }) {
   const searchParams = useSearchParams();
 
   return (
-    <Disclosure
-      as="div"
-      className="border-b border-b-neutral-200 dark:border-b-neutral-800"
-    >
+    <Disclosure as="div" className="border-b-primary-200 border-b">
       <DisclosureButton className="group flex-between w-full pt-6 pb-4">
         Sort By
         <IoChevronDownOutline className="w-5 group-data-open:rotate-180" />

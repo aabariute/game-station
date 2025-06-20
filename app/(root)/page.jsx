@@ -45,7 +45,7 @@ export default async function Page() {
       <section className="mb-16">
         <h3 className="mb-8 ml-8 text-xl md:ml-14 md:text-2xl lg:ml-20 lg:text-3xl">
           <span className="font-semibold">The latest. </span>
-          <span className="text-neutral-600 dark:text-neutral-400">
+          <span className="text-primary-600">
             Take a look at what&apos;s new.
           </span>
         </h3>

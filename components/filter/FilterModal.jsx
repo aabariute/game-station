@@ -53,7 +53,7 @@ export default function FilterModal({ filterOptions }) {
   return (
     <div>
       <button
-        className="cursor-pointer border-b border-neutral-900 text-xl dark:border-neutral-100"
+        className="border-primary-900 cursor-pointer border-b text-xl"
         onClick={() => setIsOpen(true)}
       >
         Filter & Sort
@@ -67,17 +67,17 @@ export default function FilterModal({ filterOptions }) {
         <div className="flex-center fixed inset-0 w-screen bg-black/40">
           <DialogPanel
             transition
-            className="fixed top-0 bottom-0 left-0 flex h-full w-full flex-col bg-white p-6 duration-300 data-closed:-translate-x-full md:w-[530px] md:border-r md:border-neutral-400 dark:bg-black md:dark:border-neutral-800"
+            className="md:border-primary-200 fixed top-0 bottom-0 left-0 flex h-full w-full flex-col bg-white p-6 duration-300 data-closed:-translate-x-full md:w-[530px] md:border-r dark:bg-black"
           >
-            <div className="flex-between border-b-2 border-neutral-600 pb-4">
+            <div className="flex-between border-primary-300 border-b-2 pb-4">
               <h3 className="text-2xl font-semibold">Filter & Sort</h3>
               <IoClose
                 onClick={() => setIsOpen(false)}
-                className="cursor-pointer text-3xl hover:text-pink-500"
+                className="hover:text-accent-magenta cursor-pointer text-3xl"
               />
             </div>
 
-            <div className="mt-2 mb-6 flex flex-col divide-y divide-neutral-200 overflow-y-auto px-1 dark:divide-neutral-700">
+            <div className="divide-primary-200 mt-2 mb-6 flex flex-col divide-y overflow-y-auto px-1">
               <SortBy options={sortOptions} handleSort={handleSort} />
               <FilterOption
                 label="category"

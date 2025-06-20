@@ -35,7 +35,7 @@ export default function OrderList({ order }) {
           </span>
         </div>
         <div className="flex flex-col items-end gap-1">
-          <span className="text-sm text-neutral-500 dark:text-neutral-400">
+          <span className="text-primary-600 text-sm">
             {orderItemsCount === 1
               ? "1 product"
               : `${orderItemsCount} products`}
@@ -44,10 +44,10 @@ export default function OrderList({ order }) {
         </div>
       </div>
 
-      <hr className="border-neutral-200 dark:border-neutral-700" />
+      <hr className="border-primary-300" />
 
       <div className="flex-between mt-1 gap-4">
-        <div className="w-full overflow-x-auto rounded-sm p-2 dark:bg-neutral-700">
+        <div className="dark:bg-primary-300 w-full overflow-x-auto rounded-sm p-2">
           <div className="flex gap-4">
             {order_items.map((item, i) => (
               <div

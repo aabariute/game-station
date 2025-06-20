@@ -18,7 +18,7 @@ export default async function Header() {
 
   return (
     <header className="sticky inset-x-0 top-0 z-10 flex flex-col">
-      <div className="grid grid-cols-[auto_auto] items-center justify-between gap-y-3 bg-white/90 px-3 py-2 shadow-lg backdrop-blur-md md:px-6 lg:flex lg:gap-x-3 dark:bg-neutral-900/90">
+      <div className="grid grid-cols-[auto_auto] items-center justify-between gap-y-3 bg-white/90 px-3 py-2 shadow-lg backdrop-blur-md md:px-6 lg:flex lg:gap-x-3 dark:bg-[#0f0f12]/90">
         <div className="flex items-center gap-2">
           <div className="lg:hidden">
             <HamburgerMenu links={links} positionTop="107.5px" />

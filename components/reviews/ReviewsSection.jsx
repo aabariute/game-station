@@ -16,11 +16,11 @@ export default async function ReviewsSection({ productId }) {
           <h3 className="text-2xl font-semibold">Customer Reviews</h3>
           <ReviewButton userId={userId} productId={productId} />
         </div>
-        <hr className="mb-6 border-neutral-300 dark:border-neutral-600" />
+        <hr className="border-primary-300 mb-6" />
 
         {!reviews ||
           (reviews.length === 0 && (
-            <p className="mb-6 ml-1 text-sm text-neutral-500 italic">
+            <p className="text-primary-500 mb-6 ml-1 text-sm italic">
               This product has no reviews.
             </p>
           ))}

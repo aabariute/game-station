@@ -1,3 +1,4 @@
+import ActionIcon from "@/components/admin/ActionIcon";
 import FilterRoles from "@/components/admin/FilterRoles";
 import UserDeleteButton from "@/components/admin/UserDeleteButton";
 import Pagination from "@/components/Pagination";
@@ -33,7 +34,7 @@ export default async function Page({ searchParams }) {
         <FilterRoles roles={roles} />
       </div>
 
-      <table className="w-full border-separate rounded-lg border border-gray-300 text-sm dark:border-gray-700 dark:bg-neutral-800">
+      <table className="dark:bg-primary-200 border-primary-300 w-full border-separate rounded-lg border text-sm">
         <thead>
           <tr>
             <th className="py-3 pl-4 text-left">ID</th>
@@ -47,32 +48,29 @@ export default async function Page({ searchParams }) {
         <tbody>
           {users.map((user) => (
             <tr key={user.id}>
-              <td className="min-w-[180px] border-t border-gray-300 py-2 pr-3 pl-4 dark:border-gray-700">
+              <td className="border-primary-300 min-w-[180px] border-t py-2 pr-3 pl-4">
                 <Link
                   href={`/admin/users/${user.id}`}
-                  className="hover:text-neutral-500"
+                  className="hover:text-primary-700"
                 >
                   {user.id}
                 </Link>
               </td>
-              <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
+              <td className="border-primary-300 border-t py-2 pr-3 text-nowrap">
                 {user.name}
               </td>
-              <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
+              <td className="border-primary-300 border-t py-2 pr-3 text-nowrap">
                 {user.email}
               </td>
-              <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
+              <td className="border-primary-300 border-t py-2 pr-3 text-nowrap">
                 {capitalize(user.role)}
               </td>
-              <td className="border-t border-gray-300 py-2 pr-4 dark:border-gray-700">
+              <td className="border-primary-300 border-t py-2 pr-4">
                 {user.role === "user" && (
                   <div className="flex items-center justify-center gap-x-2">
-                    <Link
-                      href={`/admin/users/${user.id}`}
-                      className="cursor-pointer rounded-md border border-neutral-300 p-2 hover:bg-neutral-100 dark:hover:bg-neutral-700"
-                    >
+                    <ActionIcon href={`/admin/users/${user.id}`}>
                       <FaEye className="text-[16px]" />
-                    </Link>
+                    </ActionIcon>
                     <UserDeleteButton userId={user.id} userName={user.name} />
                   </div>
                 )}

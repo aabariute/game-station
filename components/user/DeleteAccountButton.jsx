@@ -25,10 +25,7 @@ export default function DeleteAccountButton() {
         <DialogTitle as="h3" className="text-xl font-semibold">
           Are you sure?
         </DialogTitle>
-        <Description
-          as="p"
-          className="mt-2 mb-14 text-sm text-neutral-700 dark:text-neutral-300"
-        >
+        <Description as="p" className="text-primary-600 mt-2 mb-14 text-sm">
           This will permanently delete your account and all associated data.
           This action cannot be undone.
         </Description>

@@ -61,7 +61,7 @@ export default function ProfileContactsForm() {
           </DialogTitle>
           <IoClose
             onClick={() => setIsOpen(false)}
-            className="cursor-pointer text-2xl hover:text-pink-500"
+            className="hover:text-accent-magenta cursor-pointer text-2xl"
           />
         </div>
 
@@ -117,7 +117,7 @@ export default function ProfileContactsForm() {
               label="Email"
               disabled
             />
-            <span className="col-span-2 text-xs text-neutral-500">
+            <span className="text-primary-500 col-span-2 text-xs">
               Email used for login can not be changed
             </span>
           </div>

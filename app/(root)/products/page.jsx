@@ -67,7 +67,7 @@ export default async function Products({ searchParams }) {
       {searchQuery && products.length > 0 && (
         <div className="flex-center mb-4 gap-2">
           <Link href="/products">
-            <AiFillCloseSquare className="text-2xl text-indigo-700 duration-150 hover:text-indigo-800" />
+            <AiFillCloseSquare className="text-accent-indigo hover:text-accent-indigo-foreground text-2xl duration-150" />
           </Link>
           <p>
             {products.length} {products.length === 1 ? "product" : "products"}{" "}
@@ -92,7 +92,7 @@ export default async function Products({ searchParams }) {
       ) : (
         <section className="flex items-center py-10">
           <div className="mx-auto max-w-xl text-center">
-            <span className="mb-2 inline-block rounded-full bg-indigo-200 p-4 dark:bg-indigo-700">
+            <span className="dark:bg-accent-indigo mb-2 inline-block rounded-full bg-indigo-200 p-4">
               <PiMagnifyingGlassLight className="h-8 w-8" />
             </span>
             <p className="mb-4 text-lg font-semibold">

@@ -26,7 +26,7 @@ export default function ChangeQuantityButton({
   return (
     <div className="grid grid-cols-3 items-center rounded-full border border-pink-600/30 shadow-xs dark:border-pink-400/50">
       <button
-        className={`flex-center aspect-square w-[24px] cursor-pointer rounded-full text-base transition-colors duration-300 hover:bg-pink-600/10 dark:hover:bg-pink-600/40 ${isPending ? "cursor-not-allowed bg-neutral-200 dark:bg-neutral-700" : ""}`}
+        className={`flex-center aspect-square w-[24px] cursor-pointer rounded-full text-base transition-colors duration-300 hover:bg-pink-600/10 dark:hover:bg-pink-600/40 ${isPending ? "bg-primary-200 cursor-not-allowed" : ""}`}
         onClick={handleDecreaseQuantity}
         disabled={isPending}
       >
@@ -38,7 +38,7 @@ export default function ChangeQuantityButton({
       </span>
 
       <button
-        className={`flex-center aspect-square w-[24px] cursor-pointer rounded-full text-base transition-colors duration-300 hover:bg-pink-600/10 dark:hover:bg-pink-600/40 ${isPending ? "cursor-not-allowed bg-neutral-200 dark:bg-neutral-700" : ""}`}
+        className={`flex-center aspect-square w-[24px] cursor-pointer rounded-full text-base transition-colors duration-300 hover:bg-pink-600/10 dark:hover:bg-pink-600/40 ${isPending ? "bg-primary-200 cursor-not-allowed" : ""}`}
         onClick={handleIncreaseQuantity}
         disabled={isPending}
       >

@@ -18,11 +18,11 @@ export default async function Page({ searchParams }) {
 
   return (
     <main className="flex-center mx-4 flex-1 flex-col">
-      <section className="w-full max-w-xl rounded-xl bg-neutral-100 px-6 py-10 sm:px-14 dark:bg-neutral-800">
+      <section className="bg-primary-200 w-full max-w-xl rounded-xl px-6 py-10 sm:px-14">
         <h2 className="mb-2 text-center text-3xl font-bold uppercase">
           Create Account
         </h2>
-        <p className="mb-8 text-center text-sm text-neutral-600 dark:text-neutral-400">
+        <p className="text-primary-600 mb-8 text-center text-sm">
           Enter your information below to sign up
         </p>
         <CredentialsSignUpForm />

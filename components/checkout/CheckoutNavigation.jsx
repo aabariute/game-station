@@ -19,9 +19,7 @@ export default function CheckoutNavigation({ activePage }) {
         )}
         <IoIosArrowForward
           className={
-            activePage === 1
-              ? "mx-2 inline text-neutral-600 dark:text-neutral-400"
-              : "mx-2 inline"
+            activePage === 1 ? "text-primary-500 mx-2 inline" : "mx-2 inline"
           }
         />
       </li>
@@ -29,9 +27,7 @@ export default function CheckoutNavigation({ activePage }) {
         {activePage === 2 ? (
           <span className="font-bold">Shipping</span>
         ) : activePage < 2 ? (
-          <span className="text-neutral-600 dark:text-neutral-400">
-            Shipping
-          </span>
+          <span className="text-primary-500">Shipping</span>
         ) : (
           <Link
             href="/checkout/shipping"
@@ -40,15 +36,13 @@ export default function CheckoutNavigation({ activePage }) {
             Shipping
           </Link>
         )}
-        <IoIosArrowForward className="mx-2 inline text-neutral-600 dark:text-neutral-400" />
+        <IoIosArrowForward className="text-primary-500 mx-2 inline" />
       </li>
       <li>
         {activePage === 3 ? (
           <span className="font-bold">Payment</span>
         ) : (
-          <span className="text-neutral-600 dark:text-neutral-400">
-            Payment
-          </span>
+          <span className="text-primary-500">Payment</span>
         )}
       </li>
     </ol>

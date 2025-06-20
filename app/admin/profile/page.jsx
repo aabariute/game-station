@@ -17,16 +17,12 @@ export default async function Page() {
       <div className="mx-auto max-w-4xl">
         <article className="card-lg mb-8 flex flex-col gap-6">
           <div className="flex flex-col gap-1">
-            <span className="font-bold text-neutral-700 dark:text-neutral-400">
-              Name
-            </span>
+            <span className="text-primary-600 font-bold">Name</span>
             <span className="text-sm">{session.user.name}</span>
           </div>
 
           <div className="flex flex-col gap-1">
-            <span className="font-bold text-neutral-700 dark:text-neutral-400">
-              Email
-            </span>
+            <span className="text-primary-600 font-bold">Email</span>
             <span className="text-sm">{session.user.email}</span>
           </div>
         </article>

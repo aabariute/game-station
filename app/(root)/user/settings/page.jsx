@@ -21,7 +21,7 @@ export default async function Page() {
       <div className="mt-14">
         <DeleteAccountButton />
 
-        <p className="max-w-xl text-xs text-neutral-600 dark:text-neutral-400">
+        <p className="text-primary-600 max-w-xl text-xs">
           Caution! After your account is deleted, you will no longer have access
           to your order history or any other personalized data associated with
           your account. This action is permanent and cannot be undone. If you

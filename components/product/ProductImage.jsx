@@ -7,7 +7,7 @@ export default function ProductImage({ images, discount }) {
   return (
     <div className="relative flex w-full flex-col">
       {discount && (
-        <span className="absolute top-4 left-4 z-4 h-[55px] w-[55px] rounded-full bg-pink-700 text-center text-[15px] leading-[55px] text-white">
+        <span className="bg-accent-magenta-foreground absolute top-4 left-4 z-4 h-[55px] w-[55px] rounded-full text-center text-[15px] leading-[55px] text-white">
           -{discount}%
         </span>
       )}
@@ -37,9 +37,7 @@ export default function ProductImage({ images, discount }) {
             key={i}
             onClick={() => setIndex(i)}
             className={`relative h-[80px] w-[80px] cursor-pointer overflow-hidden rounded-md border-[2.5px] ${
-              i === index
-                ? "border-pink-500"
-                : "border-neutral-300 dark:border-neutral-700"
+              i === index ? "border-accent-magenta" : "border-primary-300"
             }`}
           >
             <Image

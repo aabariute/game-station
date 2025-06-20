@@ -19,9 +19,8 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
     <html lang="en" className={geist.className}>
-      <body className="flex min-h-screen flex-col text-neutral-900 antialiased dark:bg-[var(--color-dark-bg)] dark:text-neutral-100">
+      <body className="text-primary-900 flex min-h-screen flex-col antialiased">
         {children}
-
         <Toaster
           position="bottom-center"
           gutter={8}
@@ -33,7 +32,9 @@ export default function Layout({ children }) {
               fontSize: "14px",
               maxWidth: "500px",
               padding: "8px 12px",
-              color: "var(--color-neutral-700)",
+              backgroundColor: "var(--color-primary-100)",
+              color: "var(--color-primary-900)",
+              border: "1px solid var(--color-primary-500)",
             },
           }}
         />

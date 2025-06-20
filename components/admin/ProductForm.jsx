@@ -156,7 +156,7 @@ export default function ProductForm({ type, product, productId }) {
         </div>
       </div>
 
-      <hr className="mt-4 mb-10 border-neutral-300 dark:border-neutral-700" />
+      <hr className="border-primary-300 mt-4 mb-10" />
 
       <h3 className="mb-6 text-center text-xl font-bold uppercase">Variants</h3>
 

@@ -15,13 +15,13 @@ export default function Charts({ data }) {
       <BarChart data={data}>
         <XAxis
           dataKey="month_year"
-          stroke="var(--color-neutral-500)"
+          stroke="var(--color-primary-700)"
           fontSize={15}
           tickLine={false}
           axisLine={false}
         />
         <YAxis
-          stroke="var(--color-neutral-500)"
+          stroke="var(--color-primary-700)"
           fontSize={15}
           tickLine={false}
           axisLine={false}
@@ -30,8 +30,8 @@ export default function Charts({ data }) {
         <CartesianGrid strokeDasharray="4" />
         <Bar
           dataKey="total_sales"
-          stroke="var(--color-indigo-800)"
-          fill="var(--color-indigo-700)"
+          stroke="var(--color-accent-indigo-foreground)"
+          fill="var(--color-accent-indigo)"
           strokeWidth={2}
           radius={[4, 4, 0, 0]}
         />

@@ -35,7 +35,7 @@ export default async function OrderItem({ item }) {
             className="object-contain"
           />
         </div>
-        <ul className="flex w-full flex-col text-sm text-neutral-500 dark:text-neutral-400">
+        <ul className="text-primary-500 flex w-full flex-col text-sm">
           <li className="flex-between w-1/2 sm:w-2/5 md:w-1/4">
             <span>Quantity:</span>
             <span className="text-right">{quantity}</span>

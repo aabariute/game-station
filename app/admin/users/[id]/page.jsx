@@ -1,3 +1,4 @@
+import ActionIcon from "@/components/admin/ActionIcon";
 import { getUserOrders } from "@/lib/actions/order-actions";
 import { getUserById } from "@/lib/actions/user-actions";
 import { capitalize, dateFormatter, priceFormatter } from "@/lib/utils";
@@ -73,13 +74,13 @@ export default async function Page({ params }) {
       </h2>
 
       {(!orders || orders.length) === 0 && (
-        <p className="text-center text-neutral-600 dark:text-neutral-400">
+        <p className="text-primary-600 text-center">
           User has not placed any orders yet.
         </p>
       )}
 
       {orders?.length > 0 && (
-        <table className="w-full border-separate rounded-lg border border-gray-300 text-sm dark:border-gray-700 dark:bg-neutral-800">
+        <table className="border-primary-300 dark:bg-primary-200 w-full border-separate rounded-lg border text-sm">
           <thead>
             <tr>
               <th className="py-3 pl-4 text-left">ID</th>
@@ -93,21 +94,21 @@ export default async function Page({ params }) {
           <tbody>
             {orders.map((order) => (
               <tr key={order.order_id}>
-                <td className="min-w-[180px] border-t border-gray-300 py-2 pr-3 pl-4 dark:border-gray-700">
+                <td className="border-primary-300 min-w-[180px] border-t py-2 pr-3 pl-4">
                   <Link
                     href={`/admin/orders/${order.order_id}`}
-                    className="hover:text-neutral-500 dark:hover:text-neutral-300"
+                    className="hover:text-primary-700"
                   >
                     {order.order_id}
                   </Link>
                 </td>
-                <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
+                <td className="border-primary-300 border-t py-2 pr-3 text-nowrap">
                   {dateFormatter(order.created_at)}
                 </td>
-                <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
+                <td className="border-primary-300 border-t py-2 pr-3 text-nowrap">
                   {priceFormatter(order.total_price)}
                 </td>
-                <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
+                <td className="border-primary-300 border-t py-2 pr-3 text-nowrap">
                   {order.is_delivered && order.delivered_at ? (
                     dateFormatter(order.delivered_at)
                   ) : (
@@ -116,13 +117,12 @@ export default async function Page({ params }) {
                     </span>
                   )}
                 </td>
-                <td className="border-t border-gray-300 py-2 pr-4 text-center align-middle dark:border-gray-700">
-                  <Link
-                    href={`/admin/orders/${order.order_id}`}
-                    className="cursor-pointer rounded-md border border-neutral-300 p-2 hover:bg-neutral-100 dark:hover:bg-neutral-700"
-                  >
-                    <FaEye className="text-[16px]" />
-                  </Link>
+                <td className="border-primary-300 border-t py-2 pr-4 text-center align-middle">
+                  <div className="flex-center">
+                    <ActionIcon href={`/admin/orders/${order.order_id}`}>
+                      <FaEye className="text-[16px]" />
+                    </ActionIcon>
+                  </div>
                 </td>
               </tr>
             ))}

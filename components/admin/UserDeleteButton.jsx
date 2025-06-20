@@ -21,7 +21,7 @@ export default function UserDeleteButton({ userId, userName }) {
 
   return (
     <>
-      <button className="cursor-pointer rounded-md border border-neutral-300 p-2 hover:bg-neutral-100 dark:hover:bg-neutral-700">
+      <button className="border-primary-300 dark:border-primary-600 hover:bg-primary-100 dark:hover:bg-primary-300 cursor-pointer rounded-md border p-2">
         <FaTrash className="text-[16px]" onClick={() => setIsOpen(true)} />
       </button>
 
@@ -29,10 +29,7 @@ export default function UserDeleteButton({ userId, userName }) {
         <DialogTitle as="h3" className="text-xl font-semibold">
           Are you sure?
         </DialogTitle>
-        <Description
-          as="p"
-          className="mt-2 text-neutral-700 dark:text-neutral-300"
-        >
+        <Description as="p" className="text-primary-600 mt-2 mb-6">
           This will permanently delete user{" "}
           <span className="px-1 font-medium">{userName}</span> from database.
         </Description>

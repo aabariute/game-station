@@ -11,7 +11,7 @@ export default function UserNavbar() {
   if (!pageName) return null;
 
   return (
-    <div className="flex-center w-full bg-neutral-800 pt-12 text-white dark:bg-black/20">
+    <div className="flex-center bg-accent-indigo-foreground w-full pt-12 text-white">
       <div className="w-full max-w-4xl px-4">
         <h2 className="mb-14 text-center text-4xl font-medium">
           {capitalize(pageName)}
@@ -21,7 +21,7 @@ export default function UserNavbar() {
           <Link
             href="/user/profile"
             className={`${
-              pathname === "/user/profile" ? "border-b-4 border-b-pink-700" : ""
+              pathname === "/user/profile" ? "border-b-4 border-b-white" : ""
             } px-3 py-2`}
           >
             Profile
@@ -30,7 +30,7 @@ export default function UserNavbar() {
             href="/user/orders"
             className={`${
               pathname.includes("/user/orders")
-                ? "border-b-4 border-b-pink-700"
+                ? "border-b-4 border-b-white"
                 : ""
             } px-3 py-2`}
           >
@@ -39,9 +39,7 @@ export default function UserNavbar() {
           <Link
             href="/user/settings"
             className={`${
-              pathname === "/user/settings"
-                ? "border-b-4 border-b-pink-700"
-                : ""
+              pathname === "/user/settings" ? "border-b-4 border-b-white" : ""
             } px-3 py-2`}
           >
             Settings

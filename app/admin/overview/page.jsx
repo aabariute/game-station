@@ -1,3 +1,4 @@
+import ActionIcon from "@/components/admin/ActionIcon";
 import Charts from "@/components/admin/Charts";
 import { getOrderSummary } from "@/lib/actions/order-actions";
 import { dateFormatter, priceFormatter } from "@/lib/utils";
@@ -74,7 +75,7 @@ export default async function Page() {
         <div className="card-md col-span-3">
           <h4 className="mb-6 text-xl font-medium">Recent Sales</h4>
 
-          <table className="w-full border-separate rounded-lg border border-gray-300 text-sm dark:border-gray-500 dark:bg-neutral-600">
+          <table className="border-primary-300 dark:bg-primary-300 w-full border-separate rounded-lg border text-sm">
             <thead>
               <tr>
                 <th className="py-3 pl-4 text-left">BUYER</th>
@@ -87,22 +88,21 @@ export default async function Page() {
             <tbody>
               {summary.latestOrders.map((order) => (
                 <tr key={order.order_id}>
-                  <td className="border-t border-gray-300 py-2 pr-3 pl-4 dark:border-gray-500">
+                  <td className="border-primary-200 dark:border-primary-400 border-t py-2 pr-3 pl-4">
                     {order.user_id}
                   </td>
-                  <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-500">
+                  <td className="border-primary-200 dark:border-primary-400 border-t py-2 pr-3 text-nowrap">
                     {dateFormatter(order.created_at)}
                   </td>
-                  <td className="border-t border-gray-300 py-2 pr-3 dark:border-gray-500">
+                  <td className="border-primary-200 dark:border-primary-400 border-t py-2 pr-3">
                     {priceFormatter(order.total_price || 0)}
                   </td>
-                  <td className="border-t border-gray-300 py-2 pr-4 text-center dark:border-gray-500">
-                    <Link
-                      href={`/admin/orders/${order.order_id}`}
-                      className="cursor-pointer rounded-md border border-neutral-300 p-2 hover:bg-neutral-100"
-                    >
-                      <FaEye className="text-[16px]" />
-                    </Link>
+                  <td className="border-primary-200 dark:border-primary-400 border-t py-2 pr-4 text-center">
+                    <div className="flex-center">
+                      <ActionIcon href={`/admin/orders/${order.order_id}`}>
+                        <FaEye className="text-[16px]" />
+                      </ActionIcon>
+                    </div>
                   </td>
                 </tr>
               ))}

@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function NotificationBar() {
   return (
-    <div className="overflow-hidden bg-neutral-800 py-[0.35rem] text-xs tracking-wide text-nowrap text-white dark:bg-black">
+    <div className="bg-primary-800 overflow-hidden py-[0.35rem] text-xs tracking-wide text-nowrap text-white dark:bg-black">
       <Swiper
         modules={[Autoplay]}
         loop={true}

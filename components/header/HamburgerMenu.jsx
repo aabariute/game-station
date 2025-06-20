@@ -8,13 +8,13 @@ import NavbarLink from "./NavbarLink";
 export default function HamburgerMenu({ links, positionTop }) {
   return (
     <Popover className="group flex-center static mr-2 lg:hidden">
-      <PopoverButton className="cursor-pointer text-2xl hover:text-neutral-500">
-        <RxHamburgerMenu className="group-data-open:text-neutral-500" />
+      <PopoverButton className="hover:text-primary-500 cursor-pointer text-2xl">
+        <RxHamburgerMenu className="group-data-open:text-primary-500" />
       </PopoverButton>
 
       <PopoverPanel
         transition
-        className="flex-center fixed left-0 z-11 w-full origin-top gap-4 border-y border-neutral-200 bg-neutral-100 py-2 shadow-lg transition duration-100 ease-out data-closed:opacity-0 dark:border-neutral-800 dark:bg-neutral-700"
+        className="flex-center border-primary-200 bg-primary-100 dark:bg-primary-200 fixed left-0 z-11 w-full origin-top gap-4 border-y py-2 shadow-lg transition duration-100 ease-out data-closed:opacity-0"
         style={{ top: positionTop }}
       >
         {links.map((link) => (

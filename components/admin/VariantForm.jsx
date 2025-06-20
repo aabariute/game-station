@@ -20,11 +20,11 @@ export default function VariantForm({
   errors,
 }) {
   return (
-    <div className="flex flex-col gap-y-10 divide-y divide-neutral-200 dark:divide-neutral-800">
+    <div className="divide-primary-200 flex flex-col gap-y-10 divide-y">
       {fields.map((field, index) => (
         <div key={field.id} className="pb-4">
           <div className="flex-between mb-4">
-            <h4 className="rounded-md bg-neutral-300 px-3 py-2 text-base font-medium tracking-wide dark:bg-neutral-700">
+            <h4 className="bg-primary-300 rounded-md px-3 py-2 text-base font-medium tracking-wide">
               Variant #{index + 1}
             </h4>
             {index !== 0 && (
@@ -56,22 +56,22 @@ export default function VariantForm({
                     onChange={(color) => field.onChange(color.value)}
                     className="text-sm"
                   >
-                    <ListboxButton className="flex-between w-full cursor-pointer rounded-md border border-gray-300 px-3 py-[calc(0.75rem+1px)] text-left shadow-sm dark:border-gray-700">
+                    <ListboxButton className="flex-between border-primary-300 w-full cursor-pointer rounded-md border px-3 py-[calc(0.75rem+1px)] text-left shadow-sm">
                       {selectedColorObj.label}
                       <IoChevronDownOutline className="w-5" />
                     </ListboxButton>
                     <ListboxOptions
                       anchor="bottom start"
-                      className="h-40 w-(--button-width) bg-neutral-800 px-2 py-2"
+                      className="bg-primary-200 h-40 w-(--button-width) px-2 py-2"
                     >
                       {colors.map((color) => (
                         <ListboxOption
                           key={color.value}
                           value={color}
-                          className="flex cursor-pointer items-center gap-2 rounded-sm p-1 data-focus:bg-neutral-700"
+                          className="data-focus:bg-primary-300 flex cursor-pointer items-center gap-2 rounded-sm p-1"
                         >
                           <span
-                            className="h-[20px] w-[20px] cursor-pointer rounded-full border-2 border-neutral-900 transition duration-200 hover:scale-105"
+                            className="h-[20px] w-[20px] cursor-pointer rounded-full border-1 border-black transition duration-200 hover:scale-105"
                             style={{ backgroundColor: `${color.value}` }}
                           ></span>
                           <span className="text-sm">{color.label}</span>
@@ -162,7 +162,7 @@ export default function VariantForm({
                 <>
                   <label
                     htmlFor={`variants.${index}.images`}
-                    className="cursor-pointer border-b border-b-indigo-700 pb-[0.10rem] font-medium text-indigo-700"
+                    className="button-tertiary"
                   >
                     Upload images
                   </label>
@@ -203,7 +203,7 @@ export default function VariantForm({
                         );
                         setValue(`variants.${index}.images`, newImages);
                       }}
-                      className="cursor-pointer text-[18px] text-neutral-500 hover:text-pink-500"
+                      className="text-primary-500 hover:text-accent-magenta cursor-pointer text-[18px]"
                     />
                     {img.name}
                   </span>
@@ -218,7 +218,7 @@ export default function VariantForm({
                 !(img instanceof File) && (
                   <div
                     key={img}
-                    className="relative rounded-md border border-neutral-300 bg-white p-2 shadow-md"
+                    className="border-primary-300 relative rounded-md border bg-white p-2 shadow-md"
                   >
                     <Image
                       src={img}
@@ -239,7 +239,7 @@ export default function VariantForm({
                         setValue(`variants.${index}.images`, newImages);
                       }}
                     >
-                      <IoCloseCircle className="cursor-pointer text-[24px] text-neutral-400 hover:text-pink-500" />
+                      <IoCloseCircle className="text-primary-500 hover:text-accent-magenta cursor-pointer text-[24px]" />
                     </button>
                   </div>
                 ),

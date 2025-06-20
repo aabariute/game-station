@@ -33,8 +33,8 @@ export default function CheckoutShippingForm({ selectedMethod, totalPrice }) {
     <form action={updateShippingMethod} className="flex flex-1 flex-col">
       <h3 className="mt-8 mb-6 text-xl font-semibold">Shipping Method</h3>
 
-      <div className="rounded-md border border-neutral-300 shadow-sm dark:border-gray-700">
-        <div className="flex-between border-b border-neutral-300 px-4 dark:border-gray-700">
+      <div className="border-primary-300 rounded-md border shadow-sm">
+        <div className="flex-between border-primary-300 border-b px-4">
           <div className="flex flex-1 items-center gap-3">
             <input
               type="radio"
@@ -47,9 +47,7 @@ export default function CheckoutShippingForm({ selectedMethod, totalPrice }) {
             />
             <label htmlFor="standard" className="w-full py-3">
               Standard
-              <span className="ml-2 text-neutral-600 dark:text-neutral-400">
-                (4-7 working days)
-              </span>
+              <span className="text-primary-600 ml-2">(4-7 working days)</span>
             </label>
           </div>
           <strong>{totalPrice >= 50 ? "FREE" : priceFormatter(4.99)}</strong>
@@ -66,9 +64,7 @@ export default function CheckoutShippingForm({ selectedMethod, totalPrice }) {
             />
             <label htmlFor="express" className="w-full py-3">
               Express
-              <span className="ml-2 text-neutral-600 dark:text-neutral-400">
-                (2-4 working days)
-              </span>
+              <span className="text-primary-600 ml-2">(2-4 working days)</span>
             </label>
           </div>
           <strong>{priceFormatter(7.99)}</strong>

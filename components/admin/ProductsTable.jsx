@@ -7,6 +7,7 @@ import React, { useState } from "react";
 import { FaPen } from "react-icons/fa";
 import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
 import ProductDeleteButton from "./ProductDeleteButton";
+import ActionIcon from "./ActionIcon";
 
 export default function ProductsTable({ products }) {
   const [expandedProductId, setExpandedProductId] = useState(null);
@@ -17,7 +18,7 @@ export default function ProductsTable({ products }) {
   }
 
   return (
-    <table className="w-full border-separate rounded-lg border border-gray-300 text-sm dark:border-gray-700 dark:bg-neutral-800">
+    <table className="border-primary-300 dark:bg-primary-200 w-full border-separate rounded-lg border text-sm">
       <thead>
         <tr>
           <th className="py-3 pl-4 text-left">ID</th>
@@ -33,39 +34,36 @@ export default function ProductsTable({ products }) {
         {products.map((product) => (
           <React.Fragment key={product.product_id}>
             <tr onClick={(e) => toggleExpand(e, product.product_id)}>
-              <td className="min-w-[180px] border-t border-gray-300 py-2 pr-3 pl-4 dark:border-gray-700">
+              <td className="border-primary-300 min-w-[180px] border-t py-2 pr-3 pl-4">
                 {product.product_id}
               </td>
-              <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
+              <td className="border-primary-300 border-t py-2 pr-3 text-nowrap">
                 {product.title}
               </td>
-              <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
+              <td className="border-primary-300 border-t py-2 pr-3 text-nowrap">
                 {product.brand}
               </td>
-              <td className="border-t border-gray-300 py-2 pr-3 text-nowrap dark:border-gray-700">
+              <td className="border-primary-300 border-t py-2 pr-3 text-nowrap">
                 {product.category}
               </td>
               <td
-                className="border-t border-gray-300 py-2 dark:border-gray-700"
+                className="border-primary-300 border-t py-2"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex items-center justify-center gap-x-2">
-                  <Link
-                    href={`/admin/products/${product.product_id}`}
-                    className="cursor-pointer rounded-md border border-neutral-300 p-2 hover:bg-neutral-100 dark:hover:bg-neutral-700"
-                  >
+                  <ActionIcon href={`/admin/products/${product.product_id}`}>
                     <FaPen className="text-[16px]" />
-                  </Link>
+                  </ActionIcon>
                   <ProductDeleteButton productId={product.product_id} />
                 </div>
               </td>
-              <td className="border-t border-gray-300 py-2 pr-4 text-center align-middle dark:border-gray-700">
+              <td className="border-primary-300 border-t py-2 pr-4 text-center align-middle">
                 <button
-                  className="cursor-pointer rounded-md border border-neutral-300 p-2 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                  className="border-primary-300 dark:border-primary-600 hover:bg-primary-100 dark:hover:bg-primary-300 cursor-pointer rounded-md border p-2"
                   style={{
                     backgroundColor:
                       expandedProductId === product.product_id &&
-                      "var(--color-neutral-400)",
+                      "var(--color-primary-200)",
                   }}
                   onClick={(e) => toggleExpand(e, product.product_id)}
                 >
@@ -82,11 +80,11 @@ export default function ProductsTable({ products }) {
               <tr>
                 <td
                   colSpan={6}
-                  className="bg-gray-100 px-4 pt-2 dark:bg-neutral-700"
+                  className="bg-primary-100 dark:bg-primary-300 px-4 pt-2"
                 >
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="text-left text-gray-700 dark:text-gray-200">
+                      <tr className="text-primary-700 text-left">
                         <th className="py-2">Variant ID</th>
                         <th className="py-2">Color</th>
                         <th className="py-2">Image</th>
@@ -99,7 +97,7 @@ export default function ProductsTable({ products }) {
                       {product.variants.map((variant) => (
                         <tr
                           key={variant.variant_id}
-                          className="border-t border-gray-300 dark:border-gray-600"
+                          className="border-primary-300 dark:border-primary-400 border-t"
                         >
                           <td className="max-w-[130px] min-w-[80px] py-2">
                             {variant.variant_id}

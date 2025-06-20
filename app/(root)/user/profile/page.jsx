@@ -28,9 +28,7 @@ export default async function Page() {
         <article className="card-lg flex flex-col gap-6">
           <div className="flex flex-col gap-1">
             <div className="flex items-center gap-2">
-              <span className="font-bold text-neutral-700 dark:text-neutral-400">
-                Name
-              </span>
+              <span className="text-primary-600 font-bold">Name</span>
               <ProfileContactsForm />
             </div>
             <span className="text-sm">
@@ -39,9 +37,7 @@ export default async function Page() {
           </div>
 
           <div className="flex flex-col gap-1">
-            <span className="font-bold text-neutral-700 dark:text-neutral-400">
-              Email
-            </span>
+            <span className="text-primary-600 font-bold">Email</span>
             <span className="text-sm">{session.user.email}</span>
           </div>
         </article>
@@ -49,9 +45,7 @@ export default async function Page() {
         <article className="card-lg flex flex-col gap-6">
           <div className="flex flex-col gap-1">
             <div className="flex items-center gap-2">
-              <span className="font-bold text-neutral-700 dark:text-neutral-400">
-                Address
-              </span>
+              <span className="text-primary-600 font-bold">Address</span>
               <ProfileAddressForm
                 address={address}
                 phone_number={phone_number}
@@ -59,7 +53,7 @@ export default async function Page() {
             </div>
 
             {Object.keys(address).length === 0 ? (
-              <div className="mt-2 ml-1 text-sm text-neutral-500 italic">
+              <div className="text-primary-500 mt-2 ml-1 text-sm italic">
                 No address added
               </div>
             ) : (

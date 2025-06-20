@@ -82,15 +82,13 @@ export default async function OrderPage({ id }) {
 
           <div className="card-md flex flex-col gap-2">
             <h3 className="text-lg font-semibold uppercase">Payment method</h3>
-            <span className="text-neutral-500 dark:text-neutral-400">
-              Credit Card
-            </span>
+            <span className="text-primary-600">Credit Card</span>
             <p className="text-sm">Order paid!</p>
           </div>
 
           <div className="card-md flex flex-col gap-2">
             <h3 className="text-lg font-semibold uppercase">Delivery method</h3>
-            <span className="text-neutral-500 dark:text-neutral-400">
+            <span className="text-primary-600">
               {capitalize(shipping_method)}
             </span>
             <div className="flex flex-col text-sm">
@@ -108,7 +106,7 @@ export default async function OrderPage({ id }) {
 
       <article className="card-lg flex flex-col">
         <h3 className="text-lg font-semibold uppercase">Order details</h3>
-        <span className="text-sm text-neutral-500 dark:text-neutral-400">
+        <span className="text-primary-600 text-sm">
           {orderItemsCount === 1 ? "1 product" : `${orderItemsCount} products`}
         </span>
         <Suspense fallback={<Spinner />}>
@@ -121,7 +119,7 @@ export default async function OrderPage({ id }) {
           </div>
         </Suspense>
 
-        <hr className="mt-4 mb-8 border-neutral-200" />
+        <hr className="border-primary-300 mt-4 mb-8" />
         <ul className="flex flex-col items-end">
           <li className="flex-between mb-1 w-full md:w-1/2">
             <span>Subtotal amount</span>

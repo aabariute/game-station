@@ -19,7 +19,7 @@ export default function ReviewList({ reviews }) {
         setFilteredByStars={setFilteredByStars}
       />
 
-      <div className="mx-1 divide-y divide-neutral-200 dark:divide-neutral-700">
+      <div className="divide-primary-200 mx-1 divide-y">
         {filteredReviews.map((review) => (
           <Review key={review.id} review={review} />
         ))}
@@ -45,20 +45,18 @@ function Review({ review }) {
           ))}
         </div>
         {is_verified_purchase && (
-          <div className="flex-center rounded-full border border-neutral-200 px-2 py-1 text-sm">
+          <div className="flex-center border-primary-300 rounded-full border px-2 py-1 text-sm">
             <PiCheckCircleFill className="mr-1 text-[18px]" />
             <span className="mb-[1px]">Verified Purchase</span>
           </div>
         )}
       </div>
       <h5 className="font-semibold">{title}</h5>
-      <p className="mt-2 mb-3 text-neutral-500 dark:text-neutral-400">
-        {description}
-      </p>
+      <p className="text-primary-500 mt-2 mb-3">{description}</p>
       {name.toLowerCase() === "deleted user" ? (
         <p className="text-sm">
           Posted {created_at.slice(0, 10)}{" "}
-          <span className="text-neutral-400">(Deleted user)</span>
+          <span className="text-primary-500">(Deleted user)</span>
         </p>
       ) : (
         <p className="text-sm">

@@ -11,7 +11,7 @@ export default function ButtonGoogle() {
       className="mb-1 text-center"
     >
       <button
-        className="flex-center w-full cursor-pointer gap-4 rounded-full border border-neutral-300 bg-white py-3 font-medium dark:bg-neutral-600"
+        className="flex-center border-primary-300 w-full cursor-pointer gap-4 rounded-full border bg-white py-3 font-medium dark:bg-white/20"
         type="submit"
       >
         <Image

@@ -9,9 +9,9 @@ export default function CheckoutSummary({ user, shippingMethod }) {
   const { first_name, last_name, email, address } = user;
 
   return (
-    <div className="rounded-md border border-neutral-200 p-4 shadow-sm dark:border-gray-700">
-      <div className="grid grid-cols-[100px_1fr_80px] items-center border-b border-neutral-200 pb-3 dark:border-gray-700">
-        <div className="text-neutral-500 dark:text-neutral-400">Contact</div>
+    <div className="border-primary-300 rounded-md border p-4 shadow-sm">
+      <div className="border-primary-200 grid grid-cols-[100px_1fr_80px] items-center border-b pb-3">
+        <div className="text-primary-600">Contact</div>
         <div className="text-sm">
           {first_name} {last_name}
         </div>
@@ -27,12 +27,10 @@ export default function CheckoutSummary({ user, shippingMethod }) {
       <div
         className={`grid grid-cols-[100px_1fr_80px] items-center pt-3 ${
           pathname.split("/").at(-1) === "payment" &&
-          "border-b border-neutral-200 pb-3 dark:border-gray-700"
+          "border-primary-200 border-b pb-3"
         }`}
       >
-        <div className="col-1 self-start text-neutral-500 dark:text-neutral-400">
-          Ship to
-        </div>
+        <div className="text-primary-600 col-1 self-start">Ship to</div>
         <div className="text-sm">
           {address.street_address}, {address.zip_code} {address.city},{" "}
           {address.country}
@@ -47,7 +45,7 @@ export default function CheckoutSummary({ user, shippingMethod }) {
 
       {pathname.split("/").at(-1) === "payment" && (
         <div className="grid grid-cols-[100px_1fr_80px] items-center pt-3">
-          <div className="text-neutral-500 dark:text-neutral-400">Shipping</div>
+          <div className="text-primary-600">Shipping</div>
           <div className="text-sm">{capitalize(shippingMethod)}</div>
           <Link
             href="/checkout/shipping"

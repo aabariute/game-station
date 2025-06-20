@@ -13,7 +13,7 @@ export default function ReviewSummary({
 
   return (
     <div className="flex-center mb-6 flex-col-reverse gap-4 md:flex-row md:gap-0">
-      <div className="flex flex-col-reverse md:border-r-1 md:border-neutral-300 md:pr-24">
+      <div className="md:border-primary-300 flex flex-col-reverse md:border-r-1 md:pr-24">
         {filteredByStars && (
           <div className="col-span-full mt-4 flex justify-center text-center">
             <button
@@ -38,13 +38,16 @@ export default function ReviewSummary({
 
       <div className="flex flex-col items-center pl-8 md:pl-24">
         <div className="mb-[0.1rem] flex items-center text-lg">
-          <IoStar className="mr-1 text-[16px] text-pink-600" />
+          <IoStar className="text-accent-magenta-foreground mr-1 text-[16px]" />
           <div>
-            <span className="mr-2 font-semibold text-pink-600">
+            <span className="text-accent-magenta-foreground mr-2 font-semibold">
               {averageRating}
             </span>
             <span>
-              out of <span className="mx-1 font-semibold text-pink-600">5</span>
+              out of{" "}
+              <span className="text-accent-magenta-foreground mx-1 font-semibold">
+                5
+              </span>
             </span>
           </div>
         </div>
@@ -72,7 +75,7 @@ function ProductRatingSummary({
           ? setFilteredByStars(stars)
           : null
       }
-      className={`mb-[1px] grid grid-cols-[auto_auto_auto] items-center gap-x-6 dark:text-neutral-300 ${
+      className={`mb-[1px] grid grid-cols-[auto_auto_auto] items-center gap-x-6 ${
         filteredByStars === stars ? "cursor-pointer opacity-65" : ""
       } ${
         reviews.length === 1 ||
@@ -92,9 +95,9 @@ function ProductRatingSummary({
       </span>
 
       <div className="float-left w-[150px]">
-        <div className="w-full rounded-full bg-neutral-200 dark:bg-neutral-300">
+        <div className="bg-primary-200 w-full rounded-full">
           <div
-            className="h-[14px] rounded-full bg-neutral-900 dark:bg-neutral-700"
+            className="bg-primary-900 dark:bg-primary-700 h-[14px] rounded-full"
             style={{
               width: `${Math.round(
                 (reviews.filter((review) => review.rating === stars).length /

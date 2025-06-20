@@ -40,7 +40,7 @@ export default function CartModal({ cart }) {
           onClick={() => setIsOpen(true)}
         />
         {cartLength > 0 && (
-          <div className="flex-center absolute right-[-4px] bottom-[-5px] h-[18px] w-[18px] rounded-full bg-pink-700 text-[9px] text-white">
+          <div className="flex-center bg-accent-magenta-foreground absolute right-[-4px] bottom-[-5px] h-[18px] w-[18px] rounded-full text-[9px] text-white">
             <span>{cartLength}</span>
           </div>
         )}
@@ -55,17 +55,17 @@ export default function CartModal({ cart }) {
           <DialogPanel
             as="div"
             transition
-            className="fixed top-0 right-0 bottom-0 flex h-full w-full flex-col bg-white p-6 duration-300 data-closed:translate-x-full md:w-[530px] md:border-l md:border-neutral-400 dark:bg-black md:dark:border-neutral-800"
+            className="md:border-primary-200 fixed top-0 right-0 bottom-0 flex h-full w-full flex-col bg-white p-6 duration-300 data-closed:translate-x-full md:w-[530px] md:border-l dark:bg-black"
           >
             <div className="flex-between mb-4">
               <h3 className="text-2xl font-semibold">My Cart</h3>
               <IoClose
                 onClick={() => setIsOpen(false)}
-                className="cursor-pointer text-3xl hover:text-pink-500"
+                className="hover:text-accent-magenta cursor-pointer text-3xl"
               />
             </div>
 
-            <div className="flex-center border-y-2 border-neutral-600 py-2">
+            <div className="flex-center border-primary-300 border-y-2 py-2">
               {totalPrice < 50 ? (
                 "Free shipping on orders over $50"
               ) : (
@@ -78,7 +78,7 @@ export default function CartModal({ cart }) {
 
             {(!optimisticCart || optimisticCart?.cart_items?.length === 0) && (
               <div className="mx-auto my-10 flex flex-col items-center text-center">
-                <span className="mb-2 inline-block rounded-full bg-indigo-200 p-4 dark:bg-indigo-700">
+                <span className="dark:bg-accent-indigo mb-2 inline-block rounded-full bg-indigo-200 p-4">
                   <PiBagLight className="h-8 w-8" />
                 </span>
                 <p className="mb-4 text-lg font-semibold">
@@ -90,7 +90,7 @@ export default function CartModal({ cart }) {
 
             {optimisticCart && optimisticCart?.cart_items.length > 0 && (
               <>
-                <ul className="flex flex-col divide-y divide-neutral-200 overflow-y-auto px-2 pt-8 pb-10 dark:divide-neutral-700">
+                <ul className="divide-primary-200 flex flex-col divide-y overflow-y-auto px-2 pt-8 pb-10">
                   {optimisticCart.cart_items.map((item) => (
                     <ProductCard
                       key={`${item.product_id}%${item.variant_id}`}

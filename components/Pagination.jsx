@@ -19,7 +19,7 @@ export default function Pagination({ page, totalPages }) {
   return (
     <div className="flex-center gap-2 pt-12 pb-4">
       {page > 1 && (
-        <button className="cursor-pointer text-xl text-gray-600 hover:text-pink-500">
+        <button className="text-primary-400 hover:text-accent-magenta cursor-pointer text-xl">
           <IoIosArrowBack onClick={() => handlePagination(+page - 1)} />
         </button>
       )}
@@ -27,8 +27,9 @@ export default function Pagination({ page, totalPages }) {
         {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
           <button
             key={p}
-            className={`transition-color min-w-[30px] cursor-pointer rounded-md border border-gray-300 px-2 py-1 shadow-xs duration-100 hover:shadow-sm dark:border-gray-700 ${
-              p === +page && "bg-gray-100 hover:shadow-xs dark:bg-neutral-800"
+            className={`transition-color border-primary-300 min-w-[30px] cursor-pointer rounded-md border px-2 py-1 shadow-xs duration-100 hover:shadow-sm ${
+              p === +page &&
+              "bg-primary-100 dark:bg-primary-200 hover:shadow-xs"
             }`}
             onClick={() => handlePagination(p)}
           >
@@ -37,7 +38,7 @@ export default function Pagination({ page, totalPages }) {
         ))}
       </div>
       {page < totalPages && (
-        <button className="cursor-pointer text-xl text-gray-600 hover:text-pink-500">
+        <button className="text-primary-400 hover:text-accent-magenta cursor-pointer text-xl">
           <IoIosArrowForward onClick={() => handlePagination(+page + 1)} />
         </button>
       )}
